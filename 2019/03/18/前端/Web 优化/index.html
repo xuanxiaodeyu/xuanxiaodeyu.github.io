@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Web 优化 | 
+        
+        轩箫的博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="轩箫的博客">
+    <meta name="keywords" content="轩箫 轩箫的鱼 博客,Web 优化">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+
+
+
+
+
+
+        /*background-color: #c3cf99;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2393c59b'/%3E%3Cstop offset='1' stop-color='%2393c59b' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239cd0be'/%3E%3Cstop offset='1' stop-color='%239cd0be' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2395a9c6'/%3E%3Cstop offset='1' stop-color='%2395a9c6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23c3cf99'/%3E%3Cstop offset='1' stop-color='%23c3cf99' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%238db4ba'/%3E%3Cstop offset='1' stop-color='%238db4ba' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23a39fd1'/%3E%3Cstop offset='1' stop-color='%23a39fd1' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+background-position: center;*/
+
+
+
+
+
+
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/npm/jquery@2.2.0/dist/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="轩箫的博客">
+    <meta name="msapplication-starturl" content="http://sunyang.xyz/2019/03/18/前端/Web 优化/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="轩箫的博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="xBLSgOgP6ilVCyojvkIn8GKnA4BN-LV-ydfXAebvoHE" />
+    <meta name="baidu-site-verification" content="n3JO6fBPyR" />
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://sunyang.xyz/2019/03/18/前端/Web 优化/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Web 优化 | 轩箫的博客">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="轩箫的博客">
+    <meta property="og:article:tag" content="Web 优化"> 
+
+    
+        <meta property="article:published_time" content="Mon Mar 18 2019 18:34:24 GMT+0800">
+        <meta property="article:modified_time" content="Tue May 21 2019 20:22:02 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://sunyang.xyz/2019/03/18/前端/Web 优化/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://sunyang.xyz/2019/03/18/前端/Web 优化/index.html",
+    "headline": "Web 优化",
+    "datePublished": "Mon Mar 18 2019 18:34:24 GMT+0800",
+    "dateModified": "Tue May 21 2019 20:22:02 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "轩箫",
+        "image": {
+            "@type": "ImageObject",
+            "url": "img/favicon.png"
+        },
+        "description": "我始终相信，所有相遇都有意义"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "轩箫的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "img/favicon.png"
+        }
+    },
+    "keywords": ",Web 优化轩箫 轩箫的鱼 博客",
+    "description": "轩箫的博客",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6be0495ae5c20719000aa2b2068b5008';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-JavaScript-压缩和模块打包"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. JavaScript 压缩和模块打包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-按需加载资源"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 按需加载资源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-在使用-DOM-操作库时用上-array-ids"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 在使用 DOM 操作库时用上 array-ids</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-缓存"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-启用-HTTP-2"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 启用 HTTP/2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-使用负载均衡方案"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 使用负载均衡方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-服务器端渲染"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. 服务器端渲染</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">8.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#加载优化"><span class="post-toc-number">9.</span> <span class="post-toc-text">加载优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#减少HTTP请求"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">减少HTTP请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缓存"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">缓存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#压缩HTML、CSS、JavaScript"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">压缩HTML、CSS、JavaScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无阻塞"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">无阻塞</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用首屏加载"><span class="post-toc-number">9.5.</span> <span class="post-toc-text">使用首屏加载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#按需加载"><span class="post-toc-number">9.6.</span> <span class="post-toc-text">按需加载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预加载"><span class="post-toc-number">9.7.</span> <span class="post-toc-text">预加载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#压缩图片"><span class="post-toc-number">9.8.</span> <span class="post-toc-text">压缩图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#减少Cookie"><span class="post-toc-number">9.9.</span> <span class="post-toc-text">减少Cookie</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#避免重定向"><span class="post-toc-number">9.10.</span> <span class="post-toc-text">避免重定向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步加载第三方资源"><span class="post-toc-number">9.11.</span> <span class="post-toc-text">异步加载第三方资源</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaScript优化"><span class="post-toc-number">10.</span> <span class="post-toc-text">JavaScript优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS优化"><span class="post-toc-number">11.</span> <span class="post-toc-text">CSS优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尽量避免写在HTML标签中写Style属性"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">尽量避免写在HTML标签中写Style属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#避免CSS表达式"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">避免CSS表达式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移除空的CSS规则"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">移除空的CSS规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#正确使用Display的属性"><span class="post-toc-number">11.4.</span> <span class="post-toc-text">正确使用Display的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不滥用Float"><span class="post-toc-number">11.5.</span> <span class="post-toc-text">不滥用Float</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不滥用Web字体"><span class="post-toc-number">11.6.</span> <span class="post-toc-text">不滥用Web字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不声明过多的Font-size"><span class="post-toc-number">11.7.</span> <span class="post-toc-text">不声明过多的Font-size</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#值为0时不需要任何单位"><span class="post-toc-number">11.8.</span> <span class="post-toc-text">值为0时不需要任何单位</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标准化各种浏览器前缀"><span class="post-toc-number">11.9.</span> <span class="post-toc-text">标准化各种浏览器前缀</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#避免让选择符看起来像正则表达式"><span class="post-toc-number">11.10.</span> <span class="post-toc-text">避免让选择符看起来像正则表达式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaScript执行优化"><span class="post-toc-number">12.</span> <span class="post-toc-text">JavaScript执行优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#减少重绘和回流"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">减少重绘和回流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缓存Dom选择与计算"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">缓存Dom选择与计算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缓存列表-length"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">缓存列表.length</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尽量使用事件代理，避免批量绑定事件"><span class="post-toc-number">12.4.</span> <span class="post-toc-text">尽量使用事件代理，避免批量绑定事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尽量使用ID选择器"><span class="post-toc-number">12.5.</span> <span class="post-toc-text">尽量使用ID选择器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TOUCH事件优化"><span class="post-toc-number">12.6.</span> <span class="post-toc-text">TOUCH事件优化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#渲染优化"><span class="post-toc-number">13.</span> <span class="post-toc-text">渲染优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTML使用Viewport"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">HTML使用Viewport</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#减少Dom节点"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">减少Dom节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动画优化"><span class="post-toc-number">13.3.</span> <span class="post-toc-text">动画优化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#高频事件优化"><span class="post-toc-number">13.4.</span> <span class="post-toc-text">高频事件优化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GPU加速"><span class="post-toc-number">13.5.</span> <span class="post-toc-text">GPU加速</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Web 优化
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>轩箫</strong>
+        <span>3月 18, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aW1LDMBAEwNz/0nAAKmZGKyuGan+5wA+1P6TNaF9f//p44eHh4eHh4eHhPYz3io+fd/08T/777r3JNdHY8PDw8I7wfplqS8z1cPPnt2PDw8PDO897N+Fen+eDSxaAydjw8PDwns/7ZYIuF4zkvXh4eHh/kTe/6/a34OHh4R3kFT/4L4vgthzPh3571oKHh4cX8/JNpvPnR/f38PDw8AJe3dIUtBRMNtWSe4umKzw8PLwbePOhtMdaVJF8XDw8PLzzvHzLKvkE17C2cE9geHh4eJ/lzT9BNIkH7Vb5ZhgeHh7eeV4eN7R/SbbHrq/Jlwc8PDy8u3l5EbxrEGtXjlJqPDw8vK28emM+KG0n2//XJfstnRF4eHh4S11J9SPiULUttSflOB4eHt4ZXn5bG/VO2G1YjIeHh3eSNwkjksl93hyAh4eH9zTe2oMmTQZtKNwGu3h4eHh389Ye12595XFDPp7F1gE8PDy8MW8SIuRF9hy5oacMDw8PbxMvH/p8Qs/L8bXAFw8PD+8Mb20o+ebZJMBd3E7Dw8PDO8jb9oK8QWoc9eLh4eE9k9dGCe1SsVam1yU1Hh4e3m3tqu00nRTNSbH+io96YcDDw8PbyptEuu2UvRZG1BEJHh4e3s28djrOQ4Q8wti8wODh4eEd4bUb9kkA0TZdTZqx8PDw8D7Fy3/2Txqt2mVmQ9aCh4eH9xjeWry7FmTkJTseHh7e83n5JF4McdAKhoeHh3eSNwkj8vap9gkbNsDw8PDwbuBNIoDrSbxdNpKYuA4j8PDw8Lby/t+Bh4eHh4eHh4f3gOMbtAARJAYmA8kAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Web-优化/">Web 优化</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    <!--
+        -->
+            <!-- Busuanzi Views -->
+            <!--<a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    -->
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Web 优化&url=http://sunyang.xyz/2019/03/18/前端/Web 优化/index.html&pic=http://sunyang.xyzimg/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Web 优化&url=http://sunyang.xyz/2019/03/18/前端/Web 优化/index.html&via=轩箫" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://sunyang.xyz/2019/03/18/前端/Web 优化/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=轩箫的博客&title=Web 优化&summary=轩箫的博客&pics=http://sunyang.xyzimg/favicon.png&url=http://sunyang.xyz/2019/03/18/前端/Web 优化/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="1-JavaScript-压缩和模块打包"><a href="#1-JavaScript-压缩和模块打包" class="headerlink" title="1. JavaScript 压缩和模块打包"></a>1. JavaScript 压缩和模块打包</h2><p>JavaScript 应用是以源码形式进行分发的，而源码解析的效率是要比字节码低的。</p>
+<p>另一方面，模块打包则用于将不同脚本打包在一起并放进同一文件。 <strong>更少的 HTTP 请求</strong> 和 <strong>单个文件解析</strong> 都可以减少加载时间。</p>
+<p>也可以使用 Webpack 打包 CSS 文件以及合并图片。</p>
+<h2 id="2-按需加载资源"><a href="#2-按需加载资源" class="headerlink" title="2. 按需加载资源"></a>2. 按需加载资源</h2><p>资源（特别是图片）的按需加载或者说惰性加载，可以有助于你的 Web 应用在整体上获得更好的性能。对于使用大量图片的页面来说惰性加载有着显著的三个好处：</p>
+<ul>
+<li>减少向服务器发出的并发请求数量（这就使得页面的其他部分获得更快的加载时间）</li>
+<li>减少浏览器的内存使用率（更少的图片，更少的内存）</li>
+<li>减少服务器端的负载</li>
+</ul>
+<p>一个非常好的实践范例就像 Goggle Images 的搜索工具一样。点击前面的链接并且滑动页面滚动条就可以看到效果了。</p>
+<h2 id="3-在使用-DOM-操作库时用上-array-ids"><a href="#3-在使用-DOM-操作库时用上-array-ids" class="headerlink" title="3. 在使用 DOM 操作库时用上 array-ids"></a>3. 在使用 DOM 操作库时用上 array-ids</h2><p>此特性背后的主要概念就是尽可能多地重用已有的节点。Array ids 使得 DOM 操作引擎可以「知道」在什么时候某个节点可以被映射到数组当中的某个元素。没有 array-ids 或者 track-by 的话，大部分库都会进行重新排序而摧毁已有的节点并重新创建新的。这就非常损耗性能了。</p>
+<h2 id="4-缓存"><a href="#4-缓存" class="headerlink" title="4. 缓存"></a>4. 缓存</h2><h2 id="5-启用-HTTP-2"><a href="#5-启用-HTTP-2" class="headerlink" title="5. 启用 HTTP/2"></a>5. 启用 HTTP/2</h2><h2 id="6-使用负载均衡方案"><a href="#6-使用负载均衡方案" class="headerlink" title="6. 使用负载均衡方案"></a>6. 使用负载均衡方案</h2><p>我们在之前讨论缓存的时候简要提到了内容分发网络（CDNs）。把负载分配到不同的服务器（甚至于不同的地理区域）可以给你的用户提供更好的延迟时间。</p>
+<h2 id="7-服务器端渲染"><a href="#7-服务器端渲染" class="headerlink" title="7. 服务器端渲染"></a>7. 服务器端渲染</h2><p>将尽可能多的计算放在服务器端执行。</p>
+<hr>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>PC优化手段在Mobile侧同样适用</li>
+<li>在Mobile侧我们提出三秒种渲染完成首屏指标</li>
+<li>基于第二点，首屏加载3秒完成或使用Loading</li>
+<li>基于联通3G网络平均338KB/s(2.71Mb/s)，所以首屏资源不应超过1014KB</li>
+<li>Mobile侧因手机配置原因，除加载外渲染速度也是优化重点</li>
+<li>基于第五点，要合理处理代码减少渲染损耗</li>
+<li>基于第二、第五点，所有影响首屏加载和渲染的代码应在处理逻辑中后置</li>
+<li>加载完成后用户交互使用时也需注意性能</li>
+</ol>
+<h2 id="加载优化"><a href="#加载优化" class="headerlink" title="加载优化"></a>加载优化</h2><p>加载过程是最为耗时的过程，可能会占到总耗时的80%时间，因此是优化的重点</p>
+<h3 id="减少HTTP请求"><a href="#减少HTTP请求" class="headerlink" title="减少HTTP请求"></a>减少HTTP请求</h3><p>因为手机浏览器同时响应请求为4个请求（Android支持4个，iOS 5后可支持6个），所以要尽量减少页面的请求数，首次加载同时请求数不能超过4个。</p>
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>使用缓存可以减少向服务器的请求数，节省加载时间，所以所有静态资源都要在服务器端设置缓存，并且尽量使用长Cache（长Cache资源的更新可使用时间戳）</p>
+<ul>
+<li>缓存一切可缓存的资源</li>
+<li>使用长Cache（使用时间戳更新Cache）</li>
+<li>使用外联式引用CSS、JavaScript</li>
+</ul>
+<h3 id="压缩HTML、CSS、JavaScript"><a href="#压缩HTML、CSS、JavaScript" class="headerlink" title="压缩HTML、CSS、JavaScript"></a>压缩HTML、CSS、JavaScript</h3><p>减少资源大小可以加快网页显示速度，所以要对HTML、CSS、JavaScript等进行代码压缩，并在服务器端设置GZip</p>
+<ul>
+<li>压缩（例如，多余的空格、换行符和缩进）</li>
+<li>启用GZip</li>
+</ul>
+<h3 id="无阻塞"><a href="#无阻塞" class="headerlink" title="无阻塞"></a>无阻塞</h3><p>写在HTML头部的JavaScript（无异步），和写在HTML标签中的Style会阻塞页面的渲染，因此CSS放在页面头部并使用Link方式引入，避免在HTML标签中写Style，JavaScript放在页面尾部或使用异步方式加载</p>
+<h3 id="使用首屏加载"><a href="#使用首屏加载" class="headerlink" title="使用首屏加载"></a>使用首屏加载</h3><p>首屏的快速显示，可以大大提升用户对页面速度的感知，因此应尽量针对首屏的快速显示做优化</p>
+<h3 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h3><p>将不影响首屏的资源和当前屏幕资源不用的资源放到用户需要时才加载，可以大大提升重要资源的显示速度和降低总体流量，但按需加载会导致大量重绘，影响渲染性能。</p>
+<ul>
+<li>LazyLoad</li>
+<li>滚屏加载</li>
+<li>通过Media Query加载</li>
+</ul>
+<h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h3><p>大型重资源页面（如游戏）可使用增加Loading的方法，资源加载完成后再显示页面。但Loading时间过长，会造成用户流失 对用户行为分析，可以在当前页加载下一页资源，提升速度</p>
+<ul>
+<li>可感知Loading(如进入空间游戏的Loading)</li>
+<li>不可感知的Loading（如提前加载下一页）</li>
+</ul>
+<h3 id="压缩图片"><a href="#压缩图片" class="headerlink" title="压缩图片"></a>压缩图片</h3><p>图片是最占流量的资源，因此尽量避免使用他，使用时选择最合适的格式（实现需求的前提下，以大小判断），合适的大小，然后使用智图压缩，同时在代码中用Srcset来按需显示</p>
+<ul>
+<li>使用智图（ <a href="http://zhitu.tencent.com/" target="_blank" rel="external">http://zhitu.tencent.com/</a> ）</li>
+<li>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)</li>
+<li>使用Srcset</li>
+<li>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>选择合适的大小（1. 首次加载不大于1014KB 2. 不宽于640（基于手机屏幕一般宽度））</li>
+</ul>
+<h3 id="减少Cookie"><a href="#减少Cookie" class="headerlink" title="减少Cookie"></a>减少Cookie</h3><p>Cookie会影响加载速度，所以静态资源域名不使用Cookie</p>
+<h3 id="避免重定向"><a href="#避免重定向" class="headerlink" title="避免重定向"></a>避免重定向</h3><p>重定向会影响加载速度，所以在服务器正确设置避免重定向</p>
+<h3 id="异步加载第三方资源"><a href="#异步加载第三方资源" class="headerlink" title="异步加载第三方资源"></a>异步加载第三方资源</h3><p>第三方资源不可控会影响页面的加载和显示，因此要异步加载第三方资源</p>
+<h2 id="JavaScript优化"><a href="#JavaScript优化" class="headerlink" title="JavaScript优化"></a>JavaScript优化</h2><p>脚本处理不当会阻塞页面加载、渲染，因此在使用时需当注意:</p>
+<ul>
+<li>CSS写在头部，JavaScript写在尾部或异步</li>
+<li>避免图片和iFrame等的空Src: 空Src会重新加载当前页面，影响速度和效率</li>
+<li>尽量避免重设图片大小: 重设图片大小是指在页面、CSS、JavaScript等中多次重置图片大小，多次重设图片大小会引发图片的多次重绘，影响性能</li>
+<li>图片尽量避免使用DataURL: DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长</li>
+</ul>
+<h2 id="CSS优化"><a href="#CSS优化" class="headerlink" title="CSS优化"></a>CSS优化</h2><h3 id="尽量避免写在HTML标签中写Style属性"><a href="#尽量避免写在HTML标签中写Style属性" class="headerlink" title="尽量避免写在HTML标签中写Style属性"></a>尽量避免写在HTML标签中写Style属性</h3><h3 id="避免CSS表达式"><a href="#避免CSS表达式" class="headerlink" title="避免CSS表达式"></a>避免CSS表达式</h3><p>CSS表达式的执行需跳出CSS树的渲染，因此请避免CSS表达式</p>
+<h3 id="移除空的CSS规则"><a href="#移除空的CSS规则" class="headerlink" title="移除空的CSS规则"></a>移除空的CSS规则</h3><p>空的CSS规则增加了CSS文件的大小，且影响CSS树的执行，所以需移除空的CSS规则</p>
+<h3 id="正确使用Display的属性"><a href="#正确使用Display的属性" class="headerlink" title="正确使用Display的属性"></a>正确使用Display的属性</h3><p>Display属性会影响页面的渲染，因此请合理使用:</p>
+<p>a) display:inline后不应该再使用width、height、margin、padding以及float b) display:inline-block后不应该再使用float c) display:block后不应该再使用vertical-align d) display:table-*后不应该再使用margin或者float</p>
+<h3 id="不滥用Float"><a href="#不滥用Float" class="headerlink" title="不滥用Float"></a>不滥用Float</h3><p>Float在渲染时计算量比较大，尽量减少使用</p>
+<h3 id="不滥用Web字体"><a href="#不滥用Web字体" class="headerlink" title="不滥用Web字体"></a>不滥用Web字体</h3><p>Web字体需要下载，解析，重绘当前页面，尽量减少使用</p>
+<h3 id="不声明过多的Font-size"><a href="#不声明过多的Font-size" class="headerlink" title="不声明过多的Font-size"></a>不声明过多的Font-size</h3><p>过多的Font-size引发CSS树的效率</p>
+<h3 id="值为0时不需要任何单位"><a href="#值为0时不需要任何单位" class="headerlink" title="值为0时不需要任何单位"></a>值为0时不需要任何单位</h3><p>为了浏览器的兼容性和性能，值为0时不要带单位</p>
+<h3 id="标准化各种浏览器前缀"><a href="#标准化各种浏览器前缀" class="headerlink" title="标准化各种浏览器前缀"></a>标准化各种浏览器前缀</h3><ul>
+<li>无前缀应放在最后</li>
+<li>CSS动画只用 （-webkit- 无前缀）两种即可</li>
+<li>其它前缀为 -webkit- -moz- -ms- 无前缀 四种，（-o-Opera浏览器改用blink内核，所以淘汰）<h3 id="避免让选择符看起来像正则表达式"><a href="#避免让选择符看起来像正则表达式" class="headerlink" title="避免让选择符看起来像正则表达式"></a>避免让选择符看起来像正则表达式</h3>高级选择器执行耗时长且不易读懂，避免使用</li>
+</ul>
+<h2 id="JavaScript执行优化"><a href="#JavaScript执行优化" class="headerlink" title="JavaScript执行优化"></a>JavaScript执行优化</h2><h3 id="减少重绘和回流"><a href="#减少重绘和回流" class="headerlink" title="减少重绘和回流"></a>减少重绘和回流</h3><ul>
+<li>避免不必要的Dom操作</li>
+<li>尽量改变Class而不是Style，使用classList代替className</li>
+<li>避免使用document.write</li>
+<li>减少drawImage</li>
+</ul>
+<h3 id="缓存Dom选择与计算"><a href="#缓存Dom选择与计算" class="headerlink" title="缓存Dom选择与计算"></a>缓存Dom选择与计算</h3><p>每次Dom选择都要计算，缓存它</p>
+<h3 id="缓存列表-length"><a href="#缓存列表-length" class="headerlink" title="缓存列表.length"></a>缓存列表.length</h3><p>每次.length都要计算，用一个变量保存这个值</p>
+<h3 id="尽量使用事件代理，避免批量绑定事件"><a href="#尽量使用事件代理，避免批量绑定事件" class="headerlink" title="尽量使用事件代理，避免批量绑定事件"></a>尽量使用事件代理，避免批量绑定事件</h3><h3 id="尽量使用ID选择器"><a href="#尽量使用ID选择器" class="headerlink" title="尽量使用ID选择器"></a>尽量使用ID选择器</h3><h3 id="TOUCH事件优化"><a href="#TOUCH事件优化" class="headerlink" title="TOUCH事件优化"></a>TOUCH事件优化</h3><p>使用touchstart、touchend代替click，因快影响速度快。但应注意Touch响应过快，易引发误操作</p>
+<h2 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h2><h3 id="HTML使用Viewport"><a href="#HTML使用Viewport" class="headerlink" title="HTML使用Viewport"></a>HTML使用Viewport</h3><p>Viewport可以加速页面的渲染，请使用以下代码</p>
+<pre><code class="html">&lt;meta name=”viewport” content=”width=device-width, initial-scale=1″&gt;
+</code></pre>
+<h3 id="减少Dom节点"><a href="#减少Dom节点" class="headerlink" title="减少Dom节点"></a>减少Dom节点</h3><p>Dom节点太多影响页面的渲染，应尽量减少Dom节点</p>
+<h3 id="动画优化"><a href="#动画优化" class="headerlink" title="动画优化"></a>动画优化</h3><ul>
+<li>尽量使用CSS3动画</li>
+<li>合理使用requestAnimationFrame动画代替setTimeout</li>
+<li>适当使用Canvas动画 5个元素以内使用css动画，5个以上使用Canvas动画（iOS8可使用webGL）</li>
+</ul>
+<h3 id="高频事件优化"><a href="#高频事件优化" class="headerlink" title="高频事件优化"></a>高频事件优化</h3><p>Touchmove、Scroll 事件可导致多次渲染</p>
+<ul>
+<li>使用requestAnimationFrame监听帧变化，使得在正确的时间进行渲染</li>
+<li>增加响应变化的时间间隔，减少重绘次数</li>
+</ul>
+<h3 id="GPU加速"><a href="#GPU加速" class="headerlink" title="GPU加速"></a>GPU加速</h3><p>CSS中以下属性（CSS3 transitions、CSS3 3D transforms、Opacity、Canvas、WebGL、Video）来触发GPU渲染，请合理使用, 过渡使用会引发手机过耗电增加</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+            clientID: '3adf450f3876d8b6592a',
+            clientSecret: 'e1d9003b4594a3d09673eae78d10eb389254c827',
+            repo: 'xuanxiaodeyu.github.io',
+            owner: 'xuanxiaodeyu',
+            admin: ['xuanxiaodeyu'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            id: md5(location.pathname)
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/19/面试题/网易有道/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/17/LeetCode-JavaScript/215. 数组中的第K个最大元素（Kth Largest Element in an Array）/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/favicon.png" alt="轩箫's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sunyang.xyz@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: sunyang.xyz@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试题/">面试题<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/quotations" title="语录">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                语录
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">69</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/xuanxiaodeyu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/xuanxiaodeyu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+        <a href="http://www.v2ex.com/?r=xuanxiao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-v2ex">
+                <span class="visuallyhidden">V2EX</span>
+            </button><!--
+     --></a>
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+
+            <span id="busuanzi_container_site_uv">
+                访客<span id="busuanzi_value_site_uv"></span>&nbsp;
+            </span>&nbsp
+            <span id="busuanzi_container_page_pv">
+                浏览量<span id="busuanzi_value_page_pv"></span>&nbsp;
+            </span>
+
+            <div>
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>轩箫的博客
+            </div>
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

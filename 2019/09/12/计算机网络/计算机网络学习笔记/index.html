@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            计算机网络学习笔记 | 
+        
+        轩箫的博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="轩箫的博客">
+    <meta name="keywords" content="轩箫 轩箫的鱼 博客,计算机网络">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+
+
+
+
+
+
+        /*background-color: #c3cf99;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2393c59b'/%3E%3Cstop offset='1' stop-color='%2393c59b' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239cd0be'/%3E%3Cstop offset='1' stop-color='%239cd0be' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2395a9c6'/%3E%3Cstop offset='1' stop-color='%2395a9c6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23c3cf99'/%3E%3Cstop offset='1' stop-color='%23c3cf99' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%238db4ba'/%3E%3Cstop offset='1' stop-color='%238db4ba' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23a39fd1'/%3E%3Cstop offset='1' stop-color='%23a39fd1' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+background-position: center;*/
+
+
+
+
+
+
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/npm/jquery@2.2.0/dist/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="轩箫的博客">
+    <meta name="msapplication-starturl" content="http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="轩箫的博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="xBLSgOgP6ilVCyojvkIn8GKnA4BN-LV-ydfXAebvoHE" />
+    <meta name="baidu-site-verification" content="n3JO6fBPyR" />
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="计算机网络学习笔记 | 轩箫的博客">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="轩箫的博客">
+    <meta property="og:article:tag" content="计算机网络"> 
+
+    
+        <meta property="article:published_time" content="Thu Sep 12 2019 21:09:20 GMT+0800">
+        <meta property="article:modified_time" content="Mon Sep 16 2019 11:21:34 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/index.html",
+    "headline": "计算机网络学习笔记",
+    "datePublished": "Thu Sep 12 2019 21:09:20 GMT+0800",
+    "dateModified": "Mon Sep 16 2019 11:21:34 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "轩箫",
+        "image": {
+            "@type": "ImageObject",
+            "url": "img/favicon.png"
+        },
+        "description": "我始终相信，所有相遇都有意义"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "轩箫的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "img/favicon.png"
+        }
+    },
+    "keywords": ",计算机网络轩箫 轩箫的鱼 博客",
+    "description": "轩箫的博客",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6be0495ae5c20719000aa2b2068b5008';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-互联网的组成"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.3 互联网的组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-1-互联网的边缘部分"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.3.1 互联网的边缘部分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-2-互联网的核心部分"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">1.3.2 互联网的核心部分</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-数据链路层"><span class="post-toc-number">2.</span> <span class="post-toc-text">第三章 数据链路层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-使用点对点信道的数据链路层"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">3.1 使用点对点信道的数据链路层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-2-三个基本问题"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">3.1.2 三个基本问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-使用广播信道的数据链路层"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">3.3 使用广播信道的数据链路层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-1-局域网的数据链路层"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">3.3.1 局域网的数据链路层</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-2-CSMA-CD协议"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">3.3.2 CSMA/CD协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-3-使用集线器的星型拓扑"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">3.3.3 使用集线器的星型拓扑</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-4-扩展的以太网"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.4 扩展的以太网</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-1-在物理层扩展以太网"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">3.4.1 在物理层扩展以太网</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-2-在数据链路层扩展以太网"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">3.4.2 在数据链路层扩展以太网</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-以太网交换机的特点"><span class="post-toc-number">2.3.2.1.</span> <span class="post-toc-text">1. 以太网交换机的特点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-以太网交换机的自学习功能"><span class="post-toc-number">2.3.2.2.</span> <span class="post-toc-text">2. 以太网交换机的自学习功能</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-从总线以太网到星形以太网"><span class="post-toc-number">2.3.2.3.</span> <span class="post-toc-text">3. 从总线以太网到星形以太网</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章-网络层"><span class="post-toc-number">3.</span> <span class="post-toc-text">第四章 网络层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-1-网络层提供的两种服务"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">4.1 网络层提供的两种服务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-3-IP地址与硬件地址"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">4.2.3 IP地址与硬件地址</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-4-地址解析协议ARP"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">4.2.4 地址解析协议ARP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-5-IP数据报的格式"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">4.2.5 IP数据报的格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-6-IP层转发分组的流程"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">4.2.6 IP层转发分组的流程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-3-划分子网和构造超网"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">4.3 划分子网和构造超网</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-1-划分子网"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">4.3.1 划分子网</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-3-无分类编址CIDR（构造超网）"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">4.3.3 无分类编址CIDR（构造超网）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-4-网际控制报文协议ICMP"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">4.4 网际控制报文协议ICMP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-1-ICMP报文的种类"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">4.4.1 ICMP报文的种类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-2-ICMP的应用举例"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">4.4.2 ICMP的应用举例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-5-互联网的路由选择协议"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.5 互联网的路由选择协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-2-内部网关协议RIP"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">4.5.2 内部网关协议RIP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-3-内部网关协议OSPF"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">4.5.3 内部网关协议OSPF</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-4-外部网关协议BGP"><span class="post-toc-number">3.4.3.</span> <span class="post-toc-text">4.5.4 外部网关协议BGP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-3-从IPv4向IPv6过渡"><span class="post-toc-number">3.4.4.</span> <span class="post-toc-text">4.6.3 从IPv4向IPv6过渡</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-7-IP多播"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">4.7 IP多播</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-7-1-IP多播的基本概念"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">4.7.1 IP多播的基本概念</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-8-虚拟专用网VPN和网络地址转换NAT"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">4.8 虚拟专用网VPN和网络地址转换NAT</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-8-1-虚拟专用网VPN"><span class="post-toc-number">3.6.1.</span> <span class="post-toc-text">4.8.1 虚拟专用网VPN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-8-2-网络地址转换NAT"><span class="post-toc-number">3.6.2.</span> <span class="post-toc-text">4.8.2 网络地址转换NAT</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章-运输层"><span class="post-toc-number">4.</span> <span class="post-toc-text">第五章 运输层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-1-运输层协议概述"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">5.1 运输层协议概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-1-进程之间的通信"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">5.1.1 进程之间的通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-2-运输层的两个主要协议"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">5.1.2 运输层的两个主要协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-2-用户数据报协议UDP"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">5.2 用户数据报协议UDP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-1-UDP概述"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">5.2.1 UDP概述</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-3-传输控制协议TCP概述"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">5.3 传输控制协议TCP概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-1-TCP最主要的特点"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">5.3.1 TCP最主要的特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-4-可靠传输的工作原理"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">5.4 可靠传输的工作原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-5-TCP报文段的首部格式"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">5.5 TCP报文段的首部格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-6-TCP可靠传输的实现"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">5.6 TCP可靠传输的实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-6-1-以字节为单位的滑动窗口"><span class="post-toc-number">4.6.1.</span> <span class="post-toc-text">5.6.1 以字节为单位的滑动窗口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-6-2-超时重传时间的选择"><span class="post-toc-number">4.6.2.</span> <span class="post-toc-text">5.6.2 超时重传时间的选择</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-8-TCP的拥塞控制"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">5.8 TCP的拥塞控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-8-1-拥塞控制的一般原理"><span class="post-toc-number">4.7.1.</span> <span class="post-toc-text">5.8.1 拥塞控制的一般原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-8-2-TCP的拥塞控制方法"><span class="post-toc-number">4.7.2.</span> <span class="post-toc-text">5.8.2 TCP的拥塞控制方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-9-TCP的运输连接管理"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">5.9 TCP的运输连接管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-9-1-TCP的连接建立"><span class="post-toc-number">4.8.1.</span> <span class="post-toc-text">5.9.1 TCP的连接建立</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-9-2-TCP的连接释放"><span class="post-toc-number">4.8.2.</span> <span class="post-toc-text">5.9.2 TCP的连接释放</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章-应用层"><span class="post-toc-number">5.</span> <span class="post-toc-text">第六章 应用层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-1-域名系统DNS"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">6.1 域名系统DNS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-2-互联网的域名结构"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">6.1.2 互联网的域名结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-3-域名服务器"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">6.1.3 域名服务器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-2-文件传送协议"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">6.2 文件传送协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-1-FTP概述"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">6.2.1 FTP概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-2-FTP的基本工作原理"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">6.2.2 FTP的基本工作原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-4-万维网WWW"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">6.4 万维网WWW</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-3-超文本传送协议HTTP"><span class="post-toc-number">5.3.1.</span> <span class="post-toc-text">6.4.3 超文本传送协议HTTP</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                计算机网络学习笔记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>轩箫</strong>
+        <span>9月 12, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aQW7jMAwF0Nz/0p3tAG3sT9LTCajnVZDWkh4LlCCp19eRzwsbGxsbGxsbGxv7I9mv+Pn++39/8/3zDxsHK79b590ZkjNjY2Njn8C++ddfRCbf5/teByg5MzY2NvY57Oo2Tx39Ol0loU/OjI2NjY2dlBPX5cq7358XLdjY2NjY5SXyVk68WhICbGxsbOx5UylvM+XH7a38q700bGxs7I9nVwe9n/D5P8y3sbGxsT+SXX2SsmTyVvJN8+TY2NjYS9n5ls+2n+YhyxXY2NjYZ7KrR6mGqTdy6DWqsLGxsXez81HrpFzptfWrF33KFRg2Njb2CnaetHrUyZi2V4RgY2Njn8bO20m9QqVQKozLlfKgFxsbG3sd+9niodowqgaumnSxsbGxd7Pz5v6kMKgGsTr0vdkdGxsbezX7312gvH5rHvpCMsbGxsZeza4OXPNrl5PgFpJTr6mEjY2NfQC7ukGSuq4HEr0EGRVO2NjY2EvZzy5dHdn2Rrz5cBobGxv7BHa1AOgloWpS7F3QufljYGNjYy9lJ02iPBVNwMlqvd2xsbGxd7Pzxv2oNd9KUXmAosBhY2NjL2VXr84UrsjEDal8r+q+2NjY2Cewq0snqWVeouRnGI0HsLGxsVewk4RRPeikLVVNZtjY2NjY8yMmRcj8uk81lWJjY2OfyZ63/pMgVouZ+TAYGxsbezf7qdZ/71rkJEXlocfGxsbezU5enjR6csA8lDd/QmxsbOwD2Pno99lrOskQIhkb3wQaGxsbeym7lySqY4P5+GHStMLGxsY+gV29FtNLV3NYnsCwsbGxz2TnzZrqW0kLKS+Bqu9iY2NjY/eSU1Iq5Imqdz0IGxsbG3tSivTST/7TJOjY2NjYp7HzKzh5+umNAeYDYGxsbOzT2L1BbzUc1bfyhlSUGrGxsbGXss95sLGxsbGxsbGxsT/m+QNb8lMlfCnVQwAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/计算机网络/">计算机网络</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    <!--
+        -->
+            <!-- Busuanzi Views -->
+            <!--<a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    -->
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=计算机网络学习笔记&url=http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/index.html&pic=http://sunyang.xyzimg/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=计算机网络学习笔记&url=http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/index.html&via=轩箫" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=轩箫的博客&title=计算机网络学习笔记&summary=轩箫的博客&pics=http://sunyang.xyzimg/favicon.png&url=http://sunyang.xyz/2019/09/12/计算机网络/计算机网络学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h1><h2 id="1-3-互联网的组成"><a href="#1-3-互联网的组成" class="headerlink" title="1.3 互联网的组成"></a>1.3 互联网的组成</h2><ol>
+<li>边缘部分  由所有连接在互联网上的主机组成。用户直接使用。  </li>
+<li>核心部分  由大量网络和连接这些网络的路由器组成。为边缘部分提供服务。</li>
+</ol>
+<h3 id="1-3-1-互联网的边缘部分"><a href="#1-3-1-互联网的边缘部分" class="headerlink" title="1.3.1 互联网的边缘部分"></a>1.3.1 互联网的边缘部分</h3><p>在网络边缘的端系统之间的通信方式可划分为两大类：客户-服务器方式（C/S方式）和对等连接方式（P2P方式）。  </p>
+<h3 id="1-3-2-互联网的核心部分"><a href="#1-3-2-互联网的核心部分" class="headerlink" title="1.3.2 互联网的核心部分"></a>1.3.2 互联网的核心部分</h3><ol>
+<li>电路交换<br>建立连接–通话–释放连接<br>在通话的全部时间内，通话的两个用户始终占用端到端的通信资源。其线路的传输效率往往很低，因为数据是突发式地出现在传输线路上的，线路上真正用来传送数据的时间往往不到10%。  </li>
+<li>分组交换<br>采用存储转发技术。把一个报文划分为几个分组后再发送。省去了建立连接和释放连接的开销，数据的传输效率更高。  </li>
+</ol>
+<p><strong>分组交换的优点：</strong></p>
+<ul>
+<li>高效。传输过程中动态分配传输带宽，对通信链路是逐段占用。</li>
+<li>灵活。为每一个分组独立地选择最合适的转发路由。</li>
+<li>迅速。以分组为传送单位，可以不先建立连接就能发送。</li>
+<li>可靠。保证可靠性的网络协议；分布式多路由的分组交换网，使网络有很好的生存性。</li>
+</ul>
+<p><strong>分组交换的问题：</strong></p>
+<ul>
+<li>分组在各路由器存储转发时需要排队，这就造成一定的时延。</li>
+<li>分组交换不像电路交换那样通过建立连接来保证通信时所需的各种资源，因而无法确保通信时端到端所需的带宽。</li>
+<li>各分组必须携带的控制信息也造成了一定的开销。</li>
+</ul>
+<h1 id="第三章-数据链路层"><a href="#第三章-数据链路层" class="headerlink" title="第三章 数据链路层"></a>第三章 数据链路层</h1><h2 id="3-1-使用点对点信道的数据链路层"><a href="#3-1-使用点对点信道的数据链路层" class="headerlink" title="3.1 使用点对点信道的数据链路层"></a>3.1 使用点对点信道的数据链路层</h2><h3 id="3-1-2-三个基本问题"><a href="#3-1-2-三个基本问题" class="headerlink" title="3.1.2 三个基本问题"></a>3.1.2 三个基本问题</h3><p>封装成帧、透明传输和差错检测  </p>
+<ol>
+<li>封装成帧<br>帧的首尾定界符，可用来判断是不是完整的帧，丢弃不完整的帧。  </li>
+<li>透明传输<br>字节填充或字符填充，在帧的数据部分中，在定界符前面添加一个转义字符ESC，也在转义字符ESC前面添加一个转义字符ESC。  </li>
+<li>差错检测<br>比特差错：0变成1或者1变成0<br>采用循环冗余检测CRC来检错，把数据划分为帧，每一帧都加上冗余码，在接收方逐帧进行差错检验。<br><strong>注：</strong> 在数据链路层使用CRC检验，能够实现无比特差错的传输，但不是可靠传输。可能出现帧丢失、帧重复、帧失序的情况。  </li>
+</ol>
+<h2 id="3-3-使用广播信道的数据链路层"><a href="#3-3-使用广播信道的数据链路层" class="headerlink" title="3.3 使用广播信道的数据链路层"></a>3.3 使用广播信道的数据链路层</h2><p>一对多通信</p>
+<h3 id="3-3-1-局域网的数据链路层"><a href="#3-3-1-局域网的数据链路层" class="headerlink" title="3.3.1 局域网的数据链路层"></a>3.3.1 局域网的数据链路层</h3><ol>
+<li>静态划分信道<br>频分复用、时分复用、波分复用、码分复用<br>代价较高，不适合局域网使用  </li>
+<li>动态媒体接入控制  </li>
+</ol>
+<ul>
+<li>随机接入<br>必须有解决碰撞的协议</li>
+<li>受控接入<br>令牌环、多点线路探测</li>
+</ul>
+<h3 id="3-3-2-CSMA-CD协议"><a href="#3-3-2-CSMA-CD协议" class="headerlink" title="3.3.2 CSMA/CD协议"></a>3.3.2 CSMA/CD协议</h3><blockquote>
+<p>详见计算机网络P90  </p>
+</blockquote>
+<p>以太网使用总线，广播通信方式。在帧的首部写明接收站的地址，仅当数据帧中的目标地址与适配器ROM中存放的硬件地址一致时，适配器才能接收这个数据帧。这样，具有广播特性的总线上就实现了一对一的通信。  </p>
+<ul>
+<li>以太网采用无连接方式，适配器对发送的数据帧不进行编号，也不要求对方发回确认。<strong>尽最大努力交付，不可靠</strong>。使用CRC查出有差错则丢弃，对有差错帧是否重传由高层决定。<br>总线上同一时间只能允许一台计算机发送数据。以太网采用随机接入，使用CSMA/CD（载波监听多点接入/碰撞检测）协议减少冲突。</li>
+<li>以太网采用<strong>曼彻斯特编码</strong>。</li>
+<li>使用CSMA/CD协议时，一个站不可能同时进行发送和接收（信号叠加无法恢复），但必须边发送边监听（碰撞检测），因此以太网只能进行<strong>半双工通信</strong>。</li>
+<li>某个站发送了一个很短的帧，在发送完毕之前并没有检测出碰撞。这个帧在继续向前传播到达目的站之前和别的站发送的帧发生了碰撞，目的站收到有差错的帧会丢弃，但发送站不知道发生了碰撞，所以不会重传。为了避免这种情况的发生，以太网规定了<strong>最短帧长64字节</strong>，即512bit。也就是争用期2t。<br>如果争用期没有发生碰撞，那么后续发送的数据一定不会发生碰撞。  </li>
+<li>以太网还规定了<strong>帧间最小间隔</strong>为9.6us，这样做是为了使刚刚收到数据帧的站的接收缓存来得及清理，做好接收下一帧的准备。  </li>
+</ul>
+<h3 id="3-3-3-使用集线器的星型拓扑"><a href="#3-3-3-使用集线器的星型拓扑" class="headerlink" title="3.3.3 使用集线器的星型拓扑"></a>3.3.3 使用集线器的星型拓扑</h3><p>集线器的一些特点：  </p>
+<ul>
+<li>使用集线器的局域网在物理上是一个星型网，在逻辑上仍是一个总线网，使用的还是CSMA/CD协议。</li>
+<li>集线器工作在物理层，仅仅简单地转发比特，不进行碰撞检测。</li>
+</ul>
+<h2 id="3-4-扩展的以太网"><a href="#3-4-扩展的以太网" class="headerlink" title="3.4 扩展的以太网"></a>3.4 扩展的以太网</h2><h3 id="3-4-1-在物理层扩展以太网"><a href="#3-4-1-在物理层扩展以太网" class="headerlink" title="3.4.1 在物理层扩展以太网"></a>3.4.1 在物理层扩展以太网</h3><p>采用转发器或集线器  </p>
+<ul>
+<li>在三个系的以太网互连起来之前，每一个系的10BASE-T以太网是一个独立的碰撞域，每个系的以太网的最大吞吐量是10Mbit/s，因此三个系总的最大吞吐量共有30Mbit/s。三个系的以太网通过集线器互连起来后就把三个碰撞域变成一个碰撞域，这时的最大吞吐量任然是一个系的吞吐量10Mbit/s。当某个系的两个站在通信时所传送的数据会通过所有的集线器进行转发，使得其他系的内部在这时都不能通信。  </li>
+<li>一个系使用10Mbit/s的适配器，而另外两个系使用100Mbit.s的适配器，那么用集线器连接起来后，大家都只能工作在10Mbit/s的速率。</li>
+</ul>
+<h3 id="3-4-2-在数据链路层扩展以太网"><a href="#3-4-2-在数据链路层扩展以太网" class="headerlink" title="3.4.2 在数据链路层扩展以太网"></a>3.4.2 在数据链路层扩展以太网</h3><p>最初使用网桥，对收到的帧根据MAC帧的目的地址，查找网桥中的地址表，进行转发和过滤。  </p>
+<h4 id="1-以太网交换机的特点"><a href="#1-以太网交换机的特点" class="headerlink" title="1. 以太网交换机的特点"></a>1. 以太网交换机的特点</h4><ul>
+<li>实质上是一个多接口的网桥，全双工，并行性，即能同时连通多对接口，使多对主机能同时通信。</li>
+<li>以太网交换机的接口有存储器，能缓存帧。支持存储转发和直通两种交换方式。</li>
+<li>其内部的帧交换表（地址表）通过自学习算法自动建立。</li>
+</ul>
+<h4 id="2-以太网交换机的自学习功能"><a href="#2-以太网交换机的自学习功能" class="headerlink" title="2. 以太网交换机的自学习功能"></a>2. 以太网交换机的自学习功能</h4><ul>
+<li>交换表中的每个项目都设有一定的有效时间，过期自动删除。</li>
+<li>生成树协议STP解决无限兜圈子的问题。</li>
+</ul>
+<h4 id="3-从总线以太网到星形以太网"><a href="#3-从总线以太网到星形以太网" class="headerlink" title="3. 从总线以太网到星形以太网"></a>3. 从总线以太网到星形以太网</h4><p>总线以太网使用CSMA/CD协议，以半双工方式工作。<br>以太网交换机不适用共享总线，没有碰撞问题，因此不使用CSMA/CD协议，而是以全双工方式工作。  </p>
+<h1 id="第四章-网络层"><a href="#第四章-网络层" class="headerlink" title="第四章 网络层"></a>第四章 网络层</h1><h2 id="4-1-网络层提供的两种服务"><a href="#4-1-网络层提供的两种服务" class="headerlink" title="4.1 网络层提供的两种服务"></a>4.1 网络层提供的两种服务</h2><table>
+<thead>
+<tr>
+<th>对比的方面</th>
+<th>虚电路服务</th>
+<th>数据报服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>思路</td>
+<td>可靠通信应当由网络来保证</td>
+<td>可靠通信应当由用户主机来保证</td>
+</tr>
+<tr>
+<td>终点地址</td>
+<td>仅在连接建立阶段使用，每个分组使用短的虚电路号</td>
+<td>每个分组都有终点的完整地址</td>
+</tr>
+<tr>
+<td>分组的顺序</td>
+<td>总是按发送顺序到达终点</td>
+<td>到达终点的时间不一定按发送顺序</td>
+</tr>
+</tbody>
+</table>
+<p>TCP/IP体系的网络层提供的是数据报服务，尽最大努力交付。  </p>
+<h3 id="4-2-3-IP地址与硬件地址"><a href="#4-2-3-IP地址与硬件地址" class="headerlink" title="4.2.3 IP地址与硬件地址"></a>4.2.3 IP地址与硬件地址</h3><p>物理地址是数据链路层和物理层使用的地址，而IP地址是网络层和以上各层使用的地址。  </p>
+<ol>
+<li>IP数据报的首部中的源地址和目的地址<strong>始终</strong>是源主机和目的主机的IP地址，数据报中间经过的路由器的IP地址并不出现在IP数据报的首部中。  </li>
+<li>虽然在IP数据报首部有源站IP地址，但路由器只根据目的站的IP地址的网络号进行路由选择。</li>
+</ol>
+<h3 id="4-2-4-地址解析协议ARP"><a href="#4-2-4-地址解析协议ARP" class="headerlink" title="4.2.4 地址解析协议ARP"></a>4.2.4 地址解析协议ARP</h3><p><strong>解决问题</strong><br>已经知道一个机器的IP地址，需要找出其相应的硬件地址。  </p>
+<p><strong>为什么要使用IP地址，而不直接使用硬件地址？</strong><br>存在各种各样的网络，使用不同的硬件地址。要使这些异构网络能够互相通信就必须进行非常复杂的硬件地址转换工作。IP编址解决了这个问题，使它们就像连接在同一个网络上那样简单方便。</p>
+<ul>
+<li>由于是IP协议使用了ARP协议，因此通常把ARP协议划归网络层。但ARP协议的用途是为了从网络层使用的IP地址，解析出在数据链路层使用的硬件地址。因此，也可以把ARP协议划归在数据链路层。</li>
+<li>每一台主机都设有一个ARP高速缓存，里面有本局域网上的各主机和路由器的IP地址到硬件地址的映射表。</li>
+<li>ARP请求是在本地局域网广播发送的，带有源主机的IP地址和MAC地址，还有目的主机的IP地址。收到请求的主机检查自己的IP与目的IP是否一致。一致则发回响应，不一致则不理睬。ARP响应分组是单播。</li>
+</ul>
+<p><strong>注意：</strong><br>ARP是解决同一个局域网上的主机或路由器的IP地址和硬件地址的映射问题。如果源主机和目的主机不在同一个局域网上，就无法解析出硬件地址。只需要解析出路由器的硬件地址。  </p>
+<p><strong>使用ARP的四种典型情况</strong>详见P127  </p>
+<h3 id="4-2-5-IP数据报的格式"><a href="#4-2-5-IP数据报的格式" class="headerlink" title="4.2.5 IP数据报的格式"></a>4.2.5 IP数据报的格式</h3><p>详见P128  </p>
+<ul>
+<li><strong>首部检验和</strong> 这个字段只检验数据报的首部，但不包括数据部分，因为数据报每经过一个路由器，路由器都要重新计算一下首部检验和（一些字段，如生存时间、标志、片偏移等都可能发生变化）。不检验数据部分可减少计算的工作量。  </li>
+</ul>
+<h3 id="4-2-6-IP层转发分组的流程"><a href="#4-2-6-IP层转发分组的流程" class="headerlink" title="4.2.6 IP层转发分组的流程"></a>4.2.6 IP层转发分组的流程</h3><p><strong>分组转发算法</strong> 详见P134</p>
+<h2 id="4-3-划分子网和构造超网"><a href="#4-3-划分子网和构造超网" class="headerlink" title="4.3 划分子网和构造超网"></a>4.3 划分子网和构造超网</h2><h3 id="4-3-1-划分子网"><a href="#4-3-1-划分子网" class="headerlink" title="4.3.1 划分子网"></a>4.3.1 划分子网</h3><ol>
+<li>从两级IP地址到三级IP地址<br>两级IP地址的局限性：  </li>
+</ol>
+<ul>
+<li>IP地址空间的利用率有时很低。</li>
+<li>给每个物理网络分配一个网络号会使路由表变得太大因而使网络性能变坏。</li>
+<li>两级IP地址不够灵活。我们希望能够灵活增加某单位的网络，而不必事先到互联网管理机构去申请新的网络号。  </li>
+</ul>
+<h3 id="4-3-3-无分类编址CIDR（构造超网）"><a href="#4-3-3-无分类编址CIDR（构造超网）" class="headerlink" title="4.3.3 无分类编址CIDR（构造超网）"></a>4.3.3 无分类编址CIDR（构造超网）</h3><p>无分类域间路由选择CIDR<br>CIDR消除了传统的A类、B类和C类地址以及划分子网的概念。使IP地址从三级编址又回到了两级编址，但这已是无分类的两级编址。  </p>
+<h2 id="4-4-网际控制报文协议ICMP"><a href="#4-4-网际控制报文协议ICMP" class="headerlink" title="4.4 网际控制报文协议ICMP"></a>4.4 网际控制报文协议ICMP</h2><p>ICMP报文是装在IP数据报中，作为其中的数据部分。  </p>
+<h3 id="4-4-1-ICMP报文的种类"><a href="#4-4-1-ICMP报文的种类" class="headerlink" title="4.4.1 ICMP报文的种类"></a>4.4.1 ICMP报文的种类</h3><table><br>    <tr><br>        <th>ICMP报文种类</th><br>        <th>ICMP报文的类型</th><br>    </tr><br>    <tr><br>        <td rowspan="4">差错报告报文</td><br>        <td>终点不可达</td><br>    </tr><br>    <tr><br>        <td>时间超过</td><br>    </tr><br>    <tr><br>        <td>参数问题</td><br>    </tr><br>    <tr><br>        <td>改变路由</td><br>    </tr><br>    <tr><br>        <td rowspan="2">询问报文</td><br>        <td>回送请求或回答</td><br>    </tr><br>    <tr><br>        <td>时间戳请求或回答</td><br>    </tr><br></table>
+
+<p><strong>改变路由报文</strong><br>在互联网的主机中也要有一个路由表。当主机要发送数据报时，首先是查找主机自己的路由表，看应当从哪个接口发送。在互联网中主机的数量远大于路由器的数量，出于效率的考虑， <strong>这些主机不和连接在网络上的路由器定期交换路由信息。</strong>  </p>
+<h3 id="4-4-2-ICMP的应用举例"><a href="#4-4-2-ICMP的应用举例" class="headerlink" title="4.4.2 ICMP的应用举例"></a>4.4.2 ICMP的应用举例</h3><p>分组网间探测PING（Packet InterNet Groper），使用了 <strong>ICMP回送请求与回送回答报文</strong> 。PING是应用层直接使用网络层ICMP的一个例子，它没有通过运输层的TCP或UDP。  </p>
+<p>Traceroute数据报中封装的是无法交付的UDP用户数据报。把数据报的TTL依次设为1-n，路由器会发回 <strong>ICMP时间超过差错报告报文</strong> 。最终的目的主机会发回 <strong>ICMP终点不可达差错报告报文</strong> 。  </p>
+<h2 id="4-5-互联网的路由选择协议"><a href="#4-5-互联网的路由选择协议" class="headerlink" title="4.5 互联网的路由选择协议"></a>4.5 互联网的路由选择协议</h2><ol>
+<li>内部网关协议IGP，即在一个自治系统AS内部使用的路由选择协议，使用较多的如RIP和OSPF协议。</li>
+<li>外部网关协议EGP，目前使用最多的是BGP。</li>
+</ol>
+<h3 id="4-5-2-内部网关协议RIP"><a href="#4-5-2-内部网关协议RIP" class="headerlink" title="4.5.2 内部网关协议RIP"></a>4.5.2 内部网关协议RIP</h3><p>基于距离向量的路由选择协议，最大优点是简单。距离定义为跳数，RIP允许一条路径最多只能包含15个路由器，距离等于16即相当于不可达。所以只适应于小型互联网。<br><strong>RIP的特点</strong>  </p>
+<ol>
+<li>仅和相邻路由器交换信息。</li>
+<li>交换的是当前本路由器所知道的全部信息，即自己现在的路由表。</li>
+<li>按固定的时间间隔交换路由信息。</li>
+<li>RIP使用UDP来发送。  </li>
+</ol>
+<p><strong>距离向量算法</strong> 详见P155</p>
+<p>RIP的主要问题是当网络出现故障时，要经过比较长的时间才能将此信息传送到所有的路由器。 <strong>好消息传播得快，坏消息传播得慢</strong>。  </p>
+<p>RIP的最大优点是实现简单，开销较小。缺点：首先，RIP限制了网络的规模，最大距离15。其次，交换的路由信息是完整路由表，随着网络规模扩大，开销也增加。最后，坏消息传播得慢。  </p>
+<h3 id="4-5-3-内部网关协议OSPF"><a href="#4-5-3-内部网关协议OSPF" class="headerlink" title="4.5.3 内部网关协议OSPF"></a>4.5.3 内部网关协议OSPF</h3><p>开放最短路径优先OSPF的特点：  </p>
+<ol>
+<li>向本自治系统的所有路由器发送信息。使用洪泛法。</li>
+<li>发送的信息是与本路由器相邻的所有路由器的链路状态。</li>
+<li>只有当链路状态发生变化时才发送此信息。</li>
+<li>OSPF直接用IP数据报传送。</li>
+</ol>
+<p>所有的路由器最终都能建立一个链路状态数据库。也就是全网的拓扑结构图，在全网范围内是一致的。</p>
+<h3 id="4-5-4-外部网关协议BGP"><a href="#4-5-4-外部网关协议BGP" class="headerlink" title="4.5.4 外部网关协议BGP"></a>4.5.4 外部网关协议BGP</h3><p>在不同自治系统AS之间的路由选择不使用内部网关协议RIP或者OSPF的原因：  </p>
+<ol>
+<li>互联网的规模太大，使得自治系统AS之间路由选择非常困难。链路状态数据库庞大，Dijkstra算法花费时间长，各自治系统的距离度量不同。</li>
+<li>自治系统AS之间的路由选择必须考虑有关策略。如数据报需要避开某些网络。  </li>
+</ol>
+<p>BGP采用了路径向量路由选择协议。  </p>
+<h3 id="4-6-3-从IPv4向IPv6过渡"><a href="#4-6-3-从IPv4向IPv6过渡" class="headerlink" title="4.6.3 从IPv4向IPv6过渡"></a>4.6.3 从IPv4向IPv6过渡</h3><ol>
+<li>双协议栈<br>双协议栈主机在和IPv6主机通信时采用IPv6地址，而和IPv4主机通信时则采用IPv4地址。使用域名系统DNS来查询，确定目的主机是哪一种地址。  </li>
+<li>隧道技术<br>把整个IPv6数据报变成IPv4数据报的数据部分。</li>
+</ol>
+<h2 id="4-7-IP多播"><a href="#4-7-IP多播" class="headerlink" title="4.7 IP多播"></a>4.7 IP多播</h2><h3 id="4-7-1-IP多播的基本概念"><a href="#4-7-1-IP多播的基本概念" class="headerlink" title="4.7.1 IP多播的基本概念"></a>4.7.1 IP多播的基本概念</h3><p>多播地址只能用于目的地址，而不能用于源地址。对多播数据报不产生ICMP差错报文。因此，若在PING命令后面键入多播地址，将永远不会收到响应。</p>
+<h2 id="4-8-虚拟专用网VPN和网络地址转换NAT"><a href="#4-8-虚拟专用网VPN和网络地址转换NAT" class="headerlink" title="4.8 虚拟专用网VPN和网络地址转换NAT"></a>4.8 虚拟专用网VPN和网络地址转换NAT</h2><h3 id="4-8-1-虚拟专用网VPN"><a href="#4-8-1-虚拟专用网VPN" class="headerlink" title="4.8.1 虚拟专用网VPN"></a>4.8.1 虚拟专用网VPN</h3><p>专用地址，只能用作本地地址而不能用作全球地址。在互联网中的所有路由器，对目的地址是专用地址的数据报一律不进行转发。  </p>
+<ol>
+<li>10.0.0.0 到 10.255.255.255（10.0.0.0/8）</li>
+<li>172.16.0.0 到 172.31.255.255（172.16.0.0）</li>
+<li>192.168.0.0 到 192.168.255.255（192.168.0.0/16）  </li>
+</ol>
+<h3 id="4-8-2-网络地址转换NAT"><a href="#4-8-2-网络地址转换NAT" class="headerlink" title="4.8.2 网络地址转换NAT"></a>4.8.2 网络地址转换NAT</h3><p>当NAT路由器具有n个全球IP地址时，专用网内最多可以同时有n台主机接入互联网。<br>NAT转换表把运输层的端口号也利用上，就可以使多个拥有本地地址的主机，共用一个NAT路由器上的全球IP地址。<br><strong>注意</strong>：<br>普通路由器在转发IP数据报时，对于源IP地址或目的IP地址都是不改变的。但NAT路由器在转发IP数据报时，一定要更换其IP地址。其次，普通路由器在转发分组时，是工作在网络层。但NAPT路由器还要查看和转换运输层的端口号。</p>
+<h1 id="第五章-运输层"><a href="#第五章-运输层" class="headerlink" title="第五章 运输层"></a>第五章 运输层</h1><h2 id="5-1-运输层协议概述"><a href="#5-1-运输层协议概述" class="headerlink" title="5.1 运输层协议概述"></a>5.1 运输层协议概述</h2><h3 id="5-1-1-进程之间的通信"><a href="#5-1-1-进程之间的通信" class="headerlink" title="5.1.1 进程之间的通信"></a>5.1.1 进程之间的通信</h3><p>运输层向它上面的应用层提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中的最底层。当网络的边缘部分中的两台主机使用网络的核心功能进行端到端的通信时，只有主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三层的功能。  </p>
+<h3 id="5-1-2-运输层的两个主要协议"><a href="#5-1-2-运输层的两个主要协议" class="headerlink" title="5.1.2 运输层的两个主要协议"></a>5.1.2 运输层的两个主要协议</h3><ol>
+<li>用户数据报协议UDP（User Datagram Protocol）</li>
+<li>传输控制协议TCP（Transmission Control Protocol）</li>
+</ol>
+<p>TCP不提供广播或多播服务。由于TCP要提供可靠的、面向连接的运输服务，因此不可避免地增加了许多的开销，如确认、流量控制、计时器以及连接管理等。这不仅使协议数据单元的首部增大许多，还要占用许多的处理器资源。</p>
+<table>
+<thead>
+<tr>
+<th>应用</th>
+<th>应用层协议</th>
+<th>运输层协议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名字转换</td>
+<td>DNS（域名系统）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>文件传送</td>
+<td>TFTP（简单文件传送协议）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>路由选择协议</td>
+<td>RIP（路由信息协议）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>IP地址配置</td>
+<td>DHCP（动态主机配置协议）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>网络管理</td>
+<td>SNMP（简单网络管理协议）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>远程文件服务器</td>
+<td>NFS（网络文件系统）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>IP电话</td>
+<td>专用协议</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>流式多媒体通信</td>
+<td>专用协议</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>多播</td>
+<td>IGMP（网际组管理协议）</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>电子邮件</td>
+<td>SMTP（简单邮件传送协议）</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>远程终端接入</td>
+<td>TELNET（远程终端协议）</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>万维网</td>
+<td>HTTP（超文本传送协议）</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>文件传送</td>
+<td>FTP（文件传送协议）</td>
+<td>TCP  </td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-2-用户数据报协议UDP"><a href="#5-2-用户数据报协议UDP" class="headerlink" title="5.2 用户数据报协议UDP"></a>5.2 用户数据报协议UDP</h2><h3 id="5-2-1-UDP概述"><a href="#5-2-1-UDP概述" class="headerlink" title="5.2.1 UDP概述"></a>5.2.1 UDP概述</h3><ol>
+<li>UDP是无连接的，减少了开销和发送数据之前的时延。  </li>
+<li>UDP使用尽最大努力交付。但有差错检测，有错就丢弃。 <strong>UDP的检验和是把首部和数据部分一起都检验。</strong></li>
+<li>UDP是面向报文的。UDP对应用程序交下来的报文，添加首部后就交付IP层，既不合并也不拆分。接收方UDP除去首部后就原封不动的交付上层应用。UDP一次交付一个完整的报文。因此，应用程序必须选择合适大小的报文。若报文太长，UDP把它交给IP层后，IP层在传送时可能要进行分片，这会降低IP层的效率。若报文太短，IP的首部相对太长也降低效率。</li>
+<li>UDP没有拥塞控制，因此网络出现的拥塞不会使源主机的发送速率降低。很多实时应用，如IP电话、实时视频会议等要求源主机以恒定的速率发送数据，并且允许在网络发生拥塞时丢失一些数据，但却不允许数据有太大的时延。</li>
+<li>UDP支持一对一、一对多、多对一和多对多的交互通信。</li>
+<li>UDP首部开销小，只有8个字节，比TCP的20个字节的首部要短。</li>
+</ol>
+<h2 id="5-3-传输控制协议TCP概述"><a href="#5-3-传输控制协议TCP概述" class="headerlink" title="5.3 传输控制协议TCP概述"></a>5.3 传输控制协议TCP概述</h2><h3 id="5-3-1-TCP最主要的特点"><a href="#5-3-1-TCP最主要的特点" class="headerlink" title="5.3.1 TCP最主要的特点"></a>5.3.1 TCP最主要的特点</h3><ol>
+<li>每一条TCP连接只能是点对点的（一对一）。</li>
+<li>可靠交付。无差错、不丢失、不重复，按序到达。</li>
+<li>全双工通信。双方应用程序在任何时候都能发送数据。两端有发送缓存和接收缓存。</li>
+<li>面向字节流。TCP并不关心应用进程一次把多长的报文发送到TCP的缓存中，而是根据对方给出的窗口值和当前网络拥塞的程度来决定一个报文段应包含多少个字节（ <strong>UDP发送的报文长度是应用进程给出的</strong> ）。</li>
+</ol>
+<h2 id="5-4-可靠传输的工作原理"><a href="#5-4-可靠传输的工作原理" class="headerlink" title="5.4 可靠传输的工作原理"></a>5.4 可靠传输的工作原理</h2><p>理想的传输条件有以下两个特点：</p>
+<ol>
+<li>传输信道不产生差错。</li>
+<li>不管发送方以多快的速度发送数据，接收方总是来得及处理收到的数据。</li>
+</ol>
+<p>使用可靠传输协议，当出现差错时让发送方重传，在接收方来不及处理收到的数据时，及时告知发送方适当降低发送数据的速度。</p>
+<h2 id="5-5-TCP报文段的首部格式"><a href="#5-5-TCP报文段的首部格式" class="headerlink" title="5.5 TCP报文段的首部格式"></a>5.5 TCP报文段的首部格式</h2><ol>
+<li>序号<br>在一个TCP连接中传送的字节流中的每一个字节都按顺序编号。  </li>
+<li>确认号<br>是期望收到对方下一个报文段的第一个数据字节的序号。若确认号=N，则表示到序号N-1为止的所有数据都已正确收到。  </li>
+<li>确认ACK<br>仅当ACK=1时确认号字段才有效。在连接建立后所有传送的报文段都必须把ACK置1。  </li>
+<li>同步SYN<br>当SYN=1而ACK=0时，表明这是一个连接请求报文段。SYN=1且ACK=1时是一个连接接受报文。  </li>
+<li>窗口<br>接收方的数据缓存空间是有限的，窗口值指出了现在允许对方发送的数据量。  </li>
+</ol>
+<h2 id="5-6-TCP可靠传输的实现"><a href="#5-6-TCP可靠传输的实现" class="headerlink" title="5.6 TCP可靠传输的实现"></a>5.6 TCP可靠传输的实现</h2><h3 id="5-6-1-以字节为单位的滑动窗口"><a href="#5-6-1-以字节为单位的滑动窗口" class="headerlink" title="5.6.1 以字节为单位的滑动窗口"></a>5.6.1 以字节为单位的滑动窗口</h3><p>一、 虽然发送窗口是根据接收窗口设置的，但在同一时刻，发送窗口并不总是和接收窗口一样大。因为通过网络传送窗口值需要一定的时间滞后。另外，发送方还可能根据网络的拥塞情况适当减小自己的发送窗口数值。<br>二、 TCP接收方累计确认。接收方可以在适当的时候发送确认，也可以在自己有数据要发送时捎带确认。但捎带确认并不经常发生，因为大多数应用程序很少同时在两个方向上发送数据。  </p>
+<h3 id="5-6-2-超时重传时间的选择"><a href="#5-6-2-超时重传时间的选择" class="headerlink" title="5.6.2 超时重传时间的选择"></a>5.6.2 超时重传时间的选择</h3><p>TCP采用了一种自适应算法，测量报文段的往返时间RTT，计算加权平均往返时间RTTs。<br>只要报文段重传了，就不采用其往返时间样本。</p>
+<h2 id="5-8-TCP的拥塞控制"><a href="#5-8-TCP的拥塞控制" class="headerlink" title="5.8 TCP的拥塞控制"></a>5.8 TCP的拥塞控制</h2><h3 id="5-8-1-拥塞控制的一般原理"><a href="#5-8-1-拥塞控制的一般原理" class="headerlink" title="5.8.1 拥塞控制的一般原理"></a>5.8.1 拥塞控制的一般原理</h3><p><strong>流量控制</strong> 是指点对点通信量的控制，接收端抑制发送端发送数据的速率，以便使接收端来得及接收。<br><strong>拥塞控制</strong> 是防止过多的数据注入到网络，使网络中的路由器或链路不致过载，是一个全局性的过程。</p>
+<h3 id="5-8-2-TCP的拥塞控制方法"><a href="#5-8-2-TCP的拥塞控制方法" class="headerlink" title="5.8.2 TCP的拥塞控制方法"></a>5.8.2 TCP的拥塞控制方法</h3><p>慢开始、拥塞避免、快重传、快恢复 详见P232<br>发送方窗口的上限值 = Min[接收方窗口rwnd, 拥塞窗口cwnd]</p>
+<h2 id="5-9-TCP的运输连接管理"><a href="#5-9-TCP的运输连接管理" class="headerlink" title="5.9 TCP的运输连接管理"></a>5.9 TCP的运输连接管理</h2><h3 id="5-9-1-TCP的连接建立"><a href="#5-9-1-TCP的连接建立" class="headerlink" title="5.9.1 TCP的连接建立"></a>5.9.1 TCP的连接建立</h3><p>三次握手，第一次、第二次都消耗一个序号，不能携带数据，第三次可以携带数据，但如果不携带数据则不消耗序号。（即本次报文段seq=x+1，下一个报文段序号仍然是seq=x+1）。  </p>
+<p>为什么要发送第三次报文（最后还要发送一次确认）？<br>详见P239</p>
+<h3 id="5-9-2-TCP的连接释放"><a href="#5-9-2-TCP的连接释放" class="headerlink" title="5.9.2 TCP的连接释放"></a>5.9.2 TCP的连接释放</h3><p>A主动关闭，B发送确认，A进入半关闭状态，即A没有数据要发送，但仍要接收数据。<br>之后B发连接释放报文段，A发出确认，进入时间等待状态，经过2MSL（最长报文段寿命）后才关闭。<br>A等待2MSL的原因：  </p>
+<ol>
+<li>为了保证A发送的最后一个ACK报文能够到达B。若这个ACK丢失，B收不到，就会超时重传FIN+ACK，A就能在2MSL时间内收到这个重传的FIN+ACK，接着A重传一次确认，重新启动2MSL计时器。最后，A和B都进入关闭状态。</li>
+<li>防止上一节提到的“已失效的连接请求报文段”出现在本连接中。经过2MSL，就可以使本连接持续时间内所产生的所有报文段都从网络中小时。使下一个新的连接中不会出现这种旧的连接请求报文段。<br>B结束TCP的连接时间比A早一些。  </li>
+</ol>
+<p>TCP还设有一个保活计时器。若一方主机故障，等待两小时后，连发十个探测报文段，仍无响应则关闭连接。  </p>
+<h1 id="第六章-应用层"><a href="#第六章-应用层" class="headerlink" title="第六章 应用层"></a>第六章 应用层</h1><h2 id="6-1-域名系统DNS"><a href="#6-1-域名系统DNS" class="headerlink" title="6.1 域名系统DNS"></a>6.1 域名系统DNS</h2><p>基于UDP</p>
+<h3 id="6-1-2-互联网的域名结构"><a href="#6-1-2-互联网的域名结构" class="headerlink" title="6.1.2 互联网的域名结构"></a>6.1.2 互联网的域名结构</h3><p>域名中的标号都由英文字母和数字组成，标号不区分大小写字母。</p>
+<h3 id="6-1-3-域名服务器"><a href="#6-1-3-域名服务器" class="headerlink" title="6.1.3 域名服务器"></a>6.1.3 域名服务器</h3><ol>
+<li>根域名服务器</li>
+<li>顶级域名服务器</li>
+<li>权限域名服务器</li>
+<li>本地域名服务器<br>电脑上配置的就是本地域名服务器。</li>
+</ol>
+<p>第一，主机向本地域名服务器的查询采用递归查询。即如果本地域名服务器不知道被查询域名的IP地址，那么本地域名服务器就以DNS客户的身份，向其他根域名服务器继续查询，而不是让该主机自己进行下一步查询。<br>第二，本地域名服务器向根域名服务器的查询通常采用迭代查询。本地域名服务器依次向根域名、顶级域名、权限域名服务器查询。</p>
+<h2 id="6-2-文件传送协议"><a href="#6-2-文件传送协议" class="headerlink" title="6.2 文件传送协议"></a>6.2 文件传送协议</h2><h3 id="6-2-1-FTP概述"><a href="#6-2-1-FTP概述" class="headerlink" title="6.2.1 FTP概述"></a>6.2.1 FTP概述</h3><p>基于TCP的FTP和基于UDP的简单文件传送协议TFTP，都是文件共享协议的一大类，即复制整个文件。</p>
+<h3 id="6-2-2-FTP的基本工作原理"><a href="#6-2-2-FTP的基本工作原理" class="headerlink" title="6.2.2 FTP的基本工作原理"></a>6.2.2 FTP的基本工作原理</h3><p>一个FTP服务器进程可同时为多个客户进程提供服务。一个主进程，负责接收新的请求；若干个从属进程，负责处理单个请求。<br>在进行文件传输时，FTP的客户和服务器之间要建立两个并行的TCP连接：控制连接和数据连接。控制连接在整个会话期间一直保持打开。端口号21用于控制连接，20用于数据传送连接。<br>FTP修改大文件需要来回传送整个文件。网络文件系统NFS允许应用进程打开一个远地文件，并能在该文件的某一个特定的位置上开始读写数据。不需要复制整个大文件。</p>
+<h2 id="6-4-万维网WWW"><a href="#6-4-万维网WWW" class="headerlink" title="6.4 万维网WWW"></a>6.4 万维网WWW</h2><h3 id="6-4-3-超文本传送协议HTTP"><a href="#6-4-3-超文本传送协议HTTP" class="headerlink" title="6.4.3 超文本传送协议HTTP"></a>6.4.3 超文本传送协议HTTP</h3><p>HTTP使用面向连接的TCP作为运输层协议，但HTTP协议本身是无连接的。  </p>
+<p>请求一个万维网文档所需的时间是该文档的传输时间加上两倍往返时间RTT（一个RTT用于建立TCP连接，另一个RTT用于请求和接收万维网文档。TCP建立连接的三报文握手的第三个报文段中的数据，就是客户对万维网文档的请求报文）。  </p>
+<p>HTTP/1.0的主要缺点，就是每请求一个文档就有两倍RTT的开销。另一种开销是万维网客户和服务器每一次建立新的TCP连接都要分配缓存和变量。特别是万维网服务器往往要同时服务于大量客户的请求。所以这种非持续连接会使万维网的负担很重。好在浏览器都能够打开5-10个并行的TCP连接，而每一个TCP连接处理客户的一个请求。因此，使用并行TCP连接可以缩短响应时间。<br>HTTP/1.1较好地解决了这个问题，它使用持续连接，万维网服务器在发送响应后仍然在一段时间内保持这条连接，使同一个客户和该服务器可以继续在这条连接上传送后续的HTTP请求报文和响应报文。<br>HTTP/1.1的持续连接有两种工作方式，非流水线方式和流水线方式。<br>非流水线方式，是客户在收到前一个响应后才能发出下一个请求，因此在TCP连接已建立后，客户每访问一次对象就要用去一个往返RTT，这比非持续连接用的2RTT的开销，节省了建立TCP连接所需的一个RTT。<br>流水线方式，客户在收到响应之前就能接着发送新的请求报文，客户访问所有的对象只需花费一个RTT。<br>另见 <a href="https://zhuanlan.zhihu.com/p/61423830" target="_blank" rel="external">补充</a>  </p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+            clientID: '3adf450f3876d8b6592a',
+            clientSecret: 'e1d9003b4594a3d09673eae78d10eb389254c827',
+            repo: 'xuanxiaodeyu.github.io',
+            owner: 'xuanxiaodeyu',
+            admin: ['xuanxiaodeyu'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            id: md5(location.pathname)
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/09/27/LeetCode-Java/1. 两数之和/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/09/02/计算机网络/计算机网络协议/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/favicon.png" alt="轩箫's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sunyang.xyz@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: sunyang.xyz@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试题/">面试题<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/quotations" title="语录">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                语录
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">69</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/xuanxiaodeyu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/xuanxiaodeyu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+        <a href="http://www.v2ex.com/?r=xuanxiao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-v2ex">
+                <span class="visuallyhidden">V2EX</span>
+            </button><!--
+     --></a>
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+
+            <span id="busuanzi_container_site_uv">
+                访客<span id="busuanzi_value_site_uv"></span>&nbsp;
+            </span>&nbsp
+            <span id="busuanzi_container_page_pv">
+                浏览量<span id="busuanzi_value_page_pv"></span>&nbsp;
+            </span>
+
+            <div>
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>轩箫的博客
+            </div>
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

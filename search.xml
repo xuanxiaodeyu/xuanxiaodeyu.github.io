@@ -4247,6 +4247,45 @@ var preorderTraversal = function(root) {
     </entry>
     
     <entry>
+      <title><![CDATA[Module 的语法]]></title>
+      <url>/2019/03/14/ECMAScript6/Module%20%E7%9A%84%E8%AF%AD%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。</p>
+<p>在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。</p>
+<p>ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。比如，CommonJS 模块就是对象，输入时必须查找对象属性。</p>
+<pre><code class="JS">// CommonJS模块
+let { stat, exists, readFile } = require(&#39;fs&#39;);
+
+// 等同于
+let _fs = require(&#39;fs&#39;);
+let stat = _fs.stat;
+let exists = _fs.exists;
+let readfile = _fs.readfile;
+</code></pre>
+<p><strong>上面代码的实质是整体加载fs模块（即加载fs的所有方法），生成一个对象（_fs），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。</strong></p>
+<p>ES6 模块不是对象，而是通过export命令显式指定输出的代码，再通过import命令输入。</p>
+<pre><code class="JS">// ES6模块
+import { stat, exists, readFile } from &#39;fs&#39;;
+</code></pre>
+<p>上面代码的实质是从fs模块加载 3 个方法，其他方法不加载。这种加载称为“编译时加载”或者静态加载，即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。当然，这也导致了没法引用 ES6 模块本身，因为它不是对象。</p>
+<p>由于 ES6 模块是编译时加载，使得静态分析成为可能。有了它，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型检验（type system）这些只能靠静态分析实现的功能。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> ECMAScript 6 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ECMAScript 6 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Generator 函数的异步应用]]></title>
       <url>/2019/03/14/ECMAScript6/Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8/</url>
       <content type="html"><![CDATA[<p>异步编程对 JavaScript 语言太重要。JavaScript 语言的执行环境是“单线程”的，如果没有异步编程，根本没法用，非卡死不可。本章主要介绍 Generator 函数如何完成异步操作。</p>
@@ -4300,45 +4339,6 @@ readFile(fileA)
 <p>Promise 的最大问题是代码冗余，原来的任务被 Promise 包装了一下，不管什么操作，一眼看去都是一堆then，原来的语义变得很不清楚。</p>
 <p>那么，有没有更好的写法呢？</p>
 <h2 id="3-Generator-函数"><a href="#3-Generator-函数" class="headerlink" title="3. Generator 函数"></a>3. Generator 函数</h2><h2 id="4-Thunk-函数"><a href="#4-Thunk-函数" class="headerlink" title="4. Thunk 函数"></a>4. Thunk 函数</h2><h2 id="5-co-模块"><a href="#5-co-模块" class="headerlink" title="5. co 模块"></a>5. co 模块</h2>]]></content>
-      
-        <categories>
-            
-            <category> ECMAScript 6 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ECMAScript 6 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Module 的语法]]></title>
-      <url>/2019/03/14/ECMAScript6/Module%20%E7%9A%84%E8%AF%AD%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。</p>
-<p>在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。</p>
-<p>ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。比如，CommonJS 模块就是对象，输入时必须查找对象属性。</p>
-<pre><code class="JS">// CommonJS模块
-let { stat, exists, readFile } = require(&#39;fs&#39;);
-
-// 等同于
-let _fs = require(&#39;fs&#39;);
-let stat = _fs.stat;
-let exists = _fs.exists;
-let readfile = _fs.readfile;
-</code></pre>
-<p><strong>上面代码的实质是整体加载fs模块（即加载fs的所有方法），生成一个对象（_fs），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。</strong></p>
-<p>ES6 模块不是对象，而是通过export命令显式指定输出的代码，再通过import命令输入。</p>
-<pre><code class="JS">// ES6模块
-import { stat, exists, readFile } from &#39;fs&#39;;
-</code></pre>
-<p>上面代码的实质是从fs模块加载 3 个方法，其他方法不加载。这种加载称为“编译时加载”或者静态加载，即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。当然，这也导致了没法引用 ES6 模块本身，因为它不是对象。</p>
-<p>由于 ES6 模块是编译时加载，使得静态分析成为可能。有了它，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型检验（type system）这些只能靠静态分析实现的功能。</p>
-]]></content>
       
         <categories>
             

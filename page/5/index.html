@@ -81,6 +81,8 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+        
 
     
 
@@ -663,25 +665,18 @@ HTTP是无连接：无连接的含义是限制每次连接只处理一个请求�
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/14/ECMAScript6/Generator 函数的异步应用/">Generator 函数的异步应用</a></p>
+        <p class="article-headline-p"><a href="/2019/03/14/ECMAScript6/Module 的语法/">Module 的语法</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            异步编程对 JavaScript 语言太重要。JavaScript 语言的执行环境是“单线程”的，如果没有异步编程，根本没法用，非卡死不可。本章主要介绍 Generator 函数如何完成异步操作。
-1. 传统方法ES6 诞生以前，异步编程的方法，大概有下面四种。
-
-回调函数
-事件监听
-发布/订阅
-Promise 对象
-
-2. 基本概念
+            1. 概述历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。
+在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/03/14/ECMAScript6/Generator 函数的异步应用/" target="_self">阅读全文</a>
+            <a href="/2019/03/14/ECMAScript6/Module 的语法/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -732,18 +727,25 @@ Promise 对象
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/14/ECMAScript6/Module 的语法/">Module 的语法</a></p>
+        <p class="article-headline-p"><a href="/2019/03/14/ECMAScript6/Generator 函数的异步应用/">Generator 函数的异步应用</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            1. 概述历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。
-在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决...
+            异步编程对 JavaScript 语言太重要。JavaScript 语言的执行环境是“单线程”的，如果没有异步编程，根本没法用，非卡死不可。本章主要介绍 Generator 函数如何完成异步操作。
+1. 传统方法ES6 诞生以前，异步编程的方法，大概有下面四种。
+
+回调函数
+事件监听
+发布/订阅
+Promise 对象
+
+2. 基本概念
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/03/14/ECMAScript6/Module 的语法/" target="_self">阅读全文</a>
+            <a href="/2019/03/14/ECMAScript6/Generator 函数的异步应用/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -1387,10 +1389,8 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
 
-    
-        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
-    
 
 
 <!-- Window Load -->
@@ -1402,10 +1402,8 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
     
-        
-        
-        HanabiBrowser.start('pre code',true);
     
 </script>
 

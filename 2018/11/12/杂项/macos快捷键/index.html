@@ -266,7 +266,7 @@ background-position: center;*/
 
     
         <meta property="article:published_time" content="Mon Nov 12 2018 16:33:52 GMT+0800">
-        <meta property="article:modified_time" content="Mon Sep 16 2019 11:09:48 GMT+0800">
+        <meta property="article:modified_time" content="Wed Nov 13 2019 17:16:40 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -289,7 +289,7 @@ background-position: center;*/
     "mainEntityOfPage": "http://sunyang.xyz/2018/11/12/杂项/macos快捷键/index.html",
     "headline": "macos快捷键",
     "datePublished": "Mon Nov 12 2018 16:33:52 GMT+0800",
-    "dateModified": "Mon Sep 16 2019 11:09:48 GMT+0800",
+    "dateModified": "Wed Nov 13 2019 17:16:40 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "轩箫",
@@ -634,12 +634,36 @@ background-position: center;*/
 <td>查看需要更新的应用</td>
 </tr>
 <tr>
-<td>brew update (应用名)</td>
+<td>brew upgrate (应用名)</td>
 <td>更新所有（某个）应用</td>
 </tr>
 <tr>
 <td>brew home (应用名)</td>
 <td>访问应用官网</td>
+</tr>
+<tr>
+<td>brew services list</td>
+<td>查看使用brew安装的服务列表</td>
+</tr>
+<tr>
+<td>brew services run formula</td>
+<td>启动服务（仅启动不注册）</td>
+</tr>
+<tr>
+<td>brew services start formula</td>
+<td>启动服务，并注册</td>
+</tr>
+<tr>
+<td>brew services stop formula</td>
+<td>停止服务，并取消注册</td>
+</tr>
+<tr>
+<td>brew services restart formula</td>
+<td>重启服务，并注册</td>
+</tr>
+<tr>
+<td>brew services cleanup</td>
+<td>清除已卸载应用的无用的配置</td>
 </tr>
 </tbody>
 </table>
@@ -653,28 +677,44 @@ background-position: center;*/
 </thead>
 <tbody>
 <tr>
-<td>光标左移</td>
 <td>ctrl + b</td>
+<td>光标左移</td>
 </tr>
 <tr>
-<td>光标右移</td>
 <td>ctrl + f</td>
+<td>光标右移</td>
 </tr>
 <tr>
-<td>光标移到行首</td>
+<td>opt + b</td>
+<td>左移一个词距离</td>
+</tr>
+<tr>
+<td>opt + f</td>
+<td>右移一个词距离</td>
+</tr>
+<tr>
 <td>ctrl + a</td>
+<td>光标移到行首</td>
 </tr>
 <tr>
-<td>光标移到行尾</td>
 <td>ctrl + e</td>
+<td>光标移到行尾</td>
 </tr>
 <tr>
-<td>光标上移</td>
 <td>ctrl + p</td>
+<td>光标上移</td>
 </tr>
 <tr>
-<td>光标下移</td>
 <td>ctrl + n</td>
+<td>光标下移</td>
+</tr>
+<tr>
+<td>ctrl + u</td>
+<td>从当前光标所在位置向左剪切全部字符</td>
+</tr>
+<tr>
+<td>ctrl + k</td>
+<td>从当前光标所在位置向右剪切全部字符</td>
 </tr>
 </tbody>
 </table>
@@ -834,7 +874,7 @@ background-position: center;*/
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">49</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -852,7 +892,7 @@ background-position: center;*/
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试题/">面试题<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">62</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试题/">面试题<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -918,7 +958,7 @@ background-position: center;*/
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">69</span>
+                <span class="sidebar-badge">110</span>
             </a>
         </li>
         

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunyang.xyz/"/>
-  <updated>2019-12-04T02:26:05.889Z</updated>
+  <updated>2019-12-04T02:54:20.945Z</updated>
   <id>http://sunyang.xyz/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>6. Z 字形变换</title>
     <link href="http://sunyang.xyz/2019/12/04/LeetCode-Java/6.%20Z%20%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"/>
     <id>http://sunyang.xyz/2019/12/04/LeetCode-Java/6. Z 字形变换/</id>
-    <published>2019-12-04T02:26:05.888Z</published>
-    <updated>2019-12-04T02:26:05.889Z</updated>
+    <published>2019-12-04T02:12:20.000Z</published>
+    <updated>2019-12-04T02:54:20.945Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。</p>
 <p>比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下：</p>
@@ -69,173 +69,12 @@ T     S     G
     
     </summary>
     
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://sunyang.xyz/2019/12/04/Java/tips/"/>
-    <id>http://sunyang.xyz/2019/12/04/Java/tips/</id>
-    <published>2019-12-04T02:25:39.790Z</published>
-    <updated>2019-12-04T02:25:39.793Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="方法覆写产生原因："><a href="#方法覆写产生原因：" class="headerlink" title="方法覆写产生原因："></a>方法覆写产生原因：</h5><p>当父类中某个方法不适合于子类时,子类出现父类一模一样的方法.</p>
-<p>判断必杀技:子类方法前加上@Override能编译通过,表明是方法的覆写。</p>
-<p>调用被覆盖的父类方法：使用super.方法名(实参);</p>
-<h5 id="方法覆写时应遵循的原则-一同两小一大-："><a href="#方法覆写时应遵循的原则-一同两小一大-：" class="headerlink" title="方法覆写时应遵循的原则(一同两小一大)："></a>方法覆写时应遵循的原则(一同两小一大)：</h5><p>(一同):方法签名必须相同;</p>
-<p>(两小):</p>
-<p>子类方法的返回值类型比父类方法的返回值类型更小或相等      </p>
-<p>子类方法声明抛出的异常应比父类方法申明抛出的异常更小或相等;</p>
-<p>(一大):子类方法的访问权限应比父类方法更大或相等;</p>
-<h5 id="子类需要覆写父类方法"><a href="#子类需要覆写父类方法" class="headerlink" title="子类需要覆写父类方法"></a>子类需要覆写父类方法</h5><p>当父类的某个方法不适合于子类本身的特征行为时就当覆写父类中应当改变的方法。</p>
-<h2 id="方法重写与属性重写"><a href="#方法重写与属性重写" class="headerlink" title="方法重写与属性重写"></a>方法重写与属性重写</h2><p>1、重载（也叫过载）时只与方法特征有关，但重写（覆写）是会进一步检查两个方法的返回类型是否相同、访问修饰权限是否缩小（假设public-&gt;protected方向是缩小，反之叫扩大）和抛出的异常范围是否扩大。那么什么是方式特征呢？一个方法的特征（也可叫方法签名）仅包括方法的名字、参数的个数、类型、顺序（实质上就是参数列表），而不包括方法的返回类型、访问修饰权限与所抛出的异常。  </p>
-<p>另外，要补充说明的是重载一般是指在同一个类中多个方法间，但也可重父类的的方法，而重写只发生面父子与子类的方法间。  </p>
-<p>2、非私有非静态方法不能被任何静态方法覆写，如果子类中试着以静态方式（不管访问权限修饰符是什么）来覆写父类的方法，编译时会报错。  </p>
-<p>3、非私有静态方法不能被任何非静态方法覆写，如果子类中试着以非静态方式（不管访问权限修饰符是什么）来覆写父类的方法，编译时会报错。</p>
-<p>4、子类与父类中有方法特征相同的静态方法时，覆写规则与非静态方法覆写规则一样，但一般我们不把静态方法的覆写叫覆写，虽然语法规则上与非静态方法相同。</p>
-<pre><code class="Java">public static void main(String[] args) throws IOException {  
-    A a = new B();  
-    //覆写静态在语法上是合法的，但没有多态效果  
-    a.overwrite(0);//print: 父类静态方法...  
-    A.overwrite(0);//print: 父类静态方法...  
-    B.overwrite(0);//print: 子类静态方法...  
-}
-</code></pre>
-<p>5、私有方法对子类同名方法不产生任何影响，也就是说私有方法不能被重写，即使试着在子类覆写了父类的私有方法，不管访问权限修饰符是什么，在编译时也不会报错。原因就是私有方法对子类也是不可见的。</p>
-<p>6、属性像静态方法一样，没有多态。</p>
-<pre><code class="Java">public class A {  
-    // 这行不能去掉，否则①编译通不过  
-    int i = 1;  
-
-    A() {  
-        System.out.println(&quot;父类构造方法 i=&quot; + this.i);//①  
-        this.f();//②  
-        System.out.println(&quot;父类中 &quot; + (this == getThis()));//③ print:true  
-    }  
-
-    public void f() {  
-        System.out.println(&quot;父类方法f() i=&quot; + this.i);  
-    }  
-
-    public A getThis() {  
-        System.out.println(&quot;父类getThis&quot;);  
-        return this;  
-    }  
-}  
-
-class B extends A {  
-    int i = 2;  
-
-    B() {  
-        System.out.println(&quot;子类构造方法 i=&quot; + this.i);  
-        System.out.println(&quot;子类中 &quot; + (this == super.getThis()));//④  
-    }  
-
-    public void f() {  
-        System.out.println(&quot;子类方法f() i=&quot; + this.i);  
-    }  
-
-    public A getThis() {  
-        System.out.println(&quot;子类getThis&quot;);  
-        return this;  
-    }  
-
-    public static void main(String[] args) {  
-        /* 
-         * 从下面 a.i 与 b.i 的输出可以看出，某对象的属性只与声明 的类型相 
-         * 关，与对象本身是什么类型无关，这与方法是完全不同的 
-         */  
-        A a = new B();  
-        System.out.println(&quot;main方法 a.i=&quot; + a.i);  
-        B b = (B) a;  
-        System.out.println(&quot;main方法 b.i=&quot; + b.i);  
-
-        /* 
-         * output: 
-        父类构造方法 i=1 
-        子类方法f() i=0 
-        子类getThis 
-        父类中 true 
-        子类构造方法 i=2 
-        父类getThis 
-        子类中 true 
-        main方法 a.i=1 
-        main方法 b.i=2 
-         */  
-    }  
-}
-</code></pre>
-<p>上面①②处的this肯定都是同一个对象，且都指向子类对象，还并且与子类中this是同一象，由第③④行代码可以证明这一点。但为什么①处的this好像指向了父类对象，不然为什么①处输出的i是父类中的i呢？这说明属性除了只与定义他的类型有关外，如果在类的内部自身访问时，就会访问当前所在类的属性，与this无关，这进一步说明了属性是不具有多态这一特性的。</p>
-<p>参考链接[<a href="https://www.iteye.com/blog/jiangzhengjun-577040" target="_blank" rel="external">https://www.iteye.com/blog/jiangzhengjun-577040</a>]</p>
-<h2 id="子类父类属性的覆盖"><a href="#子类父类属性的覆盖" class="headerlink" title="子类父类属性的覆盖"></a>子类父类属性的覆盖</h2><ul>
-<li>由于private变量受访问权限的限制，它不能被覆盖。</li>
-<li>属性的值取父类还是子类并不取决于我们创建对象的类型，而是取决于我们定义的变量的类型。</li>
-<li>friendly、protected和public修饰符并不影响属性的覆盖。</li>
-<li>静态变量和静态常量属于类，不属于对象，因此它们不能被覆盖。</li>
-<li>常量可以被覆盖。</li>
-<li>对于基本类型和对象，它们适用同样的覆盖规律。</li>
-</ul>
-<p>参考链接[<a href="https://www.iteye.com/blog/gaolixu-363709" target="_blank" rel="external">https://www.iteye.com/blog/gaolixu-363709</a>]</p>
-<h2 id="向上转型与向下转型"><a href="#向上转型与向下转型" class="headerlink" title="向上转型与向下转型"></a>向上转型与向下转型</h2><p>1、父类引用指向子类对象，而子类引用不能指向父类对象。</p>
-<p>2、把子类对象直接赋给父类引用叫upcasting向上转型，向上转型不用强制转换，如：</p>
-<p>Father f1 = new Son();</p>
-<p>3、把指向子类对象的父类引用赋给子类引用叫向下转型(downcasting)，要强制转换，如：</p>
-<p>f1 就是一个指向子类对象的父类引用。把f1赋给子类引用 s1 即 Son s1 = (Son)f1;</p>
-<p>其中 f1 前面的(Son)必须加上，进行强制转换。</p>
-<p>4、向上转型时 b会遗失除与父类对象共有的其他方法；可以用向下转型在重新转回，这个和向上转型的作用要结合理解。</p>
-<pre><code class="Java">public class A {
-   public int i=10;
-   void print(){
-       System.out.println(&quot;我是A中的函数&quot;);
-   }
-}
-class B extends A{
-   public int i=20;
-    void print(){
-        System.out.println(&quot;我是B中的函数，我重写了A中的同名函数&quot;);
-    }
-    void speek(){
-        System.out.println(&quot;向上转型时我会丢失&quot;);
-    }
-
-   public static void main(String[] args) {
-        B b=new B();
-        A a=b;//此处向上转型
-        b.print();  System.out.println(b.i);
-        b.speek();
-        a.print();  System.out.println(a.i);
-       ((B) a).speek();//a在创建时虽然丢失了speek方法但是向下转型又找回了
-
-    }
-}
-
-/* 结果
-我是B中的函数，我重写了A中的同名函数
-20
-向上转型时我会丢失
-我是B中的函数，我重写了A中的同名函数
-10
-向上转型时我会丢失
-*/
-</code></pre>
-<p>参考链接[<a href="https://www.cnblogs.com/xiaoyezideboke/p/10939219.html" target="_blank" rel="external">https://www.cnblogs.com/xiaoyezideboke/p/10939219.html</a>]</p>
-<h2 id="存在继承的情况下，初始化顺序为："><a href="#存在继承的情况下，初始化顺序为：" class="headerlink" title="存在继承的情况下，初始化顺序为："></a>存在继承的情况下，初始化顺序为：</h2><ul>
-<li>父类（静态变量、静态语句块）</li>
-<li>子类（静态变量、静态语句块）</li>
-<li>父类（实例变量、普通语句块）</li>
-<li>父类（构造函数）</li>
-<li>子类（实例变量、普通语句块）</li>
-<li>子类（构造函数）</li>
-</ul>
-]]></content>
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
     
-    <summary type="html">
-    
-      &lt;h5 id=&quot;方法覆写产生原因：&quot;&gt;&lt;a href=&quot;#方法覆写产生原因：&quot; class=&quot;headerlink&quot; title=&quot;方法覆写产生原因：&quot;&gt;&lt;/a&gt;方法覆写产生原因：&lt;/h5&gt;&lt;p&gt;当父类中某个方法不适合于子类时,子类出现父类一模一样的方法.&lt;/p&gt;
-&lt;p&gt;判断必杀
-    
-    </summary>
-    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
     
   </entry>
   
@@ -244,7 +83,7 @@ class B extends A{
     <link href="http://sunyang.xyz/2019/11/28/LeetCode-Java/41.%20%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/"/>
     <id>http://sunyang.xyz/2019/11/28/LeetCode-Java/41. 缺失的第一个正数/</id>
     <published>2019-11-28T06:12:20.000Z</published>
-    <updated>2019-12-04T02:24:58.216Z</updated>
+    <updated>2019-12-04T02:55:53.761Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个未排序的整数数组，找出其中没有出现的最小的正整数。</p>
 <p>示例 1:</p>
@@ -499,6 +338,177 @@ class Solution {
       <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
     
       <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tips</title>
+    <link href="http://sunyang.xyz/2019/11/22/Java/tips/"/>
+    <id>http://sunyang.xyz/2019/11/22/Java/tips/</id>
+    <published>2019-11-22T06:12:20.000Z</published>
+    <updated>2019-12-04T02:54:39.718Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="方法覆写产生原因："><a href="#方法覆写产生原因：" class="headerlink" title="方法覆写产生原因："></a>方法覆写产生原因：</h5><p>当父类中某个方法不适合于子类时,子类出现父类一模一样的方法.</p>
+<p>判断必杀技:子类方法前加上@Override能编译通过,表明是方法的覆写。</p>
+<p>调用被覆盖的父类方法：使用super.方法名(实参);</p>
+<h5 id="方法覆写时应遵循的原则-一同两小一大-："><a href="#方法覆写时应遵循的原则-一同两小一大-：" class="headerlink" title="方法覆写时应遵循的原则(一同两小一大)："></a>方法覆写时应遵循的原则(一同两小一大)：</h5><p>(一同):方法签名必须相同;</p>
+<p>(两小):</p>
+<p>子类方法的返回值类型比父类方法的返回值类型更小或相等      </p>
+<p>子类方法声明抛出的异常应比父类方法申明抛出的异常更小或相等;</p>
+<p>(一大):子类方法的访问权限应比父类方法更大或相等;</p>
+<h5 id="子类需要覆写父类方法"><a href="#子类需要覆写父类方法" class="headerlink" title="子类需要覆写父类方法"></a>子类需要覆写父类方法</h5><p>当父类的某个方法不适合于子类本身的特征行为时就当覆写父类中应当改变的方法。</p>
+<h2 id="方法重写与属性重写"><a href="#方法重写与属性重写" class="headerlink" title="方法重写与属性重写"></a>方法重写与属性重写</h2><p>1、重载（也叫过载）时只与方法特征有关，但重写（覆写）是会进一步检查两个方法的返回类型是否相同、访问修饰权限是否缩小（假设public-&gt;protected方向是缩小，反之叫扩大）和抛出的异常范围是否扩大。那么什么是方式特征呢？一个方法的特征（也可叫方法签名）仅包括方法的名字、参数的个数、类型、顺序（实质上就是参数列表），而不包括方法的返回类型、访问修饰权限与所抛出的异常。  </p>
+<p>另外，要补充说明的是重载一般是指在同一个类中多个方法间，但也可重父类的的方法，而重写只发生面父子与子类的方法间。  </p>
+<p>2、非私有非静态方法不能被任何静态方法覆写，如果子类中试着以静态方式（不管访问权限修饰符是什么）来覆写父类的方法，编译时会报错。  </p>
+<p>3、非私有静态方法不能被任何非静态方法覆写，如果子类中试着以非静态方式（不管访问权限修饰符是什么）来覆写父类的方法，编译时会报错。</p>
+<p>4、子类与父类中有方法特征相同的静态方法时，覆写规则与非静态方法覆写规则一样，但一般我们不把静态方法的覆写叫覆写，虽然语法规则上与非静态方法相同。</p>
+<pre><code class="Java">public static void main(String[] args) throws IOException {  
+    A a = new B();  
+    //覆写静态在语法上是合法的，但没有多态效果  
+    a.overwrite(0);//print: 父类静态方法...  
+    A.overwrite(0);//print: 父类静态方法...  
+    B.overwrite(0);//print: 子类静态方法...  
+}
+</code></pre>
+<p>5、私有方法对子类同名方法不产生任何影响，也就是说私有方法不能被重写，即使试着在子类覆写了父类的私有方法，不管访问权限修饰符是什么，在编译时也不会报错。原因就是私有方法对子类也是不可见的。</p>
+<p>6、属性像静态方法一样，没有多态。</p>
+<pre><code class="Java">public class A {  
+    // 这行不能去掉，否则①编译通不过  
+    int i = 1;  
+
+    A() {  
+        System.out.println(&quot;父类构造方法 i=&quot; + this.i);//①  
+        this.f();//②  
+        System.out.println(&quot;父类中 &quot; + (this == getThis()));//③ print:true  
+    }  
+
+    public void f() {  
+        System.out.println(&quot;父类方法f() i=&quot; + this.i);  
+    }  
+
+    public A getThis() {  
+        System.out.println(&quot;父类getThis&quot;);  
+        return this;  
+    }  
+}  
+
+class B extends A {  
+    int i = 2;  
+
+    B() {  
+        System.out.println(&quot;子类构造方法 i=&quot; + this.i);  
+        System.out.println(&quot;子类中 &quot; + (this == super.getThis()));//④  
+    }  
+
+    public void f() {  
+        System.out.println(&quot;子类方法f() i=&quot; + this.i);  
+    }  
+
+    public A getThis() {  
+        System.out.println(&quot;子类getThis&quot;);  
+        return this;  
+    }  
+
+    public static void main(String[] args) {  
+        /* 
+         * 从下面 a.i 与 b.i 的输出可以看出，某对象的属性只与声明 的类型相 
+         * 关，与对象本身是什么类型无关，这与方法是完全不同的 
+         */  
+        A a = new B();  
+        System.out.println(&quot;main方法 a.i=&quot; + a.i);  
+        B b = (B) a;  
+        System.out.println(&quot;main方法 b.i=&quot; + b.i);  
+
+        /* 
+         * output: 
+        父类构造方法 i=1 
+        子类方法f() i=0 
+        子类getThis 
+        父类中 true 
+        子类构造方法 i=2 
+        父类getThis 
+        子类中 true 
+        main方法 a.i=1 
+        main方法 b.i=2 
+         */  
+    }  
+}
+</code></pre>
+<p>上面①②处的this肯定都是同一个对象，且都指向子类对象，还并且与子类中this是同一象，由第③④行代码可以证明这一点。但为什么①处的this好像指向了父类对象，不然为什么①处输出的i是父类中的i呢？这说明属性除了只与定义他的类型有关外，如果在类的内部自身访问时，就会访问当前所在类的属性，与this无关，这进一步说明了属性是不具有多态这一特性的。</p>
+<p>参考链接[<a href="https://www.iteye.com/blog/jiangzhengjun-577040" target="_blank" rel="external">https://www.iteye.com/blog/jiangzhengjun-577040</a>]</p>
+<h2 id="子类父类属性的覆盖"><a href="#子类父类属性的覆盖" class="headerlink" title="子类父类属性的覆盖"></a>子类父类属性的覆盖</h2><ul>
+<li>由于private变量受访问权限的限制，它不能被覆盖。</li>
+<li>属性的值取父类还是子类并不取决于我们创建对象的类型，而是取决于我们定义的变量的类型。</li>
+<li>friendly、protected和public修饰符并不影响属性的覆盖。</li>
+<li>静态变量和静态常量属于类，不属于对象，因此它们不能被覆盖。</li>
+<li>常量可以被覆盖。</li>
+<li>对于基本类型和对象，它们适用同样的覆盖规律。</li>
+</ul>
+<p>参考链接[<a href="https://www.iteye.com/blog/gaolixu-363709" target="_blank" rel="external">https://www.iteye.com/blog/gaolixu-363709</a>]</p>
+<h2 id="向上转型与向下转型"><a href="#向上转型与向下转型" class="headerlink" title="向上转型与向下转型"></a>向上转型与向下转型</h2><p>1、父类引用指向子类对象，而子类引用不能指向父类对象。</p>
+<p>2、把子类对象直接赋给父类引用叫upcasting向上转型，向上转型不用强制转换，如：</p>
+<p>Father f1 = new Son();</p>
+<p>3、把指向子类对象的父类引用赋给子类引用叫向下转型(downcasting)，要强制转换，如：</p>
+<p>f1 就是一个指向子类对象的父类引用。把f1赋给子类引用 s1 即 Son s1 = (Son)f1;</p>
+<p>其中 f1 前面的(Son)必须加上，进行强制转换。</p>
+<p>4、向上转型时 b会遗失除与父类对象共有的其他方法；可以用向下转型在重新转回，这个和向上转型的作用要结合理解。</p>
+<pre><code class="Java">public class A {
+   public int i=10;
+   void print(){
+       System.out.println(&quot;我是A中的函数&quot;);
+   }
+}
+class B extends A{
+   public int i=20;
+    void print(){
+        System.out.println(&quot;我是B中的函数，我重写了A中的同名函数&quot;);
+    }
+    void speek(){
+        System.out.println(&quot;向上转型时我会丢失&quot;);
+    }
+
+   public static void main(String[] args) {
+        B b=new B();
+        A a=b;//此处向上转型
+        b.print();  System.out.println(b.i);
+        b.speek();
+        a.print();  System.out.println(a.i);
+       ((B) a).speek();//a在创建时虽然丢失了speek方法但是向下转型又找回了
+
+    }
+}
+
+/* 结果
+我是B中的函数，我重写了A中的同名函数
+20
+向上转型时我会丢失
+我是B中的函数，我重写了A中的同名函数
+10
+向上转型时我会丢失
+*/
+</code></pre>
+<p>参考链接[<a href="https://www.cnblogs.com/xiaoyezideboke/p/10939219.html" target="_blank" rel="external">https://www.cnblogs.com/xiaoyezideboke/p/10939219.html</a>]</p>
+<h2 id="存在继承的情况下，初始化顺序为："><a href="#存在继承的情况下，初始化顺序为：" class="headerlink" title="存在继承的情况下，初始化顺序为："></a>存在继承的情况下，初始化顺序为：</h2><ul>
+<li>父类（静态变量、静态语句块）</li>
+<li>子类（静态变量、静态语句块）</li>
+<li>父类（实例变量、普通语句块）</li>
+<li>父类（构造函数）</li>
+<li>子类（实例变量、普通语句块）</li>
+<li>子类（构造函数）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;方法覆写产生原因：&quot;&gt;&lt;a href=&quot;#方法覆写产生原因：&quot; class=&quot;headerlink&quot; title=&quot;方法覆写产生原因：&quot;&gt;&lt;/a&gt;方法覆写产生原因：&lt;/h5&gt;&lt;p&gt;当父类中某个方法不适合于子类时,子类出现父类一模一样的方法.&lt;/p&gt;
+&lt;p&gt;判断必杀
+    
+    </summary>
+    
+      <category term="Java" scheme="http://sunyang.xyz/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
     
   </entry>
   
@@ -1418,6 +1428,86 @@ class Solution {
   </entry>
   
   <entry>
+    <title>235. 二叉搜索树的最近公共祖先</title>
+    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/235.%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/235. 二叉搜索树的最近公共祖先/</id>
+    <published>2019-11-15T08:12:20.000Z</published>
+    <updated>2019-12-04T02:22:40.340Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
+<p>图见<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank" rel="external">leetcode</a> </p>
+<p>示例 1:</p>
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+</code></pre><p>说明:</p>
+<ul>
+<li>所有节点的值都是唯一的。</li>
+<li>p、q 为不同节点且均存在于给定的二叉搜索树中。</li>
+</ul>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-递归"><a href="#方法一-递归" class="headerlink" title="方法一 递归"></a>方法一 递归</h4><pre><code class="Java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(p.val &lt; root.val &amp;&amp; q.val &lt; root.val) return lowestCommonAncestor(root.left, p, q);
+        else if(p.val &gt; root.val &amp;&amp; q.val &gt; root.val) return lowestCommonAncestor(root.right, p, q);
+        else return root;
+    }
+}
+</code></pre>
+<h4 id="方法二-迭代"><a href="#方法二-迭代" class="headerlink" title="方法二 迭代"></a>方法二 迭代</h4><p>因为是搜索树，能够确定元素在哪个子树，所以不需要回溯，不需要栈，可以直接迭代。</p>
+<pre><code class="Java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while(root != null) {
+            if(root.val &gt; p.val &amp;&amp; root.val &gt; q.val) root = root.left;
+            else if(root.val &lt; p.val &amp;&amp; root.val &lt; q.val) root = root.right;
+            else return root;
+        }
+        return null;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
+&lt;p&gt;百度百科中最近公共祖先的定义为：
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>239. 滑动窗口最大值</title>
     <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/239.%20%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
     <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/239. 滑动窗口最大值/</id>
@@ -1520,86 +1610,6 @@ class Solution {
     <summary type="html">
     
       &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>235. 二叉搜索树的最近公共祖先</title>
-    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/235.%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
-    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/235. 二叉搜索树的最近公共祖先/</id>
-    <published>2019-11-15T08:12:20.000Z</published>
-    <updated>2019-12-04T02:22:40.340Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
-<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
-<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
-<p>图见<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank" rel="external">leetcode</a> </p>
-<p>示例 1:</p>
-<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
-输出: 6 
-解释: 节点 2 和节点 8 的最近公共祖先是 6。
-</code></pre><p>示例 2:</p>
-<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
-输出: 2
-解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
-</code></pre><p>说明:</p>
-<ul>
-<li>所有节点的值都是唯一的。</li>
-<li>p、q 为不同节点且均存在于给定的二叉搜索树中。</li>
-</ul>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-递归"><a href="#方法一-递归" class="headerlink" title="方法一 递归"></a>方法一 递归</h4><pre><code class="Java">/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(p.val &lt; root.val &amp;&amp; q.val &lt; root.val) return lowestCommonAncestor(root.left, p, q);
-        else if(p.val &gt; root.val &amp;&amp; q.val &gt; root.val) return lowestCommonAncestor(root.right, p, q);
-        else return root;
-    }
-}
-</code></pre>
-<h4 id="方法二-迭代"><a href="#方法二-迭代" class="headerlink" title="方法二 迭代"></a>方法二 迭代</h4><p>因为是搜索树，能够确定元素在哪个子树，所以不需要回溯，不需要栈，可以直接迭代。</p>
-<pre><code class="Java">/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        while(root != null) {
-            if(root.val &gt; p.val &amp;&amp; root.val &gt; q.val) root = root.left;
-            else if(root.val &lt; p.val &amp;&amp; root.val &lt; q.val) root = root.right;
-            else return root;
-        }
-        return null;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
-&lt;p&gt;百度百科中最近公共祖先的定义为：
     
     </summary>
     

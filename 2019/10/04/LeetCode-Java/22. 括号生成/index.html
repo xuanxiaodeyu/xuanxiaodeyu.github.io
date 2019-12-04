@@ -266,7 +266,7 @@ background-position: center;*/
 
     
         <meta property="article:published_time" content="Fri Oct 04 2019 15:51:20 GMT+0800">
-        <meta property="article:modified_time" content="Wed Oct 09 2019 20:36:01 GMT+0800">
+        <meta property="article:modified_time" content="Wed Dec 04 2019 10:58:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -289,7 +289,7 @@ background-position: center;*/
     "mainEntityOfPage": "http://sunyang.xyz/2019/10/04/LeetCode-Java/22. 括号生成/index.html",
     "headline": "22. 括号生成",
     "datePublished": "Fri Oct 04 2019 15:51:20 GMT+0800",
-    "dateModified": "Wed Oct 09 2019 20:36:01 GMT+0800",
+    "dateModified": "Wed Dec 04 2019 10:58:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "轩箫",
@@ -382,7 +382,7 @@ background-position: center;*/
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述 ****</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题解"><span class="post-toc-number">2.</span> <span class="post-toc-text">题解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解法一"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">解法一</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解法二"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">解法二 *</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解法三"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">解法三 *</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#笔记"><span class="post-toc-number">3.</span> <span class="post-toc-text">笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#递归和回溯的区别"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">递归和回溯的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#递归和迭代的区别"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">递归和迭代的区别</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述 **</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题解"><span class="post-toc-number">2.</span> <span class="post-toc-text">题解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解法一-一遍回溯"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">解法一 一遍回溯</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解法二-两遍回溯"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">解法二 **  两遍回溯</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解法三-动态规划"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">解法三 *  动态规划</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#笔记"><span class="post-toc-number">3.</span> <span class="post-toc-text">笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#递归和回溯的区别"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">递归和回溯的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#递归和迭代的区别"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">递归和迭代的区别</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -549,7 +549,7 @@ background-position: center;*/
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 <em>**</em></h2><p>给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。</p>
 <p>例如，给出 n = 3，生成结果为：</p>
 <pre><code>[
   &quot;((()))&quot;,
@@ -558,7 +558,7 @@ background-position: center;*/
   &quot;()(())&quot;,
   &quot;()()()&quot;
 ]
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h4><p>回溯？<br>将n个左括号放入list中，探索n个右括号可以插入的位置。要保证右括号数不能多于其左边的左括号数。第一个左括号后面只能跟一个右括号，而第n个左括号后面最多可以跟n个右括号。<br>所以，用回溯法从后往前遍历所有情况。</p>
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="解法一-一遍回溯"><a href="#解法一-一遍回溯" class="headerlink" title="解法一 一遍回溯"></a>解法一 一遍回溯</h4><p>将n个左括号放入list中，探索n个右括号可以插入的位置。要保证右括号数不能多于其左边的左括号数。第一个左括号后面只能跟一个右括号，而第n个左括号后面最多可以跟n个右括号。<br>所以，用回溯法从后往前遍历所有情况。</p>
 <pre><code class="Java">class Solution {
     List&lt;String&gt; results = new ArrayList&lt;&gt;();
     public List&lt;String&gt; generateParenthesis(int n) {
@@ -573,7 +573,7 @@ background-position: center;*/
     public void insert (List&lt;String&gt; list, int p, int n) {
         if(n == 0) {
             results.add(String.join(&quot;&quot;, list));
-            // List&lt;String&gt; to String
+            // List&lt;String&gt; to String !!!
             return;
         }
         if(n &gt; p) {
@@ -593,7 +593,33 @@ background-position: center;*/
     }
 }
 </code></pre>
-<h4 id="解法二"><a href="#解法二" class="headerlink" title="解法二 *"></a>解法二 *</h4><p>如果我们还剩一个位置，我们可以开始放一个左括号。 如果它不超过左括号的数量，我们可以放一个右括号。</p>
+<p>用StringBuilder避免List转String，快一点。</p>
+<pre><code class="Java">class Solution {
+    List&lt;String&gt; result;
+
+    public List&lt;String&gt; generateParenthesis(int n) {
+        result = new ArrayList&lt;&gt;();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i&lt;n; i++) sb.append(&#39;(&#39;);
+        insert(sb, n, n);
+        return result;
+    }
+
+    public void insert(StringBuilder sb, int p, int n) {
+        if(p &lt; n) return;
+        if(n == 0) {
+            result.add(sb.toString());
+            return;
+        }
+        for(int i=0; i&lt;=n; i++) {
+            StringBuilder new_sb = new StringBuilder(sb);
+            for(int j=0; j&lt;i; j++) new_sb.insert(p, &#39;)&#39;);
+            insert(new_sb, p-1, n-i);
+        }
+    }
+}
+</code></pre>
+<h4 id="解法二-两遍回溯"><a href="#解法二-两遍回溯" class="headerlink" title="解法二 **  两遍回溯"></a>解法二 **  两遍回溯</h4><p>如果我们还剩一个位置，我们可以开始放一个左括号。 如果它不超过左括号的数量，我们可以放一个右括号。</p>
 <pre><code class="Java">class Solution {
     List&lt;String&gt; results = new ArrayList&lt;&gt;();
     public List&lt;String&gt; generateParenthesis(int n) {
@@ -610,7 +636,7 @@ background-position: center;*/
     }
 }
 </code></pre>
-<h4 id="解法三"><a href="#解法三" class="headerlink" title="解法三 *"></a>解法三 *</h4><p>当我们清楚所有i&lt; n时括号的可能生成排列后，对与 i=n 的情况，我们考虑整个括号排列中最左边的括号。<br>它一定是一个左括号，那么它可以和它对应的右括号组成一组完整的括号”()”，我们认为这一组是相比 n-1 增加进来的括号。</p>
+<h4 id="解法三-动态规划"><a href="#解法三-动态规划" class="headerlink" title="解法三 *  动态规划"></a>解法三 *  动态规划</h4><p>当我们清楚所有i&lt; n时括号的可能生成排列后，对于 i=n 的情况，我们考虑整个括号排列中最左边的括号。<br>它一定是一个左括号，那么它可以和它对应的右括号组成一组完整的括号”()”，我们认为这一组是相比 n-1 增加进来的括号。</p>
 <p>那么，剩下 n-1 组括号有可能在哪呢？</p>
 <p>【这里是重点，请着重理解】</p>
 <p>剩下的括号要么在这一组新增的括号内部，要么在这一组新增括号的外部（右侧）。</p>
@@ -818,7 +844,7 @@ return n*fac(n-1);
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">49</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">49</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -836,7 +862,7 @@ return n*fac(n-1);
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">81</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">82</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

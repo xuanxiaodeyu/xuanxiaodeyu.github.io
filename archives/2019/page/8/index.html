@@ -340,20 +340,22 @@ background-position: center;*/
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/06/20/数学/归一化与标准化/">归一化与标准化</a></p>
+        <p class="article-headline-p"><a href="/2019/10/04/LeetCode-Java/31. 下一个排列/">31. 下一个排列</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            归一化利用数据的最大值、最小值特征，将数据缩放到新的区间上。
-$$ v_{i}^{‘} = \frac{v_{i}-min_{A}}{max_{A}-min_{A}}(newMax_{A}-newMin_{A}) + newMin_{A} $$
-标准化[0,1]标准化将数据压缩到0~1之间  
-$$ x = \...
+            题目描述 **实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
+如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
+必须原地修改，只允许使用额外常数空间。
+以下是一些例子，输入位于左侧列，其相应输出位于右侧列。1,2,3 → 1,3,23,2,1 → 1,2,31,1,5 → 1,5,1
+题解
+从后往前扫描找到第一个下标i,使得nums[i] &lt; num...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/06/20/数学/归一化与标准化/" target="_self">阅读全文</a>
+            <a href="/2019/10/04/LeetCode-Java/31. 下一个排列/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -365,14 +367,14 @@ $$ x = \...
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>6月 20, 2019</span>
+                <span>10月 04, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数学/">数学</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -404,23 +406,26 @@ $$ x = \...
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/05/28/机器学习/机器学习7-/">机器学习7-</a></p>
+        <p class="article-headline-p"><a href="/2019/10/04/LeetCode-Java/23. 合并K个排序链表/">23. 合并K个排序链表</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            第七章 Logistic 回归
-不要将线性回归用于分类问题。
-逻辑回归实际上是分类问题，尽管叫做回归（由于历史原因）。
-为了使 h(x) 在 0-1 区间内（有百分之多少的概率为1或者0），引入 logistic function (sigmoid function)
-
-$$ g(z) = \frac{1}{1 + e^{-z}} $$
-
+            题目描述 ***合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
+示例:
+输入:
+[
+  1-&gt;4-&gt;5,
+  1-&gt;3-&gt;4,
+  2-&gt;6
+]
+输出: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6
+题解（注意各种算法的复杂度分析）
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/05/28/机器学习/机器学习7-/" target="_self">阅读全文</a>
+            <a href="/2019/10/04/LeetCode-Java/23. 合并K个排序链表/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -432,14 +437,14 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>5月 28, 2019</span>
+                <span>10月 04, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/机器学习/">机器学习</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -471,22 +476,26 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/05/24/MongoDB/MongoDB学习笔记/">MongoDB学习笔记</a></p>
+        <p class="article-headline-p"><a href="/2019/10/04/LeetCode-Java/22. 括号生成/">22. 括号生成</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            1. 初识 MongoDB1.1 MongoDB的特点
-数据存储格式为BSON（一种JSON的扩展）
-面向集合存储，没有固定的表头。
-模式自由。可以存键不一样的文档，可以轻松增减字段。
-支持复制和故障恢复。从节点备份主节点的数据。
-二进制数据存储方式，=。可以将图片甚至视频转换成二进制存储到数据库中。...
+            题目描述 ****给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。
+例如，给出 n = 3，生成结果为：
+[
+  &quot;((()))&quot;,
+  &quot;(()())&quot;,
+  &quot;(())()&quot;,
+  &quot;()(())&quot;,
+  &quot;()()()&quot;
+]
+题解
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/05/24/MongoDB/MongoDB学习笔记/" target="_self">阅读全文</a>
+            <a href="/2019/10/04/LeetCode-Java/22. 括号生成/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -498,14 +507,14 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>5月 24, 2019</span>
+                <span>10月 04, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/MongoDB/">MongoDB</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -537,18 +546,23 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/05/20/机器学习/机器学习1-6/">机器学习1-6</a></p>
+        <p class="article-headline-p"><a href="/2019/10/04/LeetCode-Java/21. 合并两个有序链表/">21. 合并两个有序链表</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            第一章 绪论：初识机器学习监督学习(Supervised Learning)给出正确答案，得到更多的正确答案。
-回归问题...
+            题目描述将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+示例：
+输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4
+输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+题解/**
+ * Definition for singly-linked list.
+ * public class ListN...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/05/20/机器学习/机器学习1-6/" target="_self">阅读全文</a>
+            <a href="/2019/10/04/LeetCode-Java/21. 合并两个有序链表/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -560,14 +574,14 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>5月 20, 2019</span>
+                <span>10月 04, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/机器学习/">机器学习</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -599,20 +613,27 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/05/14/杂项/Linux 与 MongoDB 的一些命令/">Linux 与 MongoDB 的一些命令</a></p>
+        <p class="article-headline-p"><a href="/2019/10/03/LeetCode-Java/20. 有效的括号/">20. 有效的括号</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            后台运行MongoDB备份nohup mongodump -d Ais -o dump20190404 --gzip &gt;dump.out &amp;
-// 后台备份，避免ssh断开导致程序退出，输出日志在dump.out里
-查看进程ps -ef|grep mongo
-
+            题目描述给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。
+示例 1:
+输入: &quot;()&quot;
+输出: true
+示例 2:
+输入: &quot;()[]{}&quot;
+输出: true
+示例 3:
+输入: &quot;(]&quot...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/05/14/杂项/Linux 与 MongoDB 的一些命令/" target="_self">阅读全文</a>
+            <a href="/2019/10/03/LeetCode-Java/20. 有效的括号/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -624,14 +645,14 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>5月 14, 2019</span>
+                <span>10月 03, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/杂项/">杂项</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -663,18 +684,27 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/04/20/杂项/Excel/">Excel</a></p>
+        <p class="article-headline-p"><a href="/2019/10/03/LeetCode-Java/19. 删除链表的倒数第N个节点/">19. 删除链表的倒数第N个节点</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Excel批量搜索并删除内容(https://jingyan.baidu.com/article/574c521916f4816c8d9dc1a7.html)
-批量删除csv...
+            题目描述给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
+示例：
+给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.
+
+当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.
+说明：
+给定的 n 保证是有效的。
+进阶：
+你能尝试使用一趟扫描实现吗？
+题解双指针
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/04/20/杂项/Excel/" target="_self">阅读全文</a>
+            <a href="/2019/10/03/LeetCode-Java/19. 删除链表的倒数第N个节点/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -686,14 +716,14 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>4月 20, 2019</span>
+                <span>10月 03, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/杂项/">杂项</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -725,30 +755,22 @@ $$ g(z) = \frac{1}{1 + e^{-z}} $$
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/04/03/JavaScript/Tips/">Tips</a></p>
+        <p class="article-headline-p"><a href="/2019/10/03/LeetCode-Java/17. 电话号码的字母组合/">17. 电话号码的字母组合</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            深拷贝
-实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制
-Object.prototype.clone = function(){
-
-  var o = this.constructor === Array ? [] : {};
-
-  for(var e in this){
-
-      o[e] = typeof this[e] === &quot;object&quot; ? this[e].clone() : this[e];
-
-  }
-
-  return o;
-...
+            题目描述 **给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
+给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
+详见leetcode
+示例:
+输入：&quot;23&quot;
+输出：[&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/04/03/JavaScript/Tips/" target="_self">阅读全文</a>
+            <a href="/2019/10/03/LeetCode-Java/17. 电话号码的字母组合/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -760,14 +782,14 @@ Object.prototype.clone = function(){
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>4月 03, 2019</span>
+                <span>10月 03, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/JavaScript/">JavaScript</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -799,18 +821,26 @@ Object.prototype.clone = function(){
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/21/面试题/头条广告/">头条广告</a></p>
+        <p class="article-headline-p"><a href="/2019/10/02/LeetCode-Java/15. 三数之和/">15. 三数之和</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            tcp 三次握手与四次挥手挥手时不是立即断开，而是等待两个ttl
-css里的box-sizing概念html 语义化
+            题目描述 *给定一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？找出所有满足条件且不重复的三元组。
+注意：答案中不可以包含重复的三元组。
+例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
+
+满足要求的三元组集合为：
+[
+  [-1, 0, 1],
+  [-1, -1, 2]
+]
+题解首先对数组进行排序，排序后固定一个数nums[i]，再使...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/03/21/面试题/头条广告/" target="_self">阅读全文</a>
+            <a href="/2019/10/02/LeetCode-Java/15. 三数之和/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -822,14 +852,14 @@ css里的box-sizing概念html 语义化
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>3月 21, 2019</span>
+                <span>10月 02, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/面试题/">面试题</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -861,20 +891,22 @@ css里的box-sizing概念html 语义化
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/20/ECMAScript6/Iterator 和 for...of 循环/">Iterator 和 for...of 循环</a></p>
+        <p class="article-headline-p"><a href="/2019/10/02/LeetCode-Java/11. 盛最多水的容器/">11. 盛最多水的容器</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Iterator 和 for…of 循环与其他遍历语法的比较以数组为例，JavaScript 提供多种遍历语法。最原始的写法就是for循环。
-for (var index = 0; index &lt; myArray.length; index++) {
-  console.log(myArray[index]);
-...
+            题目描述 ***图见leetcode给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画 n 条垂直线，垂直线 i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。
+说明：你不能倾斜容器，且n的值至少为 2。
+示例:
+输入: [1,8,6,2,5,4,8,3,7]
+输出: 49
+题解
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/03/20/ECMAScript6/Iterator 和 for...of 循环/" target="_self">阅读全文</a>
+            <a href="/2019/10/02/LeetCode-Java/11. 盛最多水的容器/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -886,14 +918,14 @@ for (var index = 0; index &lt; myArray.length; index++) {
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>3月 20, 2019</span>
+                <span>10月 02, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/ECMAScript-6/">ECMAScript 6</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -925,25 +957,25 @@ for (var index = 0; index &lt; myArray.length; index++) {
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/20/ECMAScript6/async函数/">async 函数</a></p>
+        <p class="article-headline-p"><a href="/2019/10/02/LeetCode-Java/5. 最长回文子串/">5. 最长回文子串</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            1. 含义ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
-async 函数是什么？一句话，它就是 Generator 函数的语法糖。
-前文有一个 Generator 函数，依次读取两个文件。
-const fs = require(&#39;fs&#39;);
-
-const readFile = function (fileName) {
-  return new Promise(function (resolve, reject) {
-    fs.readFile(fileName, function(error, data) {
-...
+            题目描述  **给定一个字符串 s，找到 s 中最长的回文子串。你可以假设s 的最大长度为 1000。
+示例 1：
+输入: &quot;babad&quot;
+输出: &quot;bab&quot;
+注意: &quot;aba&quot; 也是一个有效答案。
+示例 2：
+输入: &quot;cbbd&quot;
+输出: &quot;bb&quot;
+题解
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2019/03/20/ECMAScript6/async函数/" target="_self">阅读全文</a>
+            <a href="/2019/10/02/LeetCode-Java/5. 最长回文子串/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -955,14 +987,14 @@ const readFile = function (fileName) {
             </div>
             <div>
                 <strong>轩箫</strong>
-                <span>3月 20, 2019</span>
+                <span>10月 02, 2019</span>
             </div>
         </div>
         <div id="post_entry-right-info">
           
               <!-- Category -->
               <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/ECMAScript-6/">ECMAScript 6</a>
+                  <a class="post_category-link" href="/categories/LeetCode-Java/">LeetCode-Java</a>
               </span>
             
 
@@ -985,7 +1017,7 @@ const readFile = function (fileName) {
     
     <!-- Index nav -->
         <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/2019/page/7/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/6/">6</a><a class="page-number" href="/archives/2019/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/2019/page/9/">9</a><a class="page-number" href="/archives/2019/page/10/">10</a><a class="page-number" href="/archives/2019/page/11/">11</a><a class="extend next" rel="next" href="/archives/2019/page/9/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
+            <a class="extend prev" rel="prev" href="/archives/2019/page/7/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/6/">6</a><a class="page-number" href="/archives/2019/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/2019/page/9/">9</a><a class="page-number" href="/archives/2019/page/10/">10</a><a class="page-number" href="/archives/2019/page/13/">13</a><a class="extend next" rel="next" href="/archives/2019/page/9/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
         </nav>
     
 
@@ -1086,7 +1118,7 @@ const readFile = function (fileName) {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">49</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">49</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1104,7 +1136,7 @@ const readFile = function (fileName) {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">62</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试题/">面试题<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/ECMAScript-6/">ECMAScript 6<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-Java/">LeetCode-Java<span class="sidebar_archives-count">81</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode-JavaScript/">LeetCode-JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/MongoDB/">MongoDB<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -1170,7 +1202,7 @@ const readFile = function (fileName) {
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">110</span>
+                <span class="sidebar-badge">131</span>
             </a>
         </li>
         

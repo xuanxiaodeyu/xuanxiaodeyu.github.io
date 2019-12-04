@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunyang.xyz/"/>
-  <updated>2019-11-13T09:13:05.560Z</updated>
+  <updated>2019-12-04T02:26:05.889Z</updated>
   <id>http://sunyang.xyz/</id>
   
   <author>
@@ -16,1516 +16,266 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>208. 实现 Trie (前缀树)</title>
-    <link href="http://sunyang.xyz/2019/11/13/LeetCode-Java/208.%20%E5%AE%9E%E7%8E%B0%20Trie%20(%E5%89%8D%E7%BC%80%E6%A0%91)/"/>
-    <id>http://sunyang.xyz/2019/11/13/LeetCode-Java/208. 实现 Trie (前缀树)/</id>
-    <published>2019-11-13T09:12:20.000Z</published>
-    <updated>2019-11-13T09:13:05.560Z</updated>
+    <title></title>
+    <link href="http://sunyang.xyz/2019/12/04/LeetCode-Java/6.%20Z%20%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"/>
+    <id>http://sunyang.xyz/2019/12/04/LeetCode-Java/6. Z 字形变换/</id>
+    <published>2019-12-04T02:26:05.888Z</published>
+    <updated>2019-12-04T02:26:05.889Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作。</p>
-<p>示例:</p>
-<pre><code>Trie trie = new Trie();
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。</p>
+<p>比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下：</p>
+<pre><code>L   C   I   R
+E T O E S I I G
+E   D   H   N
+</code></pre><p>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。</p>
+<p>请你实现这个将字符串进行指定行数变换的函数：</p>
+<pre><code>string convert(string s, int numRows);
+</code></pre><p>示例 1:</p>
+<pre><code>输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 3
+输出: &quot;LCIRETOESIIGEDHN&quot;
+</code></pre><p>示例 2:</p>
+<pre><code>输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 4
+输出: &quot;LDREOEIIECIHNTSG&quot;
+解释:
 
-trie.insert(&quot;apple&quot;);
-trie.search(&quot;apple&quot;);   // 返回 true
-trie.search(&quot;app&quot;);     // 返回 false
-trie.startsWith(&quot;app&quot;); // 返回 true
-trie.insert(&quot;app&quot;);   
-trie.search(&quot;app&quot;);     // 返回 true
-</code></pre><p>说明:</p>
-<ul>
-<li>你可以假设所有的输入都是由小写字母 a-z 构成的。</li>
-<li>保证所有输入均为非空字符串。</li>
+L     D     R
+E   O E   I I
+E C   I H   N
+T     S     G
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>建numRows个StringBuilder，来回遍历，用flag改变方向。</p>
+<pre><code class="Java">class Solution {
+    public String convert(String s, int numRows) {
+        if(numRows == 1) return s;
+        List&lt;StringBuilder&gt; results = new ArrayList&lt;&gt;();
+        for(int i=0; i&lt;numRows; i++) results.add(new StringBuilder());
+        int i=0, flag = 1;
+        for(int j=0; j&lt;s.length(); j++) {
+            results.get(i).append(s.charAt(j));
+            i = i + flag;
+            if(i == 0 || i == numRows-1) flag = -flag;
+        }
+        StringBuilder result = new StringBuilder();
+        for(int j=0; j&lt;numRows; j++) result.append(results.get(j));
+        return result.toString();
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。&lt;/p&gt;
+&lt;p&gt;比如输入字符串为 “LE
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://sunyang.xyz/2019/12/04/Java/tips/"/>
+    <id>http://sunyang.xyz/2019/12/04/Java/tips/</id>
+    <published>2019-12-04T02:25:39.790Z</published>
+    <updated>2019-12-04T02:25:39.793Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="方法覆写产生原因："><a href="#方法覆写产生原因：" class="headerlink" title="方法覆写产生原因："></a>方法覆写产生原因：</h5><p>当父类中某个方法不适合于子类时,子类出现父类一模一样的方法.</p>
+<p>判断必杀技:子类方法前加上@Override能编译通过,表明是方法的覆写。</p>
+<p>调用被覆盖的父类方法：使用super.方法名(实参);</p>
+<h5 id="方法覆写时应遵循的原则-一同两小一大-："><a href="#方法覆写时应遵循的原则-一同两小一大-：" class="headerlink" title="方法覆写时应遵循的原则(一同两小一大)："></a>方法覆写时应遵循的原则(一同两小一大)：</h5><p>(一同):方法签名必须相同;</p>
+<p>(两小):</p>
+<p>子类方法的返回值类型比父类方法的返回值类型更小或相等      </p>
+<p>子类方法声明抛出的异常应比父类方法申明抛出的异常更小或相等;</p>
+<p>(一大):子类方法的访问权限应比父类方法更大或相等;</p>
+<h5 id="子类需要覆写父类方法"><a href="#子类需要覆写父类方法" class="headerlink" title="子类需要覆写父类方法"></a>子类需要覆写父类方法</h5><p>当父类的某个方法不适合于子类本身的特征行为时就当覆写父类中应当改变的方法。</p>
+<h2 id="方法重写与属性重写"><a href="#方法重写与属性重写" class="headerlink" title="方法重写与属性重写"></a>方法重写与属性重写</h2><p>1、重载（也叫过载）时只与方法特征有关，但重写（覆写）是会进一步检查两个方法的返回类型是否相同、访问修饰权限是否缩小（假设public-&gt;protected方向是缩小，反之叫扩大）和抛出的异常范围是否扩大。那么什么是方式特征呢？一个方法的特征（也可叫方法签名）仅包括方法的名字、参数的个数、类型、顺序（实质上就是参数列表），而不包括方法的返回类型、访问修饰权限与所抛出的异常。  </p>
+<p>另外，要补充说明的是重载一般是指在同一个类中多个方法间，但也可重父类的的方法，而重写只发生面父子与子类的方法间。  </p>
+<p>2、非私有非静态方法不能被任何静态方法覆写，如果子类中试着以静态方式（不管访问权限修饰符是什么）来覆写父类的方法，编译时会报错。  </p>
+<p>3、非私有静态方法不能被任何非静态方法覆写，如果子类中试着以非静态方式（不管访问权限修饰符是什么）来覆写父类的方法，编译时会报错。</p>
+<p>4、子类与父类中有方法特征相同的静态方法时，覆写规则与非静态方法覆写规则一样，但一般我们不把静态方法的覆写叫覆写，虽然语法规则上与非静态方法相同。</p>
+<pre><code class="Java">public static void main(String[] args) throws IOException {  
+    A a = new B();  
+    //覆写静态在语法上是合法的，但没有多态效果  
+    a.overwrite(0);//print: 父类静态方法...  
+    A.overwrite(0);//print: 父类静态方法...  
+    B.overwrite(0);//print: 子类静态方法...  
+}
+</code></pre>
+<p>5、私有方法对子类同名方法不产生任何影响，也就是说私有方法不能被重写，即使试着在子类覆写了父类的私有方法，不管访问权限修饰符是什么，在编译时也不会报错。原因就是私有方法对子类也是不可见的。</p>
+<p>6、属性像静态方法一样，没有多态。</p>
+<pre><code class="Java">public class A {  
+    // 这行不能去掉，否则①编译通不过  
+    int i = 1;  
+
+    A() {  
+        System.out.println(&quot;父类构造方法 i=&quot; + this.i);//①  
+        this.f();//②  
+        System.out.println(&quot;父类中 &quot; + (this == getThis()));//③ print:true  
+    }  
+
+    public void f() {  
+        System.out.println(&quot;父类方法f() i=&quot; + this.i);  
+    }  
+
+    public A getThis() {  
+        System.out.println(&quot;父类getThis&quot;);  
+        return this;  
+    }  
+}  
+
+class B extends A {  
+    int i = 2;  
+
+    B() {  
+        System.out.println(&quot;子类构造方法 i=&quot; + this.i);  
+        System.out.println(&quot;子类中 &quot; + (this == super.getThis()));//④  
+    }  
+
+    public void f() {  
+        System.out.println(&quot;子类方法f() i=&quot; + this.i);  
+    }  
+
+    public A getThis() {  
+        System.out.println(&quot;子类getThis&quot;);  
+        return this;  
+    }  
+
+    public static void main(String[] args) {  
+        /* 
+         * 从下面 a.i 与 b.i 的输出可以看出，某对象的属性只与声明 的类型相 
+         * 关，与对象本身是什么类型无关，这与方法是完全不同的 
+         */  
+        A a = new B();  
+        System.out.println(&quot;main方法 a.i=&quot; + a.i);  
+        B b = (B) a;  
+        System.out.println(&quot;main方法 b.i=&quot; + b.i);  
+
+        /* 
+         * output: 
+        父类构造方法 i=1 
+        子类方法f() i=0 
+        子类getThis 
+        父类中 true 
+        子类构造方法 i=2 
+        父类getThis 
+        子类中 true 
+        main方法 a.i=1 
+        main方法 b.i=2 
+         */  
+    }  
+}
+</code></pre>
+<p>上面①②处的this肯定都是同一个对象，且都指向子类对象，还并且与子类中this是同一象，由第③④行代码可以证明这一点。但为什么①处的this好像指向了父类对象，不然为什么①处输出的i是父类中的i呢？这说明属性除了只与定义他的类型有关外，如果在类的内部自身访问时，就会访问当前所在类的属性，与this无关，这进一步说明了属性是不具有多态这一特性的。</p>
+<p>参考链接[<a href="https://www.iteye.com/blog/jiangzhengjun-577040" target="_blank" rel="external">https://www.iteye.com/blog/jiangzhengjun-577040</a>]</p>
+<h2 id="子类父类属性的覆盖"><a href="#子类父类属性的覆盖" class="headerlink" title="子类父类属性的覆盖"></a>子类父类属性的覆盖</h2><ul>
+<li>由于private变量受访问权限的限制，它不能被覆盖。</li>
+<li>属性的值取父类还是子类并不取决于我们创建对象的类型，而是取决于我们定义的变量的类型。</li>
+<li>friendly、protected和public修饰符并不影响属性的覆盖。</li>
+<li>静态变量和静态常量属于类，不属于对象，因此它们不能被覆盖。</li>
+<li>常量可以被覆盖。</li>
+<li>对于基本类型和对象，它们适用同样的覆盖规律。</li>
 </ul>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><pre><code class="Java">class Trie {
-    boolean value;
-    Trie[] next;
-
-    /** Initialize your data structure here. */
-    public Trie() {
-        value = false;
-        next = new Trie[26];
+<p>参考链接[<a href="https://www.iteye.com/blog/gaolixu-363709" target="_blank" rel="external">https://www.iteye.com/blog/gaolixu-363709</a>]</p>
+<h2 id="向上转型与向下转型"><a href="#向上转型与向下转型" class="headerlink" title="向上转型与向下转型"></a>向上转型与向下转型</h2><p>1、父类引用指向子类对象，而子类引用不能指向父类对象。</p>
+<p>2、把子类对象直接赋给父类引用叫upcasting向上转型，向上转型不用强制转换，如：</p>
+<p>Father f1 = new Son();</p>
+<p>3、把指向子类对象的父类引用赋给子类引用叫向下转型(downcasting)，要强制转换，如：</p>
+<p>f1 就是一个指向子类对象的父类引用。把f1赋给子类引用 s1 即 Son s1 = (Son)f1;</p>
+<p>其中 f1 前面的(Son)必须加上，进行强制转换。</p>
+<p>4、向上转型时 b会遗失除与父类对象共有的其他方法；可以用向下转型在重新转回，这个和向上转型的作用要结合理解。</p>
+<pre><code class="Java">public class A {
+   public int i=10;
+   void print(){
+       System.out.println(&quot;我是A中的函数&quot;);
+   }
+}
+class B extends A{
+   public int i=20;
+    void print(){
+        System.out.println(&quot;我是B中的函数，我重写了A中的同名函数&quot;);
+    }
+    void speek(){
+        System.out.println(&quot;向上转型时我会丢失&quot;);
     }
 
-    /** Inserts a word into the trie. */
-    public void insert(String word) {
-        Trie cur = this;
-        for(int d = 0; d&lt;word.length(); d++) {
-            int i = word.charAt(d) - &#39;a&#39;;
-            if(cur.next[i] == null) cur.next[i] = new Trie();
-            cur = cur.next[i];
-        }
-        cur.value = true;
-    }
+   public static void main(String[] args) {
+        B b=new B();
+        A a=b;//此处向上转型
+        b.print();  System.out.println(b.i);
+        b.speek();
+        a.print();  System.out.println(a.i);
+       ((B) a).speek();//a在创建时虽然丢失了speek方法但是向下转型又找回了
 
-    /** Returns if the word is in the trie. */
-    public boolean search(String word) {
-        Trie cur = this;
-        for(int d = 0; d &lt; word.length(); d++) {
-            int i = word.charAt(d) - &#39;a&#39;;
-            if(cur.next[i] == null) return false;
-            cur = cur.next[i];
-        }
-        if(cur.value) return true;
-        return false;
-    }
-
-    /** Returns if there is any word in the trie that starts with the given prefix. */
-    public boolean startsWith(String prefix) {
-        Trie cur = this;
-        for(int d = 0; d &lt; prefix.length(); d++) {
-            int i = prefix.charAt(d) - &#39;a&#39;;
-            if(cur.next[i] == null) return false;
-            cur = cur.next[i];
-        }
-        return true;
     }
 }
 
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
- * obj.insert(word);
- * boolean param_2 = obj.search(word);
- * boolean param_3 = obj.startsWith(prefix);
- */
+/* 结果
+我是B中的函数，我重写了A中的同名函数
+20
+向上转型时我会丢失
+我是B中的函数，我重写了A中的同名函数
+10
+向上转型时我会丢失
+*/
 </code></pre>
+<p>参考链接[<a href="https://www.cnblogs.com/xiaoyezideboke/p/10939219.html" target="_blank" rel="external">https://www.cnblogs.com/xiaoyezideboke/p/10939219.html</a>]</p>
+<h2 id="存在继承的情况下，初始化顺序为："><a href="#存在继承的情况下，初始化顺序为：" class="headerlink" title="存在继承的情况下，初始化顺序为："></a>存在继承的情况下，初始化顺序为：</h2><ul>
+<li>父类（静态变量、静态语句块）</li>
+<li>子类（静态变量、静态语句块）</li>
+<li>父类（实例变量、普通语句块）</li>
+<li>父类（构造函数）</li>
+<li>子类（实例变量、普通语句块）</li>
+<li>子类（构造函数）</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作。
+      &lt;h5 id=&quot;方法覆写产生原因：&quot;&gt;&lt;a href=&quot;#方法覆写产生原因：&quot; class=&quot;headerlink&quot; title=&quot;方法覆写产生原因：&quot;&gt;&lt;/a&gt;方法覆写产生原因：&lt;/h5&gt;&lt;p&gt;当父类中某个方法不适合于子类时,子类出现父类一模一样的方法.&lt;/p&gt;
+&lt;p&gt;判断必杀
     
     </summary>
     
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
-    <title>207. 课程表</title>
-    <link href="http://sunyang.xyz/2019/11/13/LeetCode-Java/207.%20%E8%AF%BE%E7%A8%8B%E8%A1%A8/"/>
-    <id>http://sunyang.xyz/2019/11/13/LeetCode-Java/207. 课程表/</id>
-    <published>2019-11-13T01:12:20.000Z</published>
-    <updated>2019-11-13T09:13:16.470Z</updated>
+    <title>41. 缺失的第一个正数</title>
+    <link href="http://sunyang.xyz/2019/11/28/LeetCode-Java/41.%20%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/"/>
+    <id>http://sunyang.xyz/2019/11/28/LeetCode-Java/41. 缺失的第一个正数/</id>
+    <published>2019-11-28T06:12:20.000Z</published>
+    <updated>2019-12-04T02:24:58.216Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>现在你总共有 n 门课需要选，记为 0 到 n-1。</p>
-<p>在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们: [0,1]</p>
-<p>给定课程总量以及它们的先决条件，判断是否可能完成所有课程的学习？</p>
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个未排序的整数数组，找出其中没有出现的最小的正整数。</p>
 <p>示例 1:</p>
-<pre><code>输入: 2, [[1,0]] 
-输出: true
-解释: 总共有 2 门课程。学习课程 1 之前，你需要完成课程 0。所以这是可能的。
-</code></pre><p>示例 2:</p>
-<pre><code>输入: 2, [[1,0],[0,1]]
-输出: false
-解释: 总共有 2 门课程。学习课程 1 之前，你需要先完成​课程 0；并且学习课程 0 之前，你还应先完成课程 1。这是不可能的。
-</code></pre><p>说明:</p>
-<ol>
-<li>输入的先决条件是由边缘列表表示的图形，而不是邻接矩阵。详情请参见图的表示法。</li>
-<li>你可以假定输入的先决条件中没有重复的边。  </li>
-</ol>
-<p>提示:</p>
-<ol>
-<li>这个问题相当于查找一个循环是否存在于有向图中。如果存在循环，则不存在拓扑排序，因此不可能选取所有课程进行学习。</li>
-<li>通过 DFS 进行拓扑排序</li>
-<li>一个关于Coursera的精彩视频教程（21分钟），介绍拓扑排序的基本概念。<br>拓扑排序也可以通过 BFS 完成。</li>
-</ol>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-深度优先搜索dfs"><a href="#方法一-深度优先搜索dfs" class="headerlink" title="方法一 深度优先搜索dfs"></a>方法一 深度优先搜索dfs</h4><pre><code class="Java">class Solution {
-    boolean[] marked;
-    boolean[] onStack;
-    boolean hasCycle;
-
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        LinkedList&lt;Integer&gt;[] graph = new LinkedList[numCourses];  // 注意链表数组的写法，new后面不带&lt;&gt;
-        for(int i=0; i&lt;graph.length; i++) graph[i] = new LinkedList&lt;Integer&gt;(); // 数组元素要挨个初始化
-        for(int[] edge : prerequisites) {
-            graph[edge[0]].add(edge[1]);
-        }
-        return !hasCycle(graph);
-    }
-
-    public boolean hasCycle(LinkedList&lt;Integer&gt;[] graph) {
-        int n = graph.length;
-        marked = new boolean[n];
-        onStack = new boolean[n];
-        for(int i=0; i&lt;n; i++) {
-            if(marked[i]) continue;
-            dfs(graph, i);
-            if(hasCycle) return true;
-        }
-        return false;
-    }
-
-    public void dfs(LinkedList&lt;Integer&gt;[] graph, int i) {
-        marked[i] = true;
-        onStack[i] = true;
-        for(int v : graph[i]) {
-            if(onStack[v]) {hasCycle = true; return;}; // onStack 则一定 marked，这一句不需要额外判断marked
-            if(marked[v]) continue;
-            dfs(graph, v);
-        }
-        onStack[i] = false;
-        return;
-    }
-}
-</code></pre>
-<p>时间复杂度 O(m+n)</p>
-<h4 id="方法二-入度表-bfs"><a href="#方法二-入度表-bfs" class="headerlink" title="方法二 入度表 bfs"></a>方法二 入度表 bfs</h4><pre><code class="Java">class Solution {
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        int[] indegrees = new int[numCourses];
-        for(int[] cp : prerequisites) indegrees[cp[0]]++;
-        LinkedList&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
-        for(int i = 0; i &lt; numCourses; i++){
-            if(indegrees[i] == 0) queue.addLast(i);
-        }
-        while(!queue.isEmpty()) {
-            Integer pre = queue.removeFirst();
-            numCourses--;
-            for(int[] req : prerequisites) {
-                if(req[1] != pre) continue;
-                if(--indegrees[req[0]] == 0) queue.add(req[0]);
-            }
-        }
-        return numCourses == 0;
-    }
-}
-</code></pre>
-<p>时间复杂度O(m*n)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;现在你总共有 n 门课需要选，记为 0 到 n-1。&lt;/p&gt;
-&lt;p&gt;在选修某些课程之前需要一些先修课程。
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>206. 反转链表</title>
-    <link href="http://sunyang.xyz/2019/11/12/LeetCode-Java/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
-    <id>http://sunyang.xyz/2019/11/12/LeetCode-Java/206. 反转链表/</id>
-    <published>2019-11-12T14:12:20.000Z</published>
-    <updated>2019-11-13T09:13:23.823Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>反转一个单链表。</p>
-<p>示例:</p>
-<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
-输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
-</code></pre><p>进阶:<br>你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h4><pre><code class="Java">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode cur = head;
-        while(cur != null) {
-            ListNode next = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = next;
-        }
-        return pre;
-    }
-}
-</code></pre>
-<h4 id="递归"><a href="#递归" class="headerlink" title="递归 **"></a>递归 **</h4><pre><code class="Java">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        if(head == null || head.next == null) return head;
-        ListNode p = reverseList(head.next);
-        head.next.next = head;  // head.next此时是链表尾结点
-        head.next = null;
-        return p;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;反转一个单链表。&lt;/p&gt;
-&lt;p&gt;示例:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>206. 反转链表</title>
-    <link href="http://sunyang.xyz/2019/11/12/LeetCode-Java/200.%20%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/"/>
-    <id>http://sunyang.xyz/2019/11/12/LeetCode-Java/200. 岛屿数量/</id>
-    <published>2019-11-12T04:12:20.000Z</published>
-    <updated>2019-11-13T09:13:20.433Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>给定一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。你可以假设网格的四个边均被水包围。</p>
-<p>示例 1:</p>
-<pre><code>输入:
-11110
-11010
-11000
-00000
-
-输出: 1
-</code></pre><p>示例 2:</p>
-<pre><code>输入:
-11000
-11000
-00100
-00011
-
+<pre><code>输入: [1,2,0]
 输出: 3
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ul>
-<li>深度优先搜索</li>
-<li>广度优先搜索</li>
-<li>并查集</li>
-</ul>
-<pre><code class="Java">class Solution {
-    public int numIslands(char[][] grid) {
-        if(grid.length == 0) return 0;
-        int x = grid.length, y = grid[0].length;
-        int count = 0;
-        boolean[][] marked = new boolean[x][y];
-        for(int i=0; i&lt;x; i++) {
-            for(int j=0; j&lt;y; j++) {
-                if(marked[i][j] == false &amp;&amp; grid[i][j] == &#39;1&#39;) {
-                    count++;
-                    dfs(marked, grid, i, j);
-                }
-            }
-        }
-        return count;
-    }
-
-    public void dfs(boolean[][] marked, char[][] grid, int i, int j) {
-        if(i&lt;0 || i&gt;grid.length-1 || j&lt;0 || j&gt;grid[0].length-1) return;
-        if(marked[i][j] == true || grid[i][j] == &#39;0&#39;) return;
-        marked[i][j] = true;
-        dfs(marked, grid, i-1, j);
-        dfs(marked, grid, i, j-1);
-        dfs(marked, grid, i, j+1);
-        dfs(marked, grid, i+1, j);
-        return;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;给定一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>198. 打家劫舍</title>
-    <link href="http://sunyang.xyz/2019/11/11/LeetCode-Java/198.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/"/>
-    <id>http://sunyang.xyz/2019/11/11/LeetCode-Java/198. 打家劫舍/</id>
-    <published>2019-11-11T06:12:20.000Z</published>
-    <updated>2019-11-13T09:13:27.380Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</p>
-<p>给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。</p>
-<p>示例 1:</p>
-<pre><code>输入: [1,2,3,1]
-输出: 4
-解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。
-     偷窃到的最高金额 = 1 + 3 = 4 。
 </code></pre><p>示例 2:</p>
-<pre><code>输入: [2,7,9,3,1]
-输出: 12
-解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
-     偷窃到的最高金额 = 2 + 9 + 1 = 12 。
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><pre><code class="Java">class Solution {
-    public int rob(int[] nums) {
-        if(nums.length == 0) return 0;
-        if(nums.length == 1) return nums[0];
-        if(nums.length == 2) return Math.max(nums[0], nums[1]);
-        int[] dp = new int[nums.length];
-        dp[0] = nums[0];
-        dp[1] = Math.max(nums[0], nums[1]);
-        for(int i=2; i&lt;nums.length; i++) {
-            dp[i] = Math.max(dp[i-1], dp[i-2]+nums[i]);
-        }
-        return dp[nums.length-1];
-    }
-}
-</code></pre>
-<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>由于每一步你只需要前两个最大值，两个变量就足够用了。 </p>
-<pre><code class="Java">public int rob(int[] num) {
-    int prevMax = 0;
-    int currMax = 0;
-    for (int x : num) {
-        int temp = currMax;
-        currMax = Math.max(prevMax + x, currMax);
-        prevMax = temp;
-    }
-    return currMax;
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>169. 求众数</title>
-    <link href="http://sunyang.xyz/2019/11/11/LeetCode-Java/169.%20%E6%B1%82%E4%BC%97%E6%95%B0/"/>
-    <id>http://sunyang.xyz/2019/11/11/LeetCode-Java/169. 求众数/</id>
-    <published>2019-11-11T06:12:20.000Z</published>
-    <updated>2019-11-13T09:13:29.969Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="留坑！！！"><a href="#留坑！！！" class="headerlink" title="留坑！！！"></a>留坑！！！</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;留坑！！！&quot;&gt;&lt;a href=&quot;#留坑！！！&quot; class=&quot;headerlink&quot; title=&quot;留坑！！！&quot;&gt;&lt;/a&gt;留坑！！！&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>155. 最小栈</title>
-    <link href="http://sunyang.xyz/2019/11/10/LeetCode-Java/160.%20%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"/>
-    <id>http://sunyang.xyz/2019/11/10/LeetCode-Java/160. 相交链表/</id>
-    <published>2019-11-10T11:12:20.000Z</published>
-    <updated>2019-11-13T09:13:47.766Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>编写一个程序，找到两个单链表相交的起始节点。<br>图见<a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="external">leetcode</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-HashSet"><a href="#方法一-HashSet" class="headerlink" title="方法一 HashSet"></a>方法一 HashSet</h4><pre><code class="Java">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode temp = headA;
-        HashSet&lt;ListNode&gt; set = new HashSet&lt;&gt;();
-        while(temp != null) {
-            set.add(temp);
-            temp = temp.next;
-        }
-        temp = headB;
-        while(temp != null) {
-            if(set.contains(temp)) return temp;
-            temp = temp.next;
-        }
-        return null;
-    }
-}
-</code></pre>
-<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
-<li>时间复杂度 : O(m+n)。</li>
-<li>空间复杂度 : O(m) 或 O(n)。</li>
-</ul>
-<h4 id="方法二-双指针"><a href="#方法二-双指针" class="headerlink" title="方法二 双指针"></a>方法二 双指针</h4><p>两个指针分别遍历两个链表，计算链表总长度。<br>让长链表先走完差，剩下的长度与短链表相等。这是两指针同时走，相交时两指针相等。  </p>
-<pre><code class="Java">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        int numA = 0, numB = 0;
-        ListNode tempA = headA;
-        while(tempA != null) {
-            tempA = tempA.next;
-            numA ++;
-        }
-        ListNode tempB = headB;
-        while(tempB != null) {
-            tempB = tempB.next;
-            numB ++;
-        }
-
-        tempA = headA;
-        tempB = headB;
-        if(numA &gt; numB) {
-            for(int i=0; i&lt; numA - numB; i++) tempA = tempA.next;
-        }
-        else{
-            for(int i=0; i&lt; numB - numA; i++) tempB = tempB.next;
-        }
-        while(tempA != null) {
-            if(tempA == tempB) return tempA;
-            tempA = tempA.next;
-            tempB = tempB.next;
-        }
-
-        return null;
-    }
-}
-</code></pre>
-<h5 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
-<li>时间复杂度： O(m+n)</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<h4 id="方法三-双指针优化"><a href="#方法三-双指针优化" class="headerlink" title="方法三 双指针优化"></a>方法三 双指针优化</h4><p>方法二需要两个链表分别走一遍，然后再走差值，然后合起来走。<br>其实两指针可以一起走，在短链表走完之后移到长链表，长链表走完之后移到短链表。  </p>
-<pre><code class="Java">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode tempA = headA, tempB = headB;
-
-        while(tempA != null || tempB != null) {
-            if(tempA == null) {
-                tempA = headB;
-                tempB = tempB.next;
-                continue;
-            }
-
-            if(tempB == null) {
-                tempB = headA;
-                tempA = tempA.next;
-                continue;
-            }
-            if(tempA == tempB) return tempA;
-            tempA = tempA.next;
-            tempB = tempB.next;
-        }
-
-        return null;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;编写一个程序，找到两个单链表相交的起始节点。&lt;br&gt;图见&lt;a href=&quot;https://leetcode-cn
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>155. 最小栈</title>
-    <link href="http://sunyang.xyz/2019/11/10/LeetCode-Java/155.%20%E6%9C%80%E5%B0%8F%E6%A0%88/"/>
-    <id>http://sunyang.xyz/2019/11/10/LeetCode-Java/155. 最小栈/</id>
-    <published>2019-11-10T11:12:20.000Z</published>
-    <updated>2019-11-13T09:13:51.107Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。</p>
-<p>push(x) – 将元素 x 推入栈中。<br>pop() – 删除栈顶的元素。<br>top() – 获取栈顶元素。<br>getMin() – 检索栈中的最小元素。<br>示例:</p>
-<pre><code>MinStack minStack = new MinStack();
-minStack.push(-2);
-minStack.push(0);
-minStack.push(-3);
-minStack.getMin();   --&gt; 返回 -3.
-minStack.pop();
-minStack.top();      --&gt; 返回 0.
-minStack.getMin();   --&gt; 返回 -2.
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>辅助栈和数据栈同步</p>
-<pre><code class="Java">class MinStack {
-    Deque&lt;Integer&gt; stack1;
-    Deque&lt;Integer&gt; stack2;
-
-
-    /** initialize your data structure here. */
-    public MinStack() {
-        stack1 = new ArrayDeque&lt;&gt;();
-        stack2 = new ArrayDeque&lt;&gt;();
-    }
-
-    public void push(int x) {
-        stack1.push(x);
-        if(stack2.isEmpty() || stack2.peek() &gt;= x) stack2.push(x);
-        else stack2.push(stack2.peek());
-    }
-
-    public void pop() {
-        stack1.pop();
-        stack2.pop();
-    }
-
-    public int top() {
-        return stack1.peek();
-    }
-
-    public int getMin() {
-        return stack2.peek();
-    }
-}
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack obj = new MinStack();
- * obj.push(x);
- * obj.pop();
- * int param_3 = obj.top();
- * int param_4 = obj.getMin();
- */
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。&lt;/p&gt;
-&lt;p&gt;push(x)
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>152. 乘积最大子序列</title>
-    <link href="http://sunyang.xyz/2019/11/07/LeetCode-Java/152.%20%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>http://sunyang.xyz/2019/11/07/LeetCode-Java/152. 乘积最大子序列/</id>
-    <published>2019-11-07T12:12:20.000Z</published>
-    <updated>2019-11-13T09:13:53.933Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个整数数组 nums ，找出一个序列中乘积最大的连续子序列（该序列至少包含一个数）。</p>
-<p>示例 1:</p>
-<pre><code>输入: [2,3,-2,4]
-输出: 6
-解释: 子数组 [2,3] 有最大乘积 6。
-</code></pre><p>示例 2:</p>
-<pre><code>输入: [-2,0,-1]
-输出: 0
-解释: 结果不能为 2, 因为 [-2,-1] 不是子数组。
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>相关问题 <a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="external">53. 最大子序和</a></p>
-<h4 id="方法一-维护最大最小值"><a href="#方法一-维护最大最小值" class="headerlink" title="方法一  维护最大最小值"></a>方法一  维护最大最小值</h4><ul>
-<li>遍历数组时计算当前最大值，不断更新</li>
-<li>令imax为当前最大值，则当前最大值为 imax = max(imax * nums[i], nums[i])</li>
-<li><strong>由于存在负数，那么会导致最大的变最小的，最小的变最大的。因此还需要维护当前最小值imin，imin = min(imin * nums[i], nums[i])</strong></li>
-<li><strong>当负数出现时则imax与imin进行交换再进行下一步计算</strong>  </li>
-<li>时间复杂度：O(n)</li>
-</ul>
-<p>imax表示以当前节点为终结节点的最大连续子序列乘积 imin表示以当前节点为终结节点的最小连续子序列乘积</p>
-<pre><code class="Java">class Solution {
-    public int maxProduct(int[] nums) {
-        int max = Integer.MIN_VALUE, imax = 1, imin = 1;
-        for(int i=0; i&lt;nums.length; i++){
-            if(nums[i] &lt; 0){ 
-              int tmp = imax;
-              imax = imin;
-              imin = tmp;
-            }
-            imax = Math.max(imax*nums[i], nums[i]);
-            imin = Math.min(imin*nums[i], nums[i]);
-
-            max = Math.max(max, imax);
-        }
-        return max;
-    }
-}
-</code></pre>
-<h4 id="方法二-奇数个负值-偶数个负值"><a href="#方法二-奇数个负值-偶数个负值" class="headerlink" title="方法二  奇数个负值 偶数个负值"></a>方法二  奇数个负值 偶数个负值</h4><p>正反各遍历一遍，以防奇数个负值的情况。<br>分析详见<a href="https://leetcode-cn.com/problems/maximum-product-subarray/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--36/" target="_blank" rel="external">leetcode</a></p>
-<pre><code class="Java">public int maxProduct(int[] nums) {
-    if (nums.length == 0) {
-        return 0;
-    }
-
-    int max = 1;
-    int res = nums[0];
-    for (int i = 0; i &lt; nums.length; i++) {
-        max *= nums[i];
-        res = Math.max(res, max);
-        if (max == 0) {
-            max = 1;
-        }
-
-    }
-    max = 1;
-    for (int i = nums.length - 1; i &gt;= 0; i--) {
-        max *= nums[i];
-        res = Math.max(res, max);
-        if (max == 0) {
-            max = 1;
-        }
-    }
-
-    return res;
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个整数数组 nums ，找出一个序列中乘积最大的连续子序列（该序列至少包含一个数）。&lt;/p&gt;
-&lt;p&gt;示
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>148. 排序链表</title>
-    <link href="http://sunyang.xyz/2019/11/07/LeetCode-Java/148.%20%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8/"/>
-    <id>http://sunyang.xyz/2019/11/07/LeetCode-Java/148. 排序链表/</id>
-    <published>2019-11-07T07:12:20.000Z</published>
-    <updated>2019-11-13T09:13:56.913Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。</p>
-<p>示例 1:</p>
-<pre><code>输入: 4-&gt;2-&gt;1-&gt;3
-输出: 1-&gt;2-&gt;3-&gt;4
-</code></pre><p>示例 2:</p>
-<pre><code>输入: -1-&gt;5-&gt;3-&gt;4-&gt;0
-输出: -1-&gt;0-&gt;3-&gt;4-&gt;5
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-自顶向下归并排序（递归）"><a href="#方法一-自顶向下归并排序（递归）" class="headerlink" title="方法一 自顶向下归并排序（递归）"></a>方法一 自顶向下归并排序（递归）</h4><p>用快慢指针找到中间节点，然后切分链表，两部分分别排序，然后合并。</p>
-<pre><code class="Java">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public ListNode sortList(ListNode head) {
-        if(head == null || head.next == null) return head;
-        ListNode slow = head;
-        ListNode fast = head.next;
-        while(fast != null &amp;&amp; fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-        ListNode right = sortList(slow.next);
-        slow.next = null;
-        ListNode left = sortList(head);
-        return merge(left, right);
-    }
-
-    public ListNode merge(ListNode left, ListNode right) {
-        ListNode temp = new ListNode(0);
-        ListNode p = temp;
-        while(left != null &amp;&amp; right != null) {
-            if(left.val &lt; right.val) {
-                p.next = left;
-                left = left.next;
-                p = p.next;
-            }
-            else {
-                p.next = right;
-                right = right.next;
-                p = p.next;
-            }
-        }
-        if(left != null) p.next = left;
-        else if(right != null) p.next = right;
-        return temp.next;
-    }
-}
-</code></pre>
-<h4 id="方法二-自底向上的归并排序（迭代）"><a href="#方法二-自底向上的归并排序（迭代）" class="headerlink" title="方法二 自底向上的归并排序（迭代）"></a>方法二 自底向上的归并排序（迭代）</h4><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h4 id="链表的快速排序"><a href="#链表的快速排序" class="headerlink" title="链表的快速排序"></a>链表的快速排序</h4><pre><code class="Java">class Solution {
-public ListNode sortList(ListNode head) {
-        if(head==null||head.next==null) return head;
-        // 没有条件，创造条件。自己添加头节点，最后返回时去掉即可。
-        ListNode newHead=new ListNode(-1);
-        newHead.next=head;
-        return quickSort(newHead,null);
-    }
-    // 带头结点的链表快速排序
-    private ListNode quickSort(ListNode head,ListNode end){
-        if (head==end||head.next==end||head.next.next==end) return head;
-        // 将小于划分点的值存储在临时链表中
-        ListNode tmpHead=new ListNode(-1);
-        // partition为划分点，p为链表指针，tp为临时链表指针
-        ListNode partition=head.next,p=partition,tp=tmpHead;
-        // 将小于划分点的结点放到临时链表中
-        while (p.next!=end){
-            if (p.next.val&lt;partition.val){
-                tp.next=p.next;
-                tp=tp.next;
-                p.next=p.next.next;
-            }else {
-                p=p.next;
-            }
-        }
-        // 合并临时链表和原链表，将原链表接到临时链表后面即可
-        tp.next=head.next;
-        // 将临时链表插回原链表，注意是插回！（不做这一步在对右半部分处理时就断链了）
-        head.next=tmpHead.next;
-        quickSort(head,partition);
-        quickSort(partition,end);
-        // 题目要求不带头节点，返回结果时去除
-        return head.next;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>146. LRU缓存机制</title>
-    <link href="http://sunyang.xyz/2019/11/04/LeetCode-Java/146.%20LRU%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
-    <id>http://sunyang.xyz/2019/11/04/LeetCode-Java/146. LRU缓存机制/</id>
-    <published>2019-11-04T13:12:20.000Z</published>
-    <updated>2019-11-13T09:14:01.659Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。</p>
-<p>获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。<br>写入数据 put(key, value) - 如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。</p>
-<p>进阶:</p>
-<p>你是否可以在 O(1) 时间复杂度内完成这两种操作？</p>
-<p>示例:</p>
-<pre><code>LRUCache cache = new LRUCache( 2 /* 缓存容量 */ );
-
-cache.put(1, 1);
-cache.put(2, 2);
-cache.get(1);       // 返回  1
-cache.put(3, 3);    // 该操作会使得密钥 2 作废
-cache.get(2);       // 返回 -1 (未找到)
-cache.put(4, 4);    // 该操作会使得密钥 1 作废
-cache.get(1);       // 返回 -1 (未找到)
-cache.get(3);       // 返回  3
-cache.get(4);       // 返回  4
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="自己实现双向链表-HashMap"><a href="#自己实现双向链表-HashMap" class="headerlink" title="自己实现双向链表+HashMap"></a>自己实现双向链表+HashMap</h4><p>每个节点存前后节点指针，同时将节点存入HashMap以便在O(1)时间内完成访问。</p>
-<pre><code class="Java">class LRUCache {
-    class Node {
-        int key;
-        int value;
-        Node pre;
-        Node next;
-        Node(int k, int v) {
-            key = k;
-            value = v;
-            pre = null;
-            next = null;
-        }
-    }
-
-    Map&lt;Integer, Node&gt; map;
-    int capacity;
-    Node head;
-    Node tail;
-
-    public LRUCache(int capacity) {
-        this.map = new HashMap&lt;Integer, Node&gt;();
-        this.capacity = capacity;
-    }
-
-    public int get(int key) {
-        if(!map.containsKey(key)) return -1;
-        Node cur = map.get(key);
-        if(cur != head) {
-            cur.pre.next = cur.next;
-            if(cur != tail) {
-                cur.next.pre = cur.pre;
-            }
-            else tail = cur.pre;
-            cur.pre = null;
-            cur.next = head;
-            head.pre = cur;
-            head = cur;
-        }
-
-        return cur.value;
-    }
-
-    public void put(int key, int value) {
-        if(map.containsKey(key)) {
-            this.get(key);
-            map.get(key).value = value;
-            return;
-        }
-        Node cur = new Node(key, value);
-        cur.next = head;
-        head = cur;
-        if(map.size() == 0) {
-            tail = cur;
-        }
-        else {
-            cur.next.pre = cur;
-            if(map.size() &gt;= capacity) {
-                map.remove(tail.key);
-                tail = tail.pre;
-                tail.next = null;
-            }
-        }
-
-        map.put(key, cur);
-        return;
-    }
-}
-
-/**
- * Your LRUCache object will be instantiated and called as such:
- * LRUCache obj = new LRUCache(capacity);
- * int param_1 = obj.get(key);
- * obj.put(key,value);
- */
-</code></pre>
-<p>代码中要考虑首尾节点情况，显得有些啰嗦。可以先加入首尾两个节点，之后就无需判断了。</p>
-<pre><code class="Java"> import java.util.Hashtable;
-public class LRUCache {
-
-  class DLinkedNode {
-    int key;
-    int value;
-    DLinkedNode prev;
-    DLinkedNode next;
-  }
-
-  private void addNode(DLinkedNode node) {
-    /**
-     * Always add the new node right after head.
-     */
-    node.prev = head;
-    node.next = head.next;
-
-    head.next.prev = node;
-    head.next = node;
-  }
-
-  private void removeNode(DLinkedNode node){
-    /**
-     * Remove an existing node from the linked list.
-     */
-    DLinkedNode prev = node.prev;
-    DLinkedNode next = node.next;
-
-    prev.next = next;
-    next.prev = prev;
-  }
-
-  private void moveToHead(DLinkedNode node){
-    /**
-     * Move certain node in between to the head.
-     */
-    removeNode(node);
-    addNode(node);
-  }
-
-  private DLinkedNode popTail() {
-    /**
-     * Pop the current tail.
-     */
-    DLinkedNode res = tail.prev;
-    removeNode(res);
-    return res;
-  }
-
-  private Hashtable&lt;Integer, DLinkedNode&gt; cache =
-          new Hashtable&lt;Integer, DLinkedNode&gt;();
-  private int size;
-  private int capacity;
-  private DLinkedNode head, tail;
-
-  public LRUCache(int capacity) {
-    this.size = 0;
-    this.capacity = capacity;
-
-    head = new DLinkedNode();
-    // head.prev = null;
-
-    tail = new DLinkedNode();
-    // tail.next = null;
-
-    head.next = tail;
-    tail.prev = head;
-  }
-
-  public int get(int key) {
-    DLinkedNode node = cache.get(key);
-    if (node == null) return -1;
-
-    // move the accessed node to the head;
-    moveToHead(node);
-
-    return node.value;
-  }
-
-  public void put(int key, int value) {
-    DLinkedNode node = cache.get(key);
-
-    if(node == null) {
-      DLinkedNode newNode = new DLinkedNode();
-      newNode.key = key;
-      newNode.value = value;
-
-      cache.put(key, newNode);
-      addNode(newNode);
-
-      ++size;
-
-      if(size &gt; capacity) {
-        // pop the tail
-        DLinkedNode tail = popTail();
-        cache.remove(tail.key);
-        --size;
-      }
-    } else {
-      // update the value.
-      node.value = value;
-      moveToHead(node);
-    }
-  }
-}
-
-/**
- * LRUCache 对象会以如下语句构造和调用:
- * LRUCache obj = new LRUCache(capacity);
- * int param_1 = obj.get(key);
-</code></pre>
-<blockquote>
-<p>LRU，最近最少使用，是一种页面置换算法，选择最近最久没有使用的页面予以淘汰。该算法赋予每个页面一个访问字段，用来记录一个页面自上次被访问以来所经历的时间 t，当须淘汰一个页面时，选择现有页面中其 t 值最大的，即最近最少使用的页面予以淘汰。<br>从程序运行的原理来看，最近最少使用算法是比较接近理想的一种页面置换算法，这种算法既充分利用了内存中页面调用的历史信息，又正确反映了程序的局部问题。  </p>
-<p>硬件支持  </p>
-<ul>
-<li>寄存器<br>为了记录某进程在内存中各页的使用情况，须为每个在内存中的页面配置一个移位寄存器，可表示为<br>R = Rn-1 Rn-2 Rn-3 … R2 R1 R0<br>当进程访问某物理块时，要将相应寄存器的 R n -1 位置成 1。此时，定时信号将每隔一定时间(例如 100 ms)将寄存器右移一位。 如果我们把 n 位寄存器的数看做是一个整数， 那么，具有最小数值的寄存器所对应的页面，就是最近最久未使用的页面。</li>
-<li>栈<br>可利用一个特殊的栈来保存当前使用的各个页面的页面号。每当进程访问某页面时，便将该页面的页面号从栈中移出，将它压入栈顶。因此，栈顶始终是最新被访问页面的编号，而栈底则是最近最久未使用页面的页面号。</li>
-</ul>
-<p>在进程运行过程中，若其所要访问的页面不在内存而需把它们调入内存，但内存已无空闲空间时，为了保证该进程能正常运行，系统必须从内存中调出一页程序或数据送磁盘的对换区中。但应将哪个页面调出，须根据一定的算法来确定。通常，把选择换出页面的算法称为页面置换算法(Page-Replacement Algorithms)。</p>
-<p>其他页面置换算法</p>
-<ul>
-<li>最佳置换算法OPT<br>这个算法唯一的一个问题就是它无法实现。当缺页发生时，操作系统无法知道各个页面下一次是在什么时候被访问。虽然这个算法不可能实现，但是最佳页面置换算法可以用于对可实现算法的性能进行衡量比较。</li>
-<li>先进先出置换算法FIFO<br>这种算法的实质是，总是选择在主存中停留时间最长（即最老）的一页置换，即先进入内存的页，先退出内存。理由是：最早调入内存的页，其不再被使用的可能性比刚调入内存的可能性大。建立一个FIFO队列，收容所有在内存中的页。被置换页面总是在队列头上进行。当一个页面被放入内存时，就把它插在队尾上。这种算法只是在按线性顺序访问地址空间时才是理想的，否则效率不高。因为那些常被访问的页，往往在主存中也停留得最久，结果它们因变“老”而不得不被置换出去。<br>FIFO的另一个缺点是，它有一种异常现象，即在增加存储块的情况下，反而使缺页中断率增加了。当然，导致这种异常现象的页面走向实际上是很少见的。</li>
-<li>最少使用置换算法LFU<br>该置换算法选择在之前时期使用最少的页面作为淘汰页。由于存储器具有较高的访问速度，例如100 ns，在1 ms时间内可能对某页面连续访问成千上万次，因此，通常不能直接利用计数器来记录某页被访问的次数，而是采用移位寄存器方式。每次访问某页时，便将该移位寄存器的最高位置1，再每隔一定时间(例如100 ns)右移一次。这样，在最近一段时间使用最少的页面将是∑Ri最小的页。</li>
-</ul>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>142. 环形链表 II</title>
-    <link href="http://sunyang.xyz/2019/10/31/LeetCode-Java/142.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%20II/"/>
-    <id>http://sunyang.xyz/2019/10/31/LeetCode-Java/142. 环形链表 II/</id>
-    <published>2019-10-31T03:12:20.000Z</published>
-    <updated>2019-11-13T09:14:05.111Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
-<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
-<p>说明：不允许修改给定的链表。  </p>
-<p>进阶：<br>你是否可以不用额外空间解决此题？</p>
-<p>图见<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/" target="_blank" rel="external">leetcode</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-哈希表"><a href="#方法一-哈希表" class="headerlink" title="方法一 哈希表"></a>方法一 哈希表</h4><pre><code class="Java">/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
-    public ListNode detectCycle(ListNode head) {
-        Set&lt;ListNode&gt; set = new HashSet&lt;&gt;();
-        ListNode temp = head;
-        while(temp != null) {
-            if(set.contains(temp)) return temp;
-            else {
-                set.add(temp);
-                temp = temp.next;
-            }
-        }
-        return null;
-    }
-}
-</code></pre>
-<h4 id="方法二-快慢指针-双指针"><a href="#方法二-快慢指针-双指针" class="headerlink" title="方法二 快慢指针+双指针 ***"></a>方法二 快慢指针+双指针 ***</h4><p>有三个节点需要注意: 起始节点(head), 环的入口节点(输出结果), 相遇的节点(快慢指针求的)</p>
-<p>我们要证明 : 初始点到环的入口的步数 等于 相遇点到环入口的步数</p>
-<p>我们令, 初始点到入口为 s, 入口到相遇点 m, 环的周长为 r</p>
-<p>我们只需证明: s == r - m</p>
-<p>首先我们假设,慢指针走了 k 步到相遇点, 那么快指针就是 2k 步,所以我们有 2k - k = nr 即 k = nr(慢指针还没到环,快指针已经转了好几圈)</p>
-<p>还有, s = k - m</p>
-<p>得 : s = nr - m ==&gt; s == (n - 1) r + (r - m)</p>
-<p>得证!</p>
-<pre><code class="Java">public class Solution {
-    public ListNode detectCycle(ListNode head) {
-        if(head == null || head.next == null) return null;
-        ListNode slow = head, fast = head;
-        while(fast != null &amp;&amp; fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if(slow == fast) break;
-        }
-        if(fast == null || fast.next == null) return null;
-        ListNode p = head, q = fast;
-        while(p != q) {
-            p = p.next;
-            q = q.next;
-        }
-        return p;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。&lt;/p&gt;
-&lt;p&gt;为了表示给定链
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>141. 环形链表</title>
-    <link href="http://sunyang.xyz/2019/10/31/LeetCode-Java/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/"/>
-    <id>http://sunyang.xyz/2019/10/31/LeetCode-Java/141. 环形链表/</id>
-    <published>2019-10-31T03:12:20.000Z</published>
-    <updated>2019-11-13T09:14:08.118Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个链表，判断链表中是否有环。</p>
-<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
-<p>详见<a href="https://leetcode-cn.com/problems/linked-list-cycle/" target="_blank" rel="external">leetcode</a>  </p>
-<p>进阶：</p>
-<p>你能用 O(1)（即，常量）内存解决此问题吗？</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-哈希表"><a href="#方法一-哈希表" class="headerlink" title="方法一 哈希表"></a>方法一 哈希表</h4><pre><code class="Java">/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
-    public boolean hasCycle(ListNode head) {
-        Set&lt;ListNode&gt; set = new HashSet&lt;&gt;();
-        while(head != null) {
-            if(set.contains(head)) return true;
-            set.add(head);
-            head = head.next;
-        }
-        return false;
-    }
-}
-</code></pre>
-<h4 id="方法二-快慢指针"><a href="#方法二-快慢指针" class="headerlink" title="方法二 快慢指针 ***"></a>方法二 快慢指针 ***</h4><p>慢指针每次走一步，快指针每次走两步。如果有循环，就好像圆形跑道，快指针一定会追上慢指针。  </p>
-<pre><code class="Java">/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
-public class Solution {
-    public boolean hasCycle(ListNode head) {
-        if(head == null || head.next == null) return false;
-        ListNode slow = head, fast = head.next;
-        while(slow != fast) {
-            if(fast == null || fast.next == null) return false;
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-        return true;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个链表，判断链表中是否有环。&lt;/p&gt;
-&lt;p&gt;为了表示给定链表中的环，我们使用整数 pos 来表示链表尾
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>139. 单词拆分</title>
-    <link href="http://sunyang.xyz/2019/10/31/LeetCode-Java/139.%20%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/"/>
-    <id>http://sunyang.xyz/2019/10/31/LeetCode-Java/139. 单词拆分/</id>
-    <published>2019-10-31T01:12:20.000Z</published>
-    <updated>2019-11-13T09:14:11.480Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。</p>
-<p>说明：</p>
-<ul>
-<li>拆分时可以重复使用字典中的单词。</li>
-<li>你可以假设字典中没有重复的单词。  </li>
-</ul>
-<p>示例 1：</p>
-<pre><code>输入: s = &quot;leetcode&quot;, wordDict = [&quot;leet&quot;, &quot;code&quot;]
-输出: true
-解释: 返回 true 因为 &quot;leetcode&quot; 可以被拆分成 &quot;leet code&quot;。
-</code></pre><p>示例 2：</p>
-<pre><code>输入: s = &quot;applepenapple&quot;, wordDict = [&quot;apple&quot;, &quot;pen&quot;]
-输出: true
-解释: 返回 true 因为 &quot;applepenapple&quot; 可以被拆分成 &quot;apple pen apple&quot;。
-     注意你可以重复使用字典中的单词。
-</code></pre><p>示例 3：</p>
-<pre><code>输入: s = &quot;catsandog&quot;, wordDict = [&quot;cats&quot;, &quot;dog&quot;, &quot;sand&quot;, &quot;and&quot;, &quot;cat&quot;]
-输出: false
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-暴力"><a href="#方法一-暴力" class="headerlink" title="方法一  暴力"></a>方法一  暴力</h4><p>超时  </p>
-<pre><code class="Java">class Solution {
-    public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
-        if(s.length() == 0) return true;
-        Set&lt;String&gt; set = new HashSet&lt;&gt;(wordDict);
-        for(int i=1; i&lt;=s.length(); i++) {
-            String sub = s.substring(0, i);
-            if(set.contains(sub) &amp;&amp; wordBreak(s.substring(i), wordDict)) return true;
-        }
-        return false;
-    }
-}
-</code></pre>
-<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
-<li>时间复杂度：O(n^n)。考虑最坏情况 ss = aaaaaaa 。每一个前缀都在字典中，此时回溯树的复杂度会达到 n^n。</li>
-<li>空间复杂度：O(n)。回溯树的深度最深达到 n 。</li>
-</ul>
-<h4 id="方法二-记忆化回溯（剪枝）"><a href="#方法二-记忆化回溯（剪枝）" class="headerlink" title="方法二 记忆化回溯（剪枝）"></a>方法二 记忆化回溯（剪枝）</h4><p>在先前的方法中，我们看到许多函数调用都是冗余的，也就是我们会对相同的字符串调用多次回溯函数。为了避免这种情况，我们可以使用记忆化的方法，其中一个 memo 数组会被用来保存子问题的结果。每当访问到已经访问过的后缀串，直接用 memo 数组中的值返回而不需要继续调用函数。</p>
-<p>通过记忆化，许多冗余的子问题可以极大被优化，回溯树得到了剪枝，因此极大减小了时间复杂度。</p>
-<p>memo记录从i位置到结束的字符串能否满足条件<br>注意boolen[]默认为false，而Boolen[]默认为null</p>
-<pre><code class="Java">class Solution {
-    public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
-        Set&lt;String&gt; wordSet = new HashSet&lt;&gt;(wordDict);
-        Boolean[] memo = new Boolean[s.length()];
-        return helper(s, wordSet, memo, 0);
-    }
-
-    public boolean helper(String s, Set&lt;String&gt; wordSet, Boolean[] memo, int start) {
-        if(start == s.length()) return true;
-        if(memo[start] != null) return memo[start];
-        for(int i=start; i&lt;s.length(); i++) {
-            if(wordSet.contains(s.substring(start, i+1)) &amp;&amp; helper(s, wordSet, memo, i+1)) {
-                memo[start] = true;
-                return true;
-            }
-        }
-        memo[start] = false;
-        return false;
-    }
-}
-</code></pre>
-<h5 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
-<li><p>时间复杂度：O(n^2)。回溯树的大小最多达到 n^2。</p>
-</li>
-<li><p>空间复杂度：O(n)。回溯树的深度可以达到 n 级别。</p>
-</li>
-</ul>
-<h4 id="方法三-动态规划"><a href="#方法三-动态规划" class="headerlink" title="方法三 动态规划"></a>方法三 动态规划</h4><pre><code class="Java">class Solution {
-    public boolean wordBreak(String s, List&lt;String&gt; wordDict) {
-        Set&lt;String&gt; set = new HashSet&lt;&gt;(wordDict);
-        boolean[] dp = new boolean[s.length()+1];
-        dp[0] = true;
-        for(int i=1; i&lt;=s.length(); i++) {
-            for(int j=0; j&lt;i; j++) {
-                if(dp[j] &amp;&amp; set.contains(s.substring(j, i))) {
-                    dp[i] = true;
-                    break;
-                }
-            }
-        }
-        return dp[s.length()];
-    }
-}
-</code></pre>
-<h5 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
-<li><p>时间复杂度：O(n^2)。求出 dp 数组需要两重循环。</p>
-</li>
-<li><p>空间复杂度：O(n)。 dp 数组的长度是 n+1。</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>300. 最长上升子序列</title>
-    <link href="http://sunyang.xyz/2019/10/30/LeetCode-Java/300.%20%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>http://sunyang.xyz/2019/10/30/LeetCode-Java/300. 最长上升子序列/</id>
-    <published>2019-10-30T13:12:20.000Z</published>
-    <updated>2019-11-13T09:14:15.436Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>给定一个无序的整数数组，找到其中最长上升子序列的长度。</p>
-<p>示例:</p>
-<pre><code>输入: [10,9,2,5,3,7,101,18]
-输出: 4 
-解释: 最长的上升子序列是 [2,3,7,101]，它的长度是 4。
-</code></pre><p>说明:</p>
-<ul>
-<li>可能会有多种最长上升子序列的组合，你只需要输出对应的长度即可。</li>
-<li>你算法的时间复杂度应该为 O(n^2) 。  </li>
-</ul>
-<p>进阶: 你能将算法的时间复杂度降低到 O(n log n) 吗?</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-从后往前动态规划"><a href="#方法一-从后往前动态规划" class="headerlink" title="方法一  从后往前动态规划"></a>方法一  从后往前动态规划</h4><p>自己的方法，更容易理解<br>arr[]中存 以该点值作为起始元素，直到最后的最长递增序列的长度<br>[1, 2, 4, 3] 的arr为 [3, 2, 1, 1]</p>
-<pre><code class="Java">class Solution {
-    public int lengthOfLIS(int[] nums) {
-        int res = 0;
-        int[] arr = new int[nums.length];
-        for(int i=nums.length-1; i&gt;=0; i--) {
-            int curLen = 1;
-            for(int j=i+1; j&lt;nums.length; j++) {
-                if(nums[j] &gt; nums[i] &amp;&amp; arr[j]+1&gt; curLen) curLen = arr[j] + 1;
-            }
-            res = Math.max(res, curLen);
-            arr[i] = curLen;
-        }
-        return res;
-    }
-}
-</code></pre>
-<h4 id="方法二-从前往后动态规划"><a href="#方法二-从前往后动态规划" class="headerlink" title="方法二  从前往后动态规划"></a>方法二  从前往后动态规划</h4><p>方法类似，dp[]中存 以该点为结尾元素的最长递增序列的长度。<br>[1, 2, 4, 3] 的dp为 [1, 2, 3, 3]</p>
-<pre><code class="Java">class Solution {
-    public int lengthOfLIS(int[] nums) {
-        int[] dp = new int[nums.length];
-        int res = 0;
-        Arrays.fill(dp, 1);
-        for(int i=0; i&lt;nums.length; i++) {
-            for(int j=0; j&lt;i; j++) {
-                if(nums[j] &lt; nums[i]) dp[i] = Math.max(dp[i], dp[j]+1);
-            }
-            res = Math.max(res, dp[i]);
-        }
-        return res;
-    }
-}
-</code></pre>
-<h4 id="方法三-动态规划-二分法"><a href="#方法三-动态规划-二分法" class="headerlink" title="方法三  动态规划+二分法 ****"></a>方法三  动态规划+二分法 ****</h4><p>题目要求时间复杂度O(nlogn)，联想二分法  </p>
-<p>遍历数组，构造递增序列，每来一个新元素m，都要更新序列：二分法查找该递增序列，找出大于新元素m的第一个元素的位置，如果找到，则替换，此时并不会延长序列。只有在新元素大于序列中所有元素时，才会延长序列，将新元素插入序列尾部。</p>
-<pre><code class="Java">class Solution {
-    public int lengthOfLIS(int[] nums) {
-        int[] dp = new int[nums.length];
-        int res = 0;
-        for(int num : nums) {
-            int i=0, j=res;
-            while(i &lt; j) {
-                int m = (i+j)/2;
-                if(dp[m] &lt; num) i = m+1;
-                else j = m;
-            }
-            dp[i] = num;
-            if(i == res) res++;
-        }
-        return res;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;给定一个无序的整数数组，找到其中最长上升子序列的长度。&lt;/p&gt;
-&lt;p&gt;示例:&lt;/p&gt;
-&lt;pre&gt;&lt;cod
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>136. 只出现一次的数字</title>
-    <link href="http://sunyang.xyz/2019/10/30/LeetCode-Java/136.%20%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/"/>
-    <id>http://sunyang.xyz/2019/10/30/LeetCode-Java/136. 只出现一次的数字/</id>
-    <published>2019-10-30T04:12:20.000Z</published>
-    <updated>2019-11-13T09:14:18.821Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<p>说明：</p>
-<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:</p>
-<pre><code>输入: [2,2,1]
+<pre><code>输入: [3,4,-1,1]
+输出: 2
+</code></pre><p>示例 3:</p>
+<pre><code>输入: [7,8,9,11,12]
 输出: 1
-</code></pre><p>示例 2:</p>
-<pre><code>输入: [4,1,2,1,2]
-输出: 4
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-HashMap"><a href="#方法一-HashMap" class="headerlink" title="方法一 HashMap"></a>方法一 HashMap</h4><p>要注意map的方法使用:<br>getOrDefault(), keySet(), values(), entrySet(), getKey(), getValue()  </p>
-<pre><code class="Java">class Solution {
-    public int singleNumber(int[] nums) {
-        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
-        for(int i : nums) {
-            map.put(i, map.getOrDefault(i, 0) + 1);
+</code></pre><p>说明:</p>
+<p>你的算法的时间复杂度应为O(n)，并且只能使用常数级别的空间。</p>
+<h2 id="题解-数移到数组对应位置"><a href="#题解-数移到数组对应位置" class="headerlink" title="题解  数移到数组对应位置"></a>题解  数移到数组对应位置</h2><pre><code class="Java">class Solution {
+    public int firstMissingPositive(int[] nums) {
+        int i = 0;
+        while(i &lt; nums.length) {
+            if(nums[i]&gt;=1 &amp;&amp; nums[i]&lt;=nums.length &amp;&amp; nums[i] != nums[nums[i]-1]) swap(nums, i, nums[i]-1);
+            else i++;
         }
-        // for(Map.Entry&lt;Integer, Integer&gt; entry: map.entrySet()) {
-        //     if(entry.getValue() == 1) return entry.getKey();
-        // }
-        for(int k : map.keySet()) {
-            if(map.get(k) == 1) return k;
+
+        for(i=0; i&lt;nums.length; i++) {
+            if(nums[i] != i+1) return i+1;
         }
-        return -1;
+        return i+1;
     }
-}
-</code></pre>
-<h4 id="方法二-HashSet"><a href="#方法二-HashSet" class="headerlink" title="方法二 HashSet"></a>方法二 HashSet</h4><p>set要比map方法用时短</p>
-<pre><code class="Java">class Solution {
-    public int singleNumber(int[] nums) {
-        Set&lt;Integer&gt; set = new HashSet&lt;&gt;();
-        for(int i:nums) {
-            if(!set.contains(i)) set.add(i);
-            else set.remove(i);
-        }
-        for(int i:set) return i;
-        return -1;
-    }
-}
-</code></pre>
-<h4 id="方法三-异或"><a href="#方法三-异或" class="headerlink" title="方法三 异或 ***"></a>方法三 异或 ***</h4><p>唯一满足空间复杂度O(1)的方法<br>这种元素两两相同的题目，可以考虑异或！！！</p>
-<pre><code class="Java">class Solution {
-    public int singleNumber(int[] nums) {
-        int res = 0;
-        for(int i: nums) res ^= i;
-        return res;
+
+    public void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
 </code></pre>
@@ -1533,7 +283,9 @@ public class Solution {
     
     <summary type="html">
     
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。&lt;/p
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个未排序的整数数组，找出其中没有出现的最小的正整数。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;pre&gt;&lt;c
     
     </summary>
     
@@ -1547,84 +299,103 @@ public class Solution {
   </entry>
   
   <entry>
-    <title>128. 最长连续序列</title>
-    <link href="http://sunyang.xyz/2019/10/30/LeetCode-Java/128.%20%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/"/>
-    <id>http://sunyang.xyz/2019/10/30/LeetCode-Java/128. 最长连续序列/</id>
-    <published>2019-10-30T03:52:20.000Z</published>
-    <updated>2019-11-13T09:14:23.922Z</updated>
+    <title>347. 前 K 个高频元素</title>
+    <link href="http://sunyang.xyz/2019/11/27/LeetCode-Java/347.%20%E5%89%8D%20K%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/"/>
+    <id>http://sunyang.xyz/2019/11/27/LeetCode-Java/347. 前 K 个高频元素/</id>
+    <published>2019-11-27T12:51:20.000Z</published>
+    <updated>2019-12-04T02:24:55.024Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个未排序的整数数组，找出最长连续序列的长度。</p>
-<p>要求算法的时间复杂度为 O(n)。</p>
-<p>示例:</p>
-<pre><code>输入: [100, 4, 200, 1, 3, 2]
-输出: 4
-解释: 最长连续序列是 [1, 2, 3, 4]。它的长度为 4。
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这些数字用一个 HashSet 保存（或者用 Python 里的 Set），实现 O(1) 时间的查询，同时，我们只对 当前数字 - 1 不在哈希表里的数字，作为连续序列的第一个数字去找对应的最长序列，这是因为其他数字一定已经出现在了某个序列里。</p>
-<pre><code class="Java">class Solution {
-    public int longestConsecutive(int[] nums) {
-        Set&lt;Integer&gt; set = new HashSet&lt;&gt;();
-        int res = 0;
-        for(int i : nums) set.add(i);
-        for(int i : set) {
-            if(!set.contains(i-1)) {
-                int len = 1;
-                while(set.contains(i+1)) {
-                    i++;
-                    len++;
-                }
-                res = Math.max(res, len);
-            }
-        }
-        return res;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个未排序的整数数组，找出最长连续序列的长度。&lt;/p&gt;
-&lt;p&gt;要求算法的时间复杂度为 O(n)。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>124. 二叉树中的最大路径和</title>
-    <link href="http://sunyang.xyz/2019/10/28/LeetCode-Java/124.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
-    <id>http://sunyang.xyz/2019/10/28/LeetCode-Java/124. 二叉树中的最大路径和/</id>
-    <published>2019-10-28T07:52:20.000Z</published>
-    <updated>2019-11-13T09:14:26.968Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个非空二叉树，返回其最大路径和。</p>
-<p>本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径至少包含一个节点，且不一定经过根节点。</p>
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个非空的整数数组，返回其中出现频率前 k 高的元素。</p>
 <p>示例 1:</p>
-<pre><code>输入: [1,2,3]
-
-       1
-      / \
-     2   3
-
-输出: 6
+<pre><code>输入: nums = [1,1,1,2,2,3], k = 2
+输出: [1,2]
 </code></pre><p>示例 2:</p>
-<pre><code>输入: [-10,9,20,null,null,15,7]
+<pre><code>输入: nums = [1], k = 1
+输出: [1]
+</code></pre><p>说明：</p>
+<ul>
+<li>你可以假设给定的 k 总是合理的，且 1 ≤ k ≤ 数组中不相同的元素的个数。  </li>
+<li>你的算法的时间复杂度必须优于 O(n log n) , n 是数组的大小。</li>
+</ul>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><pre><code class="Java">class Solution {
+  public List&lt;Integer&gt; topKFrequent(int[] nums, int k) {
+    // build hash map : character and how often it appears
+    HashMap&lt;Integer, Integer&gt; count = new HashMap();
+    for (int n: nums) {
+      count.put(n, count.getOrDefault(n, 0) + 1);
+    }
 
-   -10
-   / \
-  9  20
-    /  \
-   15   7
+    // init heap &#39;the less frequent element first&#39;
+    PriorityQueue&lt;Integer&gt; heap =
+            new PriorityQueue&lt;Integer&gt;((n1, n2) -&gt; count.get(n1) - count.get(n2));  // 这里可以直接用map的值
 
-输出: 42
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="不够优雅"><a href="#不够优雅" class="headerlink" title="不够优雅"></a>不够优雅</h4><pre><code class="Java">/**
+    // keep k top frequent elements in the heap
+    for (int n: count.keySet()) {
+      heap.add(n);
+      if (heap.size() &gt; k)
+        heap.poll();
+    }
+
+    // build output list
+    List&lt;Integer&gt; top_k = new LinkedList();
+    while (!heap.isEmpty())
+      top_k.add(heap.poll());
+    Collections.reverse(top_k);
+    return top_k;
+  }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个非空的整数数组，返回其中出现频率前 k 高的元素。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;pre&gt;&lt;c
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>337. 打家劫舍 III</title>
+    <link href="http://sunyang.xyz/2019/11/27/LeetCode-Java/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III/"/>
+    <id>http://sunyang.xyz/2019/11/27/LeetCode-Java/337. 打家劫舍 III/</id>
+    <published>2019-11-27T11:51:20.000Z</published>
+    <updated>2019-12-04T02:24:50.622Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。</p>
+<p>计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。</p>
+<p>示例 1:</p>
+<pre><code>输入: [3,2,3,null,3,null,1]
+
+     3
+    / \
+   2   3
+    \   \ 
+     3   1
+
+输出: 7 
+解释: 小偷一晚能够盗取的最高金额 = 3 + 3 + 1 = 7.
+</code></pre><p>示例 2:</p>
+<pre><code>输入: [3,4,5,1,3,null,1]
+
+     3
+    / \
+   4   5
+  / \   \ 
+ 1   3   1
+
+输出: 9
+解释: 小偷一晚能够盗取的最高金额 = 4 + 5 = 9.
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><pre><code class="Java">/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -1634,48 +405,18 @@ public class Solution {
  * }
  */
 class Solution {
-    int maxSum = Integer.MIN_VALUE;
-
-    public int maxPathSum(TreeNode root) {
-        helper(root);
-        return maxSum;
+    public int rob(TreeNode root) {
+        int[] results = helper(root);
+        return results[0];
     }
 
-    // 返回包含根节点的单条路（直路）的最大值，并同时计算包含根节点的两条路（弯路）的最大值
-    public int helper(TreeNode root) {
-        int max = 0;
-        if(root == null) return Integer.MIN_VALUE;
-        int l = helper(root.left), r = helper(root.right);
-        if(l &lt;= 0 &amp;&amp; r &lt;= 0) {
-            max = root.val;
-            maxSum = Math.max(maxSum, max);
-            return root.val;
-        }
-        if(l &gt; 0 &amp;&amp; r &gt; 0) {
-            max = root.val + l + r;
-        }
-        else {
-            max = Math.max(l, r) + root.val;
-        }
-        maxSum = Math.max(maxSum, max);
-        return Math.max(l, r) + root.val;
-    }
-}
-</code></pre>
-<h4 id="优雅"><a href="#优雅" class="headerlink" title="优雅"></a>优雅</h4><pre><code class="Java">class Solution {
-    int res = Integer.MIN_VALUE;
-
-    public int maxPathSum(TreeNode root) {
-        helper(root);
-        return res;
-    }
-
-    private int helper(TreeNode root) {
-        if (root == null) return 0;
-        int left = helper(root.left);
-        int right = helper(root.right);
-        res = Math.max(left + right + root.val, res);
-        return Math.max(0, Math.max(left, right) + root.val);
+    public int[] helper(TreeNode root) {
+        if(root == null) return new int[]{0, 0};
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        int x = Math.max(root.val + left[1] + right[1], left[0]+right[0]);
+        int y = left[0] + right[0];
+        return new int[]{x, y};  // x 表示当前可偷最大值， y 表示不偷当前节点的最大值
     }
 }
 </code></pre>
@@ -1683,8 +424,7 @@ class Solution {
     
     <summary type="html">
     
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个非空二叉树，返回其最大路径和。&lt;/p&gt;
-&lt;p&gt;本题中，路径被定义为一条从树中任意节点出发，达到任意节
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为
     
     </summary>
     
@@ -1698,13 +438,458 @@ class Solution {
   </entry>
   
   <entry>
-    <title>121. 买卖股票的最佳时机</title>
-    <link href="http://sunyang.xyz/2019/10/24/LeetCode-Java/121.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"/>
-    <id>http://sunyang.xyz/2019/10/24/LeetCode-Java/121. 买卖股票的最佳时机/</id>
-    <published>2019-10-24T02:52:20.000Z</published>
-    <updated>2019-11-13T09:14:29.986Z</updated>
+    <title>213. 打家劫舍 II</title>
+    <link href="http://sunyang.xyz/2019/11/27/LeetCode-Java/213.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20II/"/>
+    <id>http://sunyang.xyz/2019/11/27/LeetCode-Java/213. 打家劫舍 II/</id>
+    <published>2019-11-27T10:51:20.000Z</published>
+    <updated>2019-12-04T02:24:46.466Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都围成一圈，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。</p>
+<p>示例 1:</p>
+<pre><code>输入: [2,3,2]
+输出: 3
+解释: 你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: [1,2,3,1]
+输出: 4
+解释: 你可以先偷窃 1 号房屋（金额 = 1），然后偷窃 3 号房屋（金额 = 3）。
+     偷窃到的最高金额 = 1 + 3 = 4 。
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><pre><code class="Java">class Solution {
+    public int rob(int[] nums) {
+        int max = 0;
+        if(nums.length &lt;= 3) {
+            for(int num : nums) max = Math.max(max, num);
+            return max;
+        }
+
+        // 1号被偷，则最后一房不能被偷，只能遍历到nums[nums.length-2]，且2号也不能被偷，前2套最大值也是nums[0]
+        int first = nums[0], second = nums[0];
+        for(int i=2; i&lt;nums.length-1; i++) {
+            int temp = second;
+            second = Math.max(second, first+nums[i]);
+            first = temp;
+        }
+        max = second;
+
+        // 1号不被偷，可以直接从2号遍历到最后
+        first = 0;
+        second = nums[1];
+        for(int i=2; i&lt;nums.length; i++) {
+            int temp = second;
+            second = Math.max(second, first+nums[i]);
+            first = temp;
+        }
+        max = Math.max(max, second);
+        return max;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都围成一圈，这意味着第一
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>877. 石子游戏</title>
+    <link href="http://sunyang.xyz/2019/11/22/LeetCode-Java/877.%20%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F/"/>
+    <id>http://sunyang.xyz/2019/11/22/LeetCode-Java/877. 石子游戏/</id>
+    <published>2019-11-22T01:51:20.000Z</published>
+    <updated>2019-12-04T02:23:39.261Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。</p>
+<p>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。</p>
+<p>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。</p>
+<p>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
+<p>示例：</p>
+<pre><code>输入：[5,3,4,5]
+输出：true
+解释：
+亚历克斯先开始，只能拿前 5 颗或后 5 颗石子 。
+假设他取了前 5 颗，这一行就变成了 [3,4,5] 。
+如果李拿走前 3 颗，那么剩下的是 [4,5]，亚历克斯拿走后 5 颗赢得 10 分。
+如果李拿走后 5 颗，那么剩下的是 [3,4]，亚历克斯拿走后 4 颗赢得 9 分。
+这表明，取前 5 颗石子对亚历克斯来说是一个胜利的举动，所以我们返回 true 。
+</code></pre><p>提示：</p>
+<ol>
+<li>2 &lt;= piles.length &lt;= 500</li>
+<li>piles.length 是偶数。</li>
+<li>1 &lt;= piles[i] &lt;= 500</li>
+<li>sum(piles) 是奇数。</li>
+</ol>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-动态规划"><a href="#方法一-动态规划" class="headerlink" title="方法一 动态规划"></a>方法一 动态规划</h4><p>dp数组， dp[i][j][0]表示i-j的石头，先手能拿的最高分，<br>dp[i][j][1]表示后手能拿的最高分。  </p>
+<p>状态转移方程</p>
+<pre><code class="Python">dp[i][j].fir = max(piles[i] + dp[i+1][j].sec, piles[j] + dp[i][j-1].sec)
+dp[i][j].fir = max(    选择最左边的石头堆     ,     选择最右边的石头堆     )
+# 解释：我作为先手，面对 piles[i...j] 时，有两种选择：
+# 要么我选择最左边的那一堆石头，然后面对 piles[i+1...j]
+# 但是此时轮到对方，相当于我变成了后手；
+# 要么我选择最右边的那一堆石头，然后面对 piles[i...j-1]
+# 但是此时轮到对方，相当于我变成了后手。
+
+if 先手选择左边:
+    dp[i][j].sec = dp[i+1][j].fir
+if 先手选择右边:
+    dp[i][j].sec = dp[i][j-1].fir
+# 解释：我作为后手，要等先手先选择，有两种情况：
+# 如果先手选择了最左边那堆，给我剩下了 piles[i+1...j]
+# 此时轮到我，我变成了先手；
+# 如果先手选择了最右边那堆，给我剩下了 piles[i...j-1]
+# 此时轮到我，我变成了先手。
+</code></pre>
+<p>初始状态</p>
+<pre><code class="Python">dp[i][j].fir = piles[i]
+dp[i][j].sec = 0
+其中 0 &lt;= i == j &lt; n
+# 解释：i 和 j 相等就是说面前只有一堆石头 piles[i]
+# 那么显然先手的得分为 piles[i]
+# 后手没有石头拿了，得分为 0
+</code></pre>
+<p>详细解析见<a href="https://leetcode-cn.com/problems/stone-game/solution/jie-jue-bo-yi-wen-ti-de-dong-tai-gui-hua-tong-yong/" target="_blank" rel="external">leetcode</a></p>
+<p>完整代码如下：</p>
+<pre><code class="Java">class Solution {
+    public boolean stoneGame(int[] piles) {
+        int n = piles.length;
+        int[][][] dp = new int[n][n][2];
+        for(int i=0; i&lt;n; i++) {
+            dp[i][i][0] = piles[i];
+        }
+
+        for(int l=n-1; l&gt;0; l--) {
+            for(int i=0; i&lt;l; i++) {
+                int j = n-l+i;
+                int left = piles[i] + dp[i+1][j][1];
+                int right = piles[j] + dp[i][j-1][1];
+                if(left &gt;= right) {
+                    dp[i][j][0] = left;
+                    dp[i][j][1] = dp[i+1][j][0];
+                }
+                else {
+                    dp[i][j][0] = right;
+                    dp[i][j][1] = dp[i][j-1][0];
+                }
+            }
+        }
+
+        if(dp[0][n-1][0] &gt; dp[0][n-1][1]) return true;
+        else return false;
+    }
+}
+</code></pre>
+<h4 id="方法二-数学方法"><a href="#方法二-数学方法" class="headerlink" title="方法二 数学方法"></a>方法二 数学方法</h4><p>数学降维打击！</p>
+<p>显然，亚历克斯总是赢得 2 堆时的游戏。 通过一些努力，我们可以获知她总是赢得 4 堆时的游戏。</p>
+<p>如果亚历克斯最初获得第一堆，她总是可以拿第三堆。 如果她最初取到第四堆，她总是可以取第二堆。第一 + 第三，第二 + 第四 中的至少一组是更大的，所以她总能获胜。</p>
+<p>我们可以将这个想法扩展到 N 堆的情况下。设第一、第三、第五、第七桩是白色的，第二、第四、第六、第八桩是黑色的。 亚历克斯总是可以拿到所有白色桩或所有黑色桩，其中一种颜色具有的石头数量必定大于另一种颜色的。</p>
+<p>因此，亚历克斯总能赢得比赛。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>28. 实现 strStr()</title>
+    <link href="http://sunyang.xyz/2019/11/22/LeetCode-Java/28.%20%E5%AE%9E%E7%8E%B0%20strStr()/"/>
+    <id>http://sunyang.xyz/2019/11/22/LeetCode-Java/28. 实现 strStr()/</id>
+    <published>2019-11-21T18:51:20.000Z</published>
+    <updated>2019-12-04T02:23:42.840Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>实现 strStr() 函数。</p>
+<p>给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。</p>
+<p>示例 1:</p>
+<pre><code>输入: haystack = &quot;hello&quot;, needle = &quot;ll&quot;
+输出: 2
+</code></pre><p>示例 2:</p>
+<pre><code>输入: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;
+输出: -1
+</code></pre><p>说明:</p>
+<p>当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。</p>
+<p>对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>KMP算法<br>构造next[]数组和字符串匹配过程相同，唯一区别是构造next会初始化next[0] = -1, 然后i从1开始； 而字符串匹配，i从0开始。</p>
+<p>详见算法导论P589</p>
+<pre><code class="Java">class Solution {
+    public int strStr(String haystack, String needle) {
+        if(needle.length() == 0) return 0;
+        int[] next = getNextArray(needle);
+        int k = -1;
+        for(int i=0; i&lt;haystack.length(); i++) {
+            while(k &gt;= 0 &amp;&amp; haystack.charAt(i) != needle.charAt(k+1)) k = next[k];
+            if(haystack.charAt(i) == needle.charAt(k+1)) k = k+1;
+            if(k == needle.length()-1) return i-k;
+        }
+        return -1;
+    }
+
+    public int[] getNextArray(String p) {
+        int[] next = new int[p.length()];
+        next[0] = -1;
+        int k = -1;
+        for(int i=1; i&lt;p.length(); i++) {
+            while(k &gt;= 0 &amp;&amp; p.charAt(k+1) != p.charAt(i)) k = next[k];
+            if(p.charAt(k+1) == p.charAt(i)) k = k+1;
+            next[i] = k;
+        }
+        return next;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;实现 strStr() 函数。&lt;/p&gt;
+&lt;p&gt;给定一个 haystack 字符串和一个 needle 字
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>322. 零钱兑换</title>
+    <link href="http://sunyang.xyz/2019/11/21/LeetCode-Java/322.%20%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/"/>
+    <id>http://sunyang.xyz/2019/11/21/LeetCode-Java/322. 零钱兑换/</id>
+    <published>2019-11-21T11:51:20.000Z</published>
+    <updated>2019-12-04T02:23:34.975Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。</p>
+<p>示例 1:</p>
+<pre><code>输入: coins = [1, 2, 5], amount = 11
+输出: 3 
+解释: 11 = 5 + 5 + 1
+</code></pre><p>示例 2:</p>
+<pre><code>输入: coins = [2], amount = 3
+输出: -1
+</code></pre><p>说明:<br>你可以认为每种硬币的数量是无限的。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>动态规划<br>这个<a href="https://leetcode-cn.com/problems/coin-change/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-wei-lai-bu-ke/" target="_blank" rel="external">题解</a>把动态规划的套路分析得很好。可以看一下递归和动归的复杂度分析。</p>
+<pre><code class="Java">class Solution {
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount+1];
+        for(int i : coins) if(i &lt;= amount) dp[i] = 1;
+        for(int i=1; i&lt;amount+1; i++) {
+            if(dp[i] == 0) {
+                int minCount = Integer.MAX_VALUE;
+                for(int coin : coins) {
+                    if(i-coin &gt; 0 &amp;&amp; dp[i-coin] != Integer.MAX_VALUE) minCount = Math.min(minCount, dp[i-coin]+1);
+                }
+                dp[i] = minCount;
+            }
+        }
+        if(dp[amount] == Integer.MAX_VALUE) return -1;
+        return dp[amount];
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>301. 删除无效的括号</title>
+    <link href="http://sunyang.xyz/2019/11/21/LeetCode-Java/301.%20%E5%88%A0%E9%99%A4%E6%97%A0%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"/>
+    <id>http://sunyang.xyz/2019/11/21/LeetCode-Java/301. 删除无效的括号/</id>
+    <published>2019-11-21T07:51:20.000Z</published>
+    <updated>2019-12-04T02:23:29.430Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>删除最小数量的无效括号，使得输入的字符串有效，返回所有可能的结果。</p>
+<p>说明: 输入可能包含了除 ( 和 ) 以外的字符。</p>
+<p>示例 1:</p>
+<pre><code>输入: &quot;()())()&quot;
+输出: [&quot;()()()&quot;, &quot;(())()&quot;]
+</code></pre><p>示例 2:</p>
+<pre><code>输入: &quot;(a)())()&quot;
+输出: [&quot;(a)()()&quot;, &quot;(a())()&quot;]
+</code></pre><p>示例 3:</p>
+<pre><code>输入: &quot;)(&quot;
+输出: [&quot;&quot;]
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>非最优解，先留着！！！</p>
+<p>回溯，也算DFS</p>
+<pre><code class="Java">class Solution {
+    Set&lt;String&gt; result;
+    int minRemovedCount;
+
+    public List&lt;String&gt; removeInvalidParentheses(String s) {
+        result = new HashSet&lt;&gt;();
+        reset(Integer.MAX_VALUE);
+        StringBuilder curS = new StringBuilder();
+        backtrack(s, 0, 0, 0, 0, curS);
+        return new ArrayList&lt;String&gt;(result);
+    }
+
+    public void reset(int min) {
+        result.clear();
+        minRemovedCount = min;
+    }
+
+    public void backtrack(String s, int index, int leftCount, int rightCount, int removedCount, StringBuilder curS) {
+        if(index == s.length()) {
+            if(leftCount == rightCount) {
+                if(removedCount == minRemovedCount) result.add(curS.toString());
+                else if(removedCount &lt; minRemovedCount) {
+                    reset(removedCount);
+                    result.add(curS.toString());
+                }
+            }
+        }
+        else {
+            char curC = s.charAt(index);
+            int length = curS.length();
+            if(curC != &#39;(&#39; &amp;&amp; curC != &#39;)&#39;) { // 不是括号，不需要删除，直接存入
+                curS.append(curC);
+                backtrack(s, index+1, leftCount, rightCount, removedCount, curS);
+                curS.deleteCharAt(length);
+            }
+            else {
+                // 遍历所有情况，第一种是先删除该括号
+                backtrack(s, index+1, leftCount, rightCount, removedCount+1, curS);
+
+                // 第二种是左括号存入（因为总有可能最终解包含该括号）
+                if(curC == &#39;(&#39;) {
+                    curS.append(curC);
+                    backtrack(s, index+1, leftCount+1, rightCount, removedCount, curS);
+                    curS.deleteCharAt(length);
+                }
+
+                // 第三种是右括号，只有leftCount &gt; rightCount时才能接受右括号
+                else {
+                    if(leftCount &gt; rightCount) {
+                        curS.append(curC);
+                        backtrack(s, index+1, leftCount, rightCount+1, removedCount, curS);
+                        curS.deleteCharAt(length);
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;删除最小数量的无效括号，使得输入的字符串有效，返回所有可能的结果。&lt;/p&gt;
+&lt;p&gt;说明: 输入可能包含了
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>309. 股票问题通用解题思路</title>
+    <link href="http://sunyang.xyz/2019/11/20/LeetCode-Java/309.%20%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98%E9%80%9A%E7%94%A8%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/"/>
+    <id>http://sunyang.xyz/2019/11/20/LeetCode-Java/309. 股票问题通用解题思路/</id>
+    <published>2019-11-20T03:12:20.000Z</published>
+    <updated>2019-12-04T02:23:02.595Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="external">买卖股票的最佳时机</a><br>只限一次交易</p>
+<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="external">买卖股票的最佳时机 II</a><br>不限交易次数（无数次）</p>
+<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank" rel="external">买卖股票的最佳时机 III</a><br>最多两次交易</p>
+<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="external">买卖股票的最佳时机 IV</a><br>最多k次交易</p>
+<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="external">最佳买卖股票时机含冷冻期</a><br>无数次交易，有一天冷冻期</p>
+<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank" rel="external">买卖股票的最佳时机含手续费</a><br>无数次交易，需要手续费</p>
+<p>以上股票类问题都可以用状态机解决，第2题有更简单的方法，所以在此不套用模板，题目如下： </p>
+<h2 id="122-买卖股票的最佳时机-II"><a href="#122-买卖股票的最佳时机-II" class="headerlink" title="122. 买卖股票的最佳时机 II"></a>122. 买卖股票的最佳时机 II</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p>
+<p>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例 1:</p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+</code></pre><p>示例 3:</p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre><pre><code class="Java">class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices.length &lt;=1) return 0;
+        int[] diff = new int[prices.length-1];
+        for(int i=0; i&lt;prices.length-1; i++) {
+            diff[i] = prices[i+1] - prices[i];
+        }
+        int max = 0;
+        for(int i : diff) {
+            if(i &gt; 0) max += i;
+        }
+        return max;
+    }
+}
+</code></pre>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><pre><code class="Java">class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices.length &lt;=1) return 0;
+        int[] diff = new int[prices.length-1];
+        for(int i=0; i&lt;prices.length-1; i++) {
+            diff[i] = prices[i+1] - prices[i];
+        }
+        int max = 0;
+        for(int i : diff) {
+            if(i &gt; 0) max += i;
+        }
+        return max;
+    }
+}
+</code></pre>
+<p>其余题目，解题思路均类似。  </p>
+<h2 id="通用思路"><a href="#通用思路" class="headerlink" title="通用思路 !!!"></a>通用思路 !!!</h2><p>如果次数限制为有限值，如1、2等，可以用变量s1/s2/s3/s4表示第一次买入、第一次卖出、第二次买入、第二次卖出…<br>初始值均为 Integer.MIN_VALUE<br>后面的值均与前面比较更新，详见121、123、188三道题。  </p>
+<p>若交易次数为无限次，2*k &gt; n，用上面思路也可以，但是多浪费了空间，只需要O(n)存储就行，而不需要O(k)。此时可用二维数组s[n][2]， 其中s[i][0]表示第i天不持股，s[i][1]表示第i天持股（不同于有限次的第一次买入、卖出，这里用持股不持股更好理解）。但用数组初始化更复杂一点，不是全部MIN_VALUE！！！<br>详见309、714两道题。</p>
+<h2 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121. 买卖股票的最佳时机"></a>121. 买卖股票的最佳时机</h2><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
 <p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
 <p>注意你不能在买入股票前卖出股票。</p>
 <p>示例 1:</p>
@@ -1716,51 +901,154 @@ class Solution {
 <pre><code>输入: [7,6,4,3,1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="两次遍历"><a href="#两次遍历" class="headerlink" title="两次遍历"></a>两次遍历</h4><pre><code class="Java">class Solution {
+</code></pre><h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><pre><code class="Java">class Solution {
     public int maxProfit(int[] prices) {
         if(prices.length &lt;= 1) return 0;
-        int[] profits = new int[prices.length];
-        profits[0] = 0;
-        for(int i = 1; i &lt; profits.length; i++) {
-            profits[i] = prices[i] - prices[i-1];
+        int s1 = -prices[0], s2 = Integer.MIN_VALUE;
+        for(int i=1; i&lt;prices.length; i++) {
+            s1 = Math.max(s1, -prices[i]);
+            s2 = Math.max(s2, s1+prices[i]);
+        }
+        return s2;
+    }
+}
+</code></pre>
+<h2 id="123-买卖股票的最佳时机-III"><a href="#123-买卖股票的最佳时机-III" class="headerlink" title="123. 买卖股票的最佳时机 III"></a>123. 买卖股票的最佳时机 III</h2><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你最多可以完成 两笔 交易。</p>
+<p>注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例 1:</p>
+<pre><code>输入: [3,3,5,0,0,3,1,4]
+输出: 6
+解释: 在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，这笔交易所能获得利润 = 3-0 = 3 。
+     随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4-1 = 3 。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。   
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。   
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+</code></pre><p>示例 3:</p>
+<pre><code>输入: [7,6,4,3,1] 
+输出: 0 
+解释: 在这个情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre><h4 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h4><pre><code class="Java">class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices.length &lt;= 1) return 0;
+        int s1 = Integer.MIN_VALUE, s2 = Integer.MIN_VALUE, s3 = Integer.MIN_VALUE, s4 = Integer.MIN_VALUE;
+        for(int i=0; i&lt;prices.length; i++) {
+            s1 = Math.max(s1, -prices[i]);
+            s2 = Math.max(s2, s1 + prices[i]);
+            s3 = Math.max(s3, s2 - prices[i]);
+            s4 = Math.max(s4, s3 + prices[i]);
+        }
+        return s4;
+    }
+}
+</code></pre>
+<h2 id="188-买卖股票的最佳时机-IV"><a href="#188-买卖股票的最佳时机-IV" class="headerlink" title="188. 买卖股票的最佳时机 IV"></a>188. 买卖股票的最佳时机 IV</h2><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你最多可以完成 k 笔交易。</p>
+<p>注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例 1:</p>
+<pre><code>输入: [2,4,1], k = 2
+输出: 2
+解释: 在第 1 天 (股票价格 = 2) 的时候买入，在第 2 天 (股票价格 = 4) 的时候卖出，这笔交易所能获得利润 = 4-2 = 2 。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: [3,2,6,5,0,3], k = 2
+输出: 7
+解释: 在第 2 天 (股票价格 = 2) 的时候买入，在第 3 天 (股票价格 = 6) 的时候卖出, 这笔交易所能获得利润 = 6-2 = 4 。
+     随后，在第 5 天 (股票价格 = 0) 的时候买入，在第 6 天 (股票价格 = 3) 的时候卖出, 这笔交易所能获得利润 = 3-0 = 3 。
+</code></pre><h4 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h4><pre><code class="Java">class Solution {
+    public int maxProfit(int k, int[] prices) {
+        if(prices.length &lt;= 1 || k == 0) return 0;
+        if(2*k &gt;= prices.length) return maxProfit_k_inf(prices);  // k过大会超过内存，发现此时相当于交易不限次数
+        int[] s = new int[2*k];
+        s[0] = -prices[0];
+        for(int i=0; i&lt;2*k; i++) {
+            s[i] = Integer.MIN_VALUE;
+        }
+
+        for(int i=0; i&lt;prices.length; i++) {
+            s[0] = Math.max(s[0], -prices[i]);
+            for(int j=1; j&lt;2*k; j++) {
+                if(j%2 == 1) s[j] = Math.max(s[j], s[j-1]+prices[i]);
+                else s[j] = Math.max(s[j], s[j-1]-prices[i]);
+            }
+        }
+        return Math.max(0, s[2*k-1]);
+    }
+
+    public int maxProfit_k_inf(int[] prices) {
+        int[] diff = new int[prices.length-1];
+        for(int i=0; i&lt;diff.length; i++) {
+            diff[i] = prices[i+1] - prices[i];
         }
         int max = 0;
-        int cur = 0;
-        for(int i = 1; i &lt; profits.length; i++) {
-            cur += profits[i];
-            if(cur &lt;= 0) cur = 0;
-            else max = Math.max(max, cur);
+        for(int i=0; i&lt;diff.length; i++) {
+            if(diff[i] &gt;= 0) max += diff[i];
         }
         return max;
     }
 }
 </code></pre>
-<h4 id="一次遍历"><a href="#一次遍历" class="headerlink" title="一次遍历"></a>一次遍历</h4><pre><code class="Java">class Solution {
+<hr>
+<h2 id="309-最佳买卖股票时机含冷冻期"><a href="#309-最佳买卖股票时机含冷冻期" class="headerlink" title="309. 最佳买卖股票时机含冷冻期"></a>309. 最佳买卖股票时机含冷冻期</h2><p>给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。​</p>
+<p>设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:</p>
+<ul>
+<li>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</li>
+<li>卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。</li>
+</ul>
+<p>示例:</p>
+<pre><code>输入: [1,2,3,0,2]
+输出: 3 
+解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]
+</code></pre><h4 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h4><pre><code class="Java">class Solution {
     public int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0) return 0;
-        int cur_max = 0;
-        int res = 0;
-        for (int i = 1; i &lt; prices.length; i++) {
-            cur_max += prices[i] - prices[i - 1];
-            cur_max = Math.max(0, cur_max);
-            res = Math.max(cur_max, res);
+        int n = prices.length;
+        if(n &lt;= 1) return 0;
+        int[][] s = new int[n][2];
+        s[0][1] = -prices[0];
+        s[0][0] = 0;
+        s[1][1] = Math.max(s[0][1], -prices[1]);
+        s[1][0] = Math.max(0, prices[1]+s[0][1]);
+        for(int i=2; i&lt;n; i++) {
+            s[i][1] = Math.max(s[i-1][1], s[i-2][0]-prices[i]);
+            // 冷冻期应该 -2
+            s[i][0] = Math.max(s[i-1][0], s[i-1][1]+prices[i]);
         }
-        return res;
+        return s[n-1][0];
     }
 }
 </code></pre>
-<h4 id="峰和谷"><a href="#峰和谷" class="headerlink" title="峰和谷"></a>峰和谷</h4><p>使我们感兴趣的点是上图中的峰和谷。我们需要找到最小的谷之后的最大的峰。<br>我们可以维持两个变量——minprice 和 maxprofit，它们分别对应迄今为止所得到的最小的谷值和最大的利润（卖出价格与最低价格之间的最大差值）。</p>
-<pre><code class="Java">public class Solution {
-    public int maxProfit(int prices[]) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
-        for (int i = 0; i &lt; prices.length; i++) {
-            if (prices[i] &lt; minprice)
-                minprice = prices[i];
-            else if (prices[i] - minprice &gt; maxprofit)
-                maxprofit = prices[i] - minprice;
+<h2 id="714-买卖股票的最佳时机含手续费"><a href="#714-买卖股票的最佳时机含手续费" class="headerlink" title="714. 买卖股票的最佳时机含手续费"></a>714. 买卖股票的最佳时机含手续费</h2><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个整数数组 prices，其中第 i 个元素代表了第 i 天的股票价格 ；非负整数 fee 代表了交易股票的手续费用。</p>
+<p>你可以无限次地完成交易，但是你每次交易都需要付手续费。如果你已经购买了一个股票，在卖出它之前你就不能再继续购买股票了。</p>
+<p>返回获得利润的最大值。</p>
+<p>示例 1:</p>
+<pre><code>输入: prices = [1, 3, 2, 8, 4, 9], fee = 2
+输出: 8
+解释: 能够达到的最大利润:  
+在此处买入 prices[0] = 1
+在此处卖出 prices[3] = 8
+在此处买入 prices[4] = 4
+在此处卖出 prices[5] = 9
+总利润: ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
+</code></pre><p>注意:</p>
+<ul>
+<li>0 &lt; prices.length &lt;= 50000.</li>
+<li>0 &lt; prices[i] &lt; 50000.</li>
+<li>0 &lt;= fee &lt; 50000.</li>
+</ul>
+<h4 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h4><pre><code class="Java">class Solution {
+    public int maxProfit(int[] prices, int fee) {
+        int n = prices.length;
+        if(n &lt;= 1) return 0;
+        int[][] s = new int[n][2];
+        s[0][0] = 0;
+        s[0][1] = -prices[0]-fee;
+        for(int i=1; i&lt;n; i++) {
+            s[i][0] = Math.max(s[i-1][0], s[i-1][1]+prices[i]);
+            s[i][1] = Math.max(s[i-1][1], s[i-1][0]-prices[i]-fee);
         }
-        return maxprofit;
+        return s[n-1][0];
     }
 }
 </code></pre>
@@ -1768,8 +1056,8 @@ class Solution {
     
     <summary type="html">
     
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。&lt;/p&gt;
-&lt;p&gt;如果你最多只允许完成一笔交易（即
+      &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;买卖股票的最佳时机&lt;/a&gt;&lt;br&gt;只限一次交易&lt;/p&gt;
+&lt;p
     
     </summary>
     
@@ -1783,32 +1071,315 @@ class Solution {
   </entry>
   
   <entry>
-    <title>114. 二叉树展开为链表</title>
-    <link href="http://sunyang.xyz/2019/10/24/LeetCode-Java/114.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/"/>
-    <id>http://sunyang.xyz/2019/10/24/LeetCode-Java/114. 二叉树展开为链表/</id>
-    <published>2019-10-24T01:52:20.000Z</published>
-    <updated>2019-11-13T09:14:32.707Z</updated>
+    <title>309. 最佳买卖股票时机含冷冻期</title>
+    <link href="http://sunyang.xyz/2019/11/19/LeetCode-Java/309.%20%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/"/>
+    <id>http://sunyang.xyz/2019/11/19/LeetCode-Java/309. 最佳买卖股票时机含冷冻期/</id>
+    <published>2019-11-19T03:12:20.000Z</published>
+    <updated>2019-12-04T02:22:59.489Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉树，原地将它展开为链表。</p>
-<p>例如，给定二叉树</p>
-<pre><code>    1
-   / \
-  2   5
- / \   \
-3   4   6
-</code></pre><p>将其展开为：</p>
-<pre><code>1
- \
-  2
-   \
-    3
-     \
-      4
-       \
-        5
-         \
-          6
-</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-递归（自己的）"><a href="#方法一-递归（自己的）" class="headerlink" title="方法一 递归（自己的）"></a>方法一 递归（自己的）</h4><pre><code class="Java">/**
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。​</p>
+<p>设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:</p>
+<p>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。<br>卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。<br>示例:</p>
+<pre><code>输入: [1,2,3,0,2]
+输出: 3 
+解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="菜鸡的解题过程"><a href="#菜鸡的解题过程" class="headerlink" title="菜鸡的解题过程"></a>菜鸡的解题过程</h3><h4 id="1-暴力"><a href="#1-暴力" class="headerlink" title="1. 暴力"></a>1. 暴力</h4><p>子数组遍历+递归<br>复杂度就不提了。。。绝对超时算法</p>
+<pre><code class="Java">class Solution {
+    public int maxProfit(int[] prices) {
+        return helper(prices, 0);
+    }
+
+    public int helper(int[] prices, int start) {
+        int max = 0;
+        for(int i=start; i&lt;prices.length-1; i++) {
+            for(int j=i+1; j&lt;prices.length; j++) {
+                int curProfit = prices[j] - prices[i];
+                if(curProfit &lt;= 0) max = Math.max(max, helper(prices, j+2));
+                else  max = Math.max(max, curProfit + helper(prices, j+2));
+            }
+        }
+        return max;
+    }
+}
+</code></pre>
+<h4 id="2-暴力的优化"><a href="#2-暴力的优化" class="headerlink" title="2. 暴力的优化"></a>2. 暴力的优化</h4><p>注意到递归过程会重复计算，所以采用记忆数组存从第i个元素到最后的最大利润。<br>也算动态规划吧。  </p>
+<pre><code class="Java">class Solution {
+    int[] maxProfit;
+
+    public int maxProfit(int[] prices) {
+        maxProfit = new int[prices.length];
+        Arrays.fill(maxProfit, -1);
+        return helper(prices, 0);
+    }
+
+    public int helper(int[] prices, int start) {
+        if(start &gt; prices.length-1) return 0;
+        if(maxProfit[start] != -1) return maxProfit[start];
+        int max = 0;
+        for(int i=start; i&lt;prices.length-1; i++) {
+            for(int j=i+1; j&lt;prices.length; j++) {
+                int curProfit = prices[j] - prices[i];
+                if(curProfit &lt;= 0) max = Math.max(max, helper(prices, j+2));
+                else  max = Math.max(max, curProfit + helper(prices, j+2));
+            }
+        }
+        maxProfit[start] = max;
+        return max;
+    }
+}
+</code></pre>
+<p>结果遇到一个更大的数组，还是超时。。。</p>
+<h4 id="3-继续优化"><a href="#3-继续优化" class="headerlink" title="3. 继续优化"></a>3. 继续优化</h4><p>子数组遍历很暴力，会遍历所有子数组，而通常第一次买入的时间不会太靠后。可以通过iMax在遍历过程中逐渐减小，从而避免后面的子数组遍历。当某个区间的利润为正时，第一次买入的位置只会在此区间最大值之前，故可去掉后面的i。</p>
+<pre><code class="Java">class Solution {
+    int[] maxProfit;
+
+    public int maxProfit(int[] prices) {
+        maxProfit = new int[prices.length];
+        Arrays.fill(maxProfit, -1);
+        return helper(prices, 0);
+    }
+
+    public int helper(int[] prices, int start) {
+        if(start &gt; prices.length-1) return 0;
+        if(maxProfit[start] != -1) return maxProfit[start];
+        int max = 0;
+        int iMax = prices.length-1;
+        for(int i=start; i&lt;iMax; i++) {
+            for(int j=i+1; j&lt;prices.length; j++) {
+                int curProfit = prices[j] - prices[i];
+                if(curProfit &lt;= 0) max = Math.max(max, helper(prices, j+2));
+                else  {
+                    iMax = Math.min(iMax, j+2);
+                    max = Math.max(max, curProfit + helper(prices, j+2));
+                }
+            }
+        }
+        maxProfit[start] = max;
+        return max;
+    }
+}
+</code></pre>
+<p>终于通过了，但复杂度还是很高。。。</p>
+<h2 id="正确做法请见-309-股票问题通用解题思路-！！！"><a href="#正确做法请见-309-股票问题通用解题思路-！！！" class="headerlink" title="正确做法请见 309. 股票问题通用解题思路 ！！！"></a>正确做法请见 309. 股票问题通用解题思路 ！！！</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。​&lt;/p&gt;
+&lt;p&gt;设计一个算法计算出最大利
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>287. 寻找重复数</title>
+    <link href="http://sunyang.xyz/2019/11/18/LeetCode-Java/287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0/"/>
+    <id>http://sunyang.xyz/2019/11/18/LeetCode-Java/287. 寻找重复数/</id>
+    <published>2019-11-18T03:12:20.000Z</published>
+    <updated>2019-12-04T02:22:55.449Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。</p>
+<p>示例 1:</p>
+<pre><code>输入: [1,3,4,2,2]
+输出: 2
+</code></pre><p>示例 2:</p>
+<pre><code>输入: [3,1,3,4,2]
+输出: 3
+</code></pre><p>说明：</p>
+<ol>
+<li>不能更改原数组（假设数组是只读的）。</li>
+<li>只能使用额外的 O(1) 的空间。</li>
+<li>时间复杂度小于 O(n2) 。</li>
+<li>数组中只有一个重复的数字，但它可能不止重复出现一次。</li>
+</ol>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-鸽巢原理-二分法"><a href="#方法一-鸽巢原理-二分法" class="headerlink" title="方法一 鸽巢原理+二分法"></a>方法一 鸽巢原理+二分法</h4><pre><code class="Java">class Solution {
+    public int findDuplicate(int[] nums) {
+        int left = 1, right = nums.length-1;  // left 和 right 不是数组索引，是数字的取值范围
+        while(left &lt; right) {
+            int mid = left + (right - left) / 2;
+            int cur = 0;
+            for(int num : nums) {
+                if(num &lt;= mid) cur++;
+            }
+            if(cur &lt;= mid) left = mid + 1;
+            else right = mid;
+        }
+        return left;
+    }
+}
+</code></pre>
+<p>时间复杂度：O(nlogn)</p>
+<p>空间复杂度：O(1)</p>
+<h4 id="方法二-快慢指针-环入口"><a href="#方法二-快慢指针-环入口" class="headerlink" title="方法二 快慢指针+环入口"></a>方法二 快慢指针+环入口</h4><p><strong>数组有重复元素的话，通过索引号移动会有环出现。</strong></p>
+<p>图见<a href="https://leetcode-cn.com/problems/find-the-duplicate-number/solution/er-fen-fa-huan-ru-kou-by-powcai/" target="_blank" rel="external">leetcode</a></p>
+<pre><code class="Java">class Solution {
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[nums[0]];  // 如果出发点相同，则下面slow重回出发点时，fast不用动。否则，fast也要走一步。
+        while(fast != slow) {  
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }
+        slow = nums[0];
+        fast = nums[fast];
+        while(slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+}
+</code></pre>
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(1)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>279. 完全平方数</title>
+    <link href="http://sunyang.xyz/2019/11/18/LeetCode-Java/279.%20%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/"/>
+    <id>http://sunyang.xyz/2019/11/18/LeetCode-Java/279. 完全平方数/</id>
+    <published>2019-11-18T02:12:20.000Z</published>
+    <updated>2019-12-04T02:22:51.859Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。</p>
+<p>示例 1:</p>
+<pre><code>输入: n = 12
+输出: 3 
+解释: 12 = 4 + 4 + 4.
+</code></pre><p>示例 2:</p>
+<pre><code>输入: n = 13
+输出: 2
+解释: 13 = 4 + 9.
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>动态规划  </p>
+<pre><code class="Java">class Solution {
+    public int numSquares(int n) {
+        int[] dp = new int[n+1];
+        for(int i=0; i&lt;=n; i++) dp[i] = i;
+        for(int i=0; i&lt;=n; i++) {
+            for(int j=1; j*j&lt;=i; j++) {
+                dp[i] = Math.min(dp[i-j*j]+1, dp[i]);
+            }
+        }
+        return dp[n];
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>240. 搜索二维矩阵 II</title>
+    <link href="http://sunyang.xyz/2019/11/16/LeetCode-Java/240.%20%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%20II/"/>
+    <id>http://sunyang.xyz/2019/11/16/LeetCode-Java/240. 搜索二维矩阵 II/</id>
+    <published>2019-11-16T13:12:20.000Z</published>
+    <updated>2019-12-04T02:22:47.327Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target。该矩阵具有以下特性：</p>
+<p>每行的元素从左到右升序排列。<br>每列的元素从上到下升序排列。<br>示例:</p>
+<p>现有矩阵 matrix 如下：</p>
+<pre><code>[
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+</code></pre><p>给定 target = 5，返回 true。</p>
+<p>给定 target = 20，返回 false。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解 ***"></a>题解 ***</h2><p>这种排序矩阵，可以从左下角或右上角开始搜索，类似小于向上，大于向右，类似二叉排序树。</p>
+<pre><code class="Java">class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix.length == 0 || matrix[0].length == 0) return false;
+        int m = matrix.length, n = matrix[0].length;
+        int i = m-1, j = 0;
+        while(i &gt;= 0 &amp;&amp; i &lt; m &amp;&amp; j &lt; n &amp;&amp; j &gt;= 0) {
+            if(matrix[i][j] == target) return true;
+            if(matrix[i][j] &gt; target) i--;
+            else j++;
+        }
+        return false;
+    }
+}
+</code></pre>
+<p>时间复杂度 O(m+n)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target。该矩阵具有以下特性：
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>236. 二叉树的最近公共祖先</title>
+    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/236.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/236. 二叉树的最近公共祖先/</id>
+    <published>2019-11-15T09:12:20.000Z</published>
+    <updated>2019-12-04T02:22:36.794Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]</p>
+<p>图见<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank" rel="external">leetcode</a> </p>
+<p>示例 1:</p>
+<pre><code>输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+输出: 3
+解释: 节点 5 和节点 1 的最近公共祖先是节点 3。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+输出: 5
+解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
+</code></pre><p>说明:</p>
+<ul>
+<li>所有节点的值都是唯一的。</li>
+<li>p、q 为不同节点且均存在于给定的二叉树中。</li>
+</ul>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><pre><code class="Java">/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -1818,122 +1389,416 @@ class Solution {
  * }
  */
 class Solution {
-    public void flatten(TreeNode root) {
-        helper(root);
-        return;
-    }
-
-    // 直接在root上展开，返回值是展开链表的最后一个节点
-    public TreeNode helper(TreeNode root) {
-        if(root == null) return null;
-        if(root.left == null &amp;&amp; root.right == null) return root;
-        TreeNode temp1 = helper(root.left);
-        TreeNode temp2 = root.right;
-        if(temp1 != null) {
-            root.right = root.left;
-            root.left = null;
-            temp1.right = temp2;
-        }
-        if(temp2 == null) return temp1;
-        else return helper(temp2);
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null || root == p || root == q) return root;
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if(left != null &amp;&amp; right != null) return root;
+        else if(left == null) return right;
+        else return left;
     }
 }
 </code></pre>
-<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>可以发现展开的顺序其实就是二叉树的先序遍历。算法和 94 题 中序遍历的 Morris 算法有些神似，我们需要两步完成这道题。</p>
-<ol>
-<li>将左子树插入到右子树的地方</li>
-<li>将原来的右子树接到左子树的最右边节点</li>
-<li>考虑新的右子树的根节点，一直重复上边的过程，直到新的右子树为 null  </li>
-</ol>
-<p>可以看图理解下这个过程。</p>
-<pre><code>   1
-   / \
-  2   5
- / \   \
-3   4   6
-
-//将 1 的左子树插入到右子树的地方
-    1
-     \
-      2         5
-     / \         \
-    3   4         6        
-//将原来的右子树接到左子树的最右边节点
-    1
-     \
-      2          
-     / \          
-    3   4  
-         \
-          5
-           \
-            6
-
- //将 2 的左子树插入到右子树的地方
-    1
-     \
-      2          
-       \          
-        3       4  
-                 \
-                  5
-                   \
-                    6   
-
- //将原来的右子树接到左子树的最右边节点
-    1
-     \
-      2          
-       \          
-        3      
-         \
-          4  
-           \
-            5
-             \
-              6
-</code></pre><pre><code class="Java">public void flatten(TreeNode root) {
-    while (root != null) { 
-        //左子树为 null，直接考虑下一个节点
-        if (root.left == null) {
-            root = root.right;
-        } else {
-            // 找左子树最右边的节点
-            TreeNode pre = root.left;
-            while (pre.right != null) {
-                pre = pre.right;
-            } 
-            //将原来的右子树接到左子树的最右边节点
-            pre.right = root.right;
-            // 将左子树插入到右子树的地方
-            root.right = root.left;
-            root.left = null;
-            // 考虑下一个节点
-            root = root.right;
-        }
-    }
-}
-</code></pre>
-<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><pre><code class="Java">private TreeNode pre = null;
-
-public void flatten(TreeNode root) {
-    if (root == null)
-        return;
-    flatten(root.right);
-    flatten(root.left);
-    root.right = pre;
-    root.left = null;
-    pre = root;
-}
-</code></pre>
-<p>解析详见<a href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--26/" target="_blank" rel="external">leetcode</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉树，原地将它展开为链表。&lt;/p&gt;
-&lt;p&gt;例如，给定二叉树&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
+&lt;p&gt;百度百科中最近公共祖先的定义为：“对
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>239. 滑动窗口最大值</title>
+    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/239.%20%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
+    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/239. 滑动窗口最大值/</id>
+    <published>2019-11-15T08:12:20.000Z</published>
+    <updated>2019-12-04T02:22:43.688Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ****"></a>题目描述 ****</h2><p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
+<p>返回滑动窗口中的最大值。</p>
+<p>示例:</p>
+<pre><code>输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+输出: [3,3,5,5,6,7] 
+解释: 
+
+  滑动窗口的位置                最大值
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+</code></pre><p>提示：</p>
+<p>你可以假设 k 总是有效的，在输入数组不为空的情况下，1 ≤ k ≤ 输入数组的大小。</p>
+<p>进阶：</p>
+<p>你能在线性时间复杂度内解决此题吗？</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-暴力"><a href="#方法一-暴力" class="headerlink" title="方法一 暴力"></a>方法一 暴力</h4><p>稍有优化</p>
+<pre><code class="Java">class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums.length == 0) return new int[0];
+        int[] result = new int[nums.length-k+1];
+        int maxIndex = -1;
+        for(int i=0; i&lt;nums.length-k+1; i++) {
+            if(maxIndex &gt;= i) {
+                if(nums[maxIndex] &lt;= nums[i+k-1]) maxIndex = i+k-1;
+                result[i] = nums[maxIndex];
+            }
+            else {
+                maxIndex = i;
+                for(int j=i; j&lt;= i+k-1; j++) 
+                    if(nums[maxIndex] &lt; nums[j]) maxIndex = j;
+                result[i] = nums[maxIndex];
+            }
+        }
+        return result;
+    }
+}
+</code></pre>
+<p>理论上最坏时间复杂度 O(Nk)</p>
+<h4 id="方法二-单调队列"><a href="#方法二-单调队列" class="headerlink" title="方法二 单调队列"></a>方法二 单调队列</h4><p>这是单调栈的改进，单调栈一头不动，另一头进栈。<br>但此题是滑动窗口，右边进栈同时左边会出栈，所以采用单调队列。</p>
+<pre><code class="Java">class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums.length == 0) return new int[0];
+        if(nums.length == 1) return nums;
+        int n = nums.length;
+        int[] result = new int[n-k+1];
+        Deque&lt;Integer&gt; dq = new ArrayDeque&lt;&gt;();
+        for(int i=0; i&lt;k; i++) {
+            while(!dq.isEmpty() &amp;&amp; nums[dq.getLast()] &lt;= nums[i]) dq.removeLast();
+            dq.addLast(i);
+        }
+        for(int i=0; i&lt;n-k+1; i++) {
+            while(!dq.isEmpty() &amp;&amp; nums[dq.getLast()] &lt;= nums[i+k-1]) dq.removeLast();
+            dq.addLast(i+k-1);
+            if(dq.getFirst() &lt; i) dq.removeFirst();
+            result[i] = nums[dq.getFirst()];
+        }
+        return result;
+    }
+}
+</code></pre>
+<h4 id="方法三-动态规划"><a href="#方法三-动态规划" class="headerlink" title="方法三 动态规划"></a>方法三 动态规划</h4><p>跟<a href="https://leetcode-cn.com/problems/product-of-array-except-self/" target="_blank" rel="external">238. 除自身以外数组的乘积</a>有点像。<br>将数组按窗口大小划分，从左往右找每个窗口最大值，从右往左找每个窗口最大值，则无论窗口在哪，都可找到最大值。  </p>
+<pre><code class="Java">class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums.length == 0) return new int[0];
+        if(k == 1) return nums;
+        int n = nums.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
+        for(int i=0; i&lt;n; i++) {
+            if(i % k == 0) left[i] = nums[i];
+            else left[i] = Math.max(left[i-1], nums[i]);
+        }
+
+        right[n-1] = nums[n-1];
+        for(int i=n-2; i&gt;= 0; i--) {
+            if((i+1)%k == 0) right[i] = nums[i];
+            else right[i] = Math.max(right[i+1], nums[i]);
+        }
+
+        int[] result = new int[n-k+1];
+        for(int i=0; i&lt;n-k+1; i++) {
+            result[i] = Math.max(left[i+k-1], right[i]);
+        }
+        return result;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>235. 二叉搜索树的最近公共祖先</title>
+    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/235.%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/235. 二叉搜索树的最近公共祖先/</id>
+    <published>2019-11-15T08:12:20.000Z</published>
+    <updated>2019-12-04T02:22:40.340Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
+<p>图见<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank" rel="external">leetcode</a> </p>
+<p>示例 1:</p>
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+</code></pre><p>说明:</p>
+<ul>
+<li>所有节点的值都是唯一的。</li>
+<li>p、q 为不同节点且均存在于给定的二叉搜索树中。</li>
+</ul>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-递归"><a href="#方法一-递归" class="headerlink" title="方法一 递归"></a>方法一 递归</h4><pre><code class="Java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(p.val &lt; root.val &amp;&amp; q.val &lt; root.val) return lowestCommonAncestor(root.left, p, q);
+        else if(p.val &gt; root.val &amp;&amp; q.val &gt; root.val) return lowestCommonAncestor(root.right, p, q);
+        else return root;
+    }
+}
+</code></pre>
+<h4 id="方法二-迭代"><a href="#方法二-迭代" class="headerlink" title="方法二 迭代"></a>方法二 迭代</h4><p>因为是搜索树，能够确定元素在哪个子树，所以不需要回溯，不需要栈，可以直接迭代。</p>
+<pre><code class="Java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while(root != null) {
+            if(root.val &gt; p.val &amp;&amp; root.val &gt; q.val) root = root.left;
+            else if(root.val &lt; p.val &amp;&amp; root.val &lt; q.val) root = root.right;
+            else return root;
+        }
+        return null;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
+&lt;p&gt;百度百科中最近公共祖先的定义为：
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>234. 回文链表</title>
+    <link href="http://sunyang.xyz/2019/11/14/LeetCode-Java/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/"/>
+    <id>http://sunyang.xyz/2019/11/14/LeetCode-Java/234. 回文链表/</id>
+    <published>2019-11-14T14:12:20.000Z</published>
+    <updated>2019-12-04T02:22:32.537Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 **"></a>题目描述 **</h2><p>请判断一个链表是否为回文链表。</p>
+<p>示例 1:</p>
+<pre><code>输入: 1-&gt;2
+输出: false
+</code></pre><p>示例 2:</p>
+<pre><code>输入: 1-&gt;2-&gt;2-&gt;1
+输出: true
+</code></pre><p>进阶：<br>你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="快慢指针-翻转后半部分链表"><a href="#快慢指针-翻转后半部分链表" class="headerlink" title="快慢指针 + 翻转后半部分链表"></a>快慢指针 + 翻转后半部分链表</h4><pre><code class="Java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        if(head == null || head.next == null) return true;
+        ListNode slow = head, fast = head;
+        while(fast != null &amp;&amp; fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        if(fast != null) {
+            slow = slow.next;
+        }
+        ListNode head2 = reverse(slow);
+        while(head2 != null) {
+            if(head.val != head2.val) return false;
+            head = head.next;
+            head2 = head2.next;
+        }
+        return true;
+    }
+
+    public ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        while(head != null) {
+            ListNode temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
+        }
+        return prev;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 **&quot;&gt;&lt;/a&gt;题目描述 **&lt;/h2&gt;&lt;p&gt;请判断一个链表是否为回文链表。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;输入: 1-&amp;gt;2
+
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>221. 最大正方形</title>
+    <link href="http://sunyang.xyz/2019/11/14/LeetCode-Java/221.%20%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/"/>
+    <id>http://sunyang.xyz/2019/11/14/LeetCode-Java/221. 最大正方形/</id>
+    <published>2019-11-14T13:12:20.000Z</published>
+    <updated>2019-12-04T02:22:28.369Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。</p>
+<pre><code>示例:
+
+输入: 
+
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+
+输出: 4
+</code></pre><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-暴力法"><a href="#方法一-暴力法" class="headerlink" title="方法一 暴力法"></a>方法一 暴力法</h4><p>对每个点，都向右向下扫描，找以该点为左上角的最大正方形。</p>
+<pre><code class="Java">class Solution {
+    public int maximalSquare(char[][] matrix) {
+        if(matrix.length == 0) return 0;
+        int m = matrix.length, n = matrix[0].length;
+        int maxS = 0;
+        for(int i=0; i&lt;m; i++) {
+            for(int j=0; j&lt;n; j++) {
+                if(matrix[i][j] == &#39;0&#39;) continue;
+                maxS = Math.max(maxS, curSquare(matrix, i, j));
+            }
+        }
+        return maxS;
+    }
+
+    public int curSquare(char[][] matrix, int i, int j) {
+        int m = matrix.length, n = matrix[0].length;
+        int curS = 1;
+        int max = Math.min(m-i, n-j);
+        for(int l=2; l&lt;=max; l++) {
+            for(int x=i+l-1, y=j; y&lt;=j+l-1; y++) {
+                if(matrix[x][y] == &#39;0&#39;) return curS;
+            }
+            for(int x=i, y=j+l-1; x&lt;=i+l-1; x++) {
+                if(matrix[x][y] == &#39;0&#39;) return curS;
+            }
+            curS = l * l;
+        }
+        return curS;
+    }
+
+}
+</code></pre>
+<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
+<li>时间复杂度 O((mn)^2)</li>
+<li>空间复杂度 O(1)</li>
+</ul>
+<h4 id="方法二-动态规划"><a href="#方法二-动态规划" class="headerlink" title="方法二 动态规划"></a>方法二 动态规划</h4><p>dp(i, j)=min(dp(i−1, j), dp(i−1, j−1), dp(i, j−1))+1<br>dp(i, j)表示以该点为右下角的最大正方形的边长。 </p>
+<pre><code class="Java">public class Solution {
+    public int maximalSquare(char[][] matrix) {
+        int rows = matrix.length, cols = rows &gt; 0 ? matrix[0].length : 0;
+        int[][] dp = new int[rows + 1][cols + 1];
+        int maxsqlen = 0;
+        for (int i = 1; i &lt;= rows; i++) {
+            for (int j = 1; j &lt;= cols; j++) {
+                if (matrix[i-1][j-1] == &#39;1&#39;){
+                    dp[i][j] = Math.min(Math.min(dp[i][j - 1], dp[i - 1][j]), dp[i - 1][j - 1]) + 1;
+                    maxsqlen = Math.max(maxsqlen, dp[i][j]);
+                }
+            }
+        }
+        return maxsqlen * maxsqlen;
+    }
+}
+</code></pre>
+<h5 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
+<li>时间复杂度 O(mn)</li>
+<li>空间复杂度 O(mn)</li>
+</ul>
+<h4 id="方法三-动态规划优化"><a href="#方法三-动态规划优化" class="headerlink" title="方法三 动态规划优化"></a>方法三 动态规划优化</h4><pre><code class="Java">class Solution {
+    public int maximalSquare(char[][] matrix) {
+        if(matrix.length == 0) return 0;
+        int m = matrix.length, n = matrix[0].length;
+        int[] dp = new int[n+1];
+        int maxL = 0, prev = 0;
+        for(int i=0; i&lt;m; i++) {
+            for(int j=1; j&lt;n+1; j++) {
+                if(matrix[i][j-1] == &#39;1&#39;) {
+                    int temp = dp[j];
+                    dp[j] = Math.min(Math.min(dp[j], dp[j-1]), prev) + 1;
+                    prev = temp;
+                    maxL = Math.max(maxL, dp[j]);
+                }
+                else {
+                    prev = dp[j];
+                    dp[j] = 0;
+                }
+            }
+
+        }
+        return maxL * maxL;
+    }
+}
+</code></pre>
+<h5 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><ul>
+<li>时间复杂度 O(mn)</li>
+<li>空间复杂度 O(n)</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。&lt;/p&gt;
+&lt;pre&gt;&lt;c
     
     </summary>
     

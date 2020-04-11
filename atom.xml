@@ -1428,86 +1428,6 @@ class Solution {
   </entry>
   
   <entry>
-    <title>235. 二叉搜索树的最近公共祖先</title>
-    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/235.%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
-    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/235. 二叉搜索树的最近公共祖先/</id>
-    <published>2019-11-15T08:12:20.000Z</published>
-    <updated>2019-12-04T02:22:40.340Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
-<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
-<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
-<p>图见<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank" rel="external">leetcode</a> </p>
-<p>示例 1:</p>
-<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
-输出: 6 
-解释: 节点 2 和节点 8 的最近公共祖先是 6。
-</code></pre><p>示例 2:</p>
-<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
-输出: 2
-解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
-</code></pre><p>说明:</p>
-<ul>
-<li>所有节点的值都是唯一的。</li>
-<li>p、q 为不同节点且均存在于给定的二叉搜索树中。</li>
-</ul>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-递归"><a href="#方法一-递归" class="headerlink" title="方法一 递归"></a>方法一 递归</h4><pre><code class="Java">/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(p.val &lt; root.val &amp;&amp; q.val &lt; root.val) return lowestCommonAncestor(root.left, p, q);
-        else if(p.val &gt; root.val &amp;&amp; q.val &gt; root.val) return lowestCommonAncestor(root.right, p, q);
-        else return root;
-    }
-}
-</code></pre>
-<h4 id="方法二-迭代"><a href="#方法二-迭代" class="headerlink" title="方法二 迭代"></a>方法二 迭代</h4><p>因为是搜索树，能够确定元素在哪个子树，所以不需要回溯，不需要栈，可以直接迭代。</p>
-<pre><code class="Java">/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        while(root != null) {
-            if(root.val &gt; p.val &amp;&amp; root.val &gt; q.val) root = root.left;
-            else if(root.val &lt; p.val &amp;&amp; root.val &lt; q.val) root = root.right;
-            else return root;
-        }
-        return null;
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
-&lt;p&gt;百度百科中最近公共祖先的定义为：
-    
-    </summary>
-    
-      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
-    
-    
-      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
-    
-      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>239. 滑动窗口最大值</title>
     <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/239.%20%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
     <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/239. 滑动窗口最大值/</id>
@@ -1610,6 +1530,86 @@ class Solution {
     <summary type="html">
     
       &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ****&quot;&gt;&lt;/a&gt;题目描述 ****&lt;/h2&gt;&lt;p&gt;给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动
+    
+    </summary>
+    
+      <category term="LeetCode-Java" scheme="http://sunyang.xyz/categories/LeetCode-Java/"/>
+    
+    
+      <category term="Java" scheme="http://sunyang.xyz/tags/Java/"/>
+    
+      <category term="LeetCode" scheme="http://sunyang.xyz/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>235. 二叉搜索树的最近公共祖先</title>
+    <link href="http://sunyang.xyz/2019/11/15/LeetCode-Java/235.%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <id>http://sunyang.xyz/2019/11/15/LeetCode-Java/235. 二叉搜索树的最近公共祖先/</id>
+    <published>2019-11-15T08:12:20.000Z</published>
+    <updated>2019-12-04T02:22:40.340Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 ***"></a>题目描述 ***</h2><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]</p>
+<p>图见<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank" rel="external">leetcode</a> </p>
+<p>示例 1:</p>
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+</code></pre><p>示例 2:</p>
+<pre><code>输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+</code></pre><p>说明:</p>
+<ul>
+<li>所有节点的值都是唯一的。</li>
+<li>p、q 为不同节点且均存在于给定的二叉搜索树中。</li>
+</ul>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="方法一-递归"><a href="#方法一-递归" class="headerlink" title="方法一 递归"></a>方法一 递归</h4><pre><code class="Java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(p.val &lt; root.val &amp;&amp; q.val &lt; root.val) return lowestCommonAncestor(root.left, p, q);
+        else if(p.val &gt; root.val &amp;&amp; q.val &gt; root.val) return lowestCommonAncestor(root.right, p, q);
+        else return root;
+    }
+}
+</code></pre>
+<h4 id="方法二-迭代"><a href="#方法二-迭代" class="headerlink" title="方法二 迭代"></a>方法二 迭代</h4><p>因为是搜索树，能够确定元素在哪个子树，所以不需要回溯，不需要栈，可以直接迭代。</p>
+<pre><code class="Java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while(root != null) {
+            if(root.val &gt; p.val &amp;&amp; root.val &gt; q.val) root = root.left;
+            else if(root.val &lt; p.val &amp;&amp; root.val &lt; q.val) root = root.right;
+            else return root;
+        }
+        return null;
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述 ***&quot;&gt;&lt;/a&gt;题目描述 ***&lt;/h2&gt;&lt;p&gt;给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
+&lt;p&gt;百度百科中最近公共祖先的定义为：
     
     </summary>
     
